@@ -116,7 +116,7 @@ nav.menu-bar .dropdown-menu li a {
 }
 
 /*  Show submenu on hover  */
-nav.menu-bar li.dropdown:hover .dropdown-menu {
+nav.menu-bar li.dropdown:open .dropdown-menu {
   display: block;
   text-decoration: underline;
 
