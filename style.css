@@ -129,6 +129,11 @@ nav.menu-bar .dropdown-toggle {
   display: inline-block;
 }
 
+/* keep the menu open when you hover over it directly */
+nav.menu-bar li.dropdown:hover .dropdown-menu,
+nav.menu-bar .dropdown-menu:hover {
+  display: block;
+}
 
 
 /* Push content down below the fixed-height header and menu */
