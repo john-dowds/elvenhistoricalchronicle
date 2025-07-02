@@ -93,7 +93,8 @@ nav.menu-bar li.dropdown {
 nav.menu-bar .dropdown-menu {
   display: none;
   position: absolute;
-  top: calc(100% + 0.25rem);
+  top: 100%;
+  margin-top: -4px;
   left: 0;
   background-color: rgba(0,0,0,0.85); /* matches nav */
   list-style: none;
