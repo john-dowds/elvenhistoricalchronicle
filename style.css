@@ -56,7 +56,7 @@ nav.menu-bar {
 nav.menu-bar ul {
   list-style: none;
   display: flex;
-  gap: 40px;
+  gap: 1.5rem;
   margin: 0;
   padding: 0;
 }
@@ -135,6 +135,12 @@ nav.menu-bar .dropdown-menu:hover {
   display: block;
 }
 
+nav.menu-bar ul li a,
+nav.menu-bar .dropdown-toggle {
+  display: inline-block;      /* ensure padding applies consistently */
+  padding: 0.5rem 1rem;       /* same vertical/horizontal padding */
+  line-height: 1;             /* tighten up vertical alignment */
+}
 
 /* Push content down below the fixed-height header and menu */
 main.content {
