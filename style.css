@@ -77,6 +77,16 @@ nav.menu-bar.sticky {
     z-index: 999;
   }  
 
+  /* ─────────────────────────────────────────────
+   Hide music player on mobile devices
+   ───────────────────────────────────────────── */
+@media (max-width: 768px) {
+  /* or whatever breakpoint you prefer */
+  nav.menu-bar audio {
+    display: none !important;
+  }
+}
+
 .menu-bar audio {
   position: absolute;
   left: 50px;
@@ -255,4 +265,60 @@ body {
   color: #fce5cd;
   font-size: 2rem;
   margin-bottom: 0.5em;
+}
+
+/* ───────────────── FAQ / COLLAPSIBLE ───────────────── */
+.faq-container {
+  max-width: 800px;
+  margin: 2em auto;
+}
+
+.faq-container h1 {
+  text-align: center;
+  margin-bottom: 1em;
+  color: #fce5cd;
+  font-size: 2.5rem;
+}
+
+.faq-item {
+  margin-bottom: 1rem;
+  background: rgba(0,0,0,0.6);
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+
+/* Style the question bar */
+.faq-item summary {
+  cursor: pointer;
+  padding: 1rem;
+  font-size: 1.2rem;
+  color: #fce5cd;
+  list-style: none; /* remove default arrow */
+  position: relative;
+}
+
+/* Add our own arrow indicator */
+.faq-item summary::after {
+  content: "▾";
+  position: absolute;
+  right: 1rem;
+  transition: transform 0.2s;
+}
+
+/* Rotate the arrow when open */
+.faq-item[open] summary::after {
+  transform: rotate(180deg);
+}
+
+/* Hide default disclosure triangle */
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Style the answer area */
+.faq-answer {
+  padding: 0 1rem 1rem;
+  color: #fce5cd;
+  line-height: 1.6;
 }

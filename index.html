@@ -10,7 +10,7 @@
       </head>
       
       <body>
-        <!--Elven Sigil-->
+  <!-- Elven Sigil & Header/Nav -->
         <img src="assets/art/sigil_master1trans.png" alt="Elven Sigil" class="sigil-overlay" />
         <header class="banner">
             <h1 class="site-title">The Elven Historical Chronicle</h1>
@@ -34,6 +34,7 @@
                   </ul>
                 </li>
                 <li><a href="form.html">Apply</a></li>
+                <li><a href="faq.html">FAQ</a></li>
                 <li><a href="archive.html">Archives</a></li>
                 <li><a href="about.html">About</a></li>
                 </ul>
@@ -83,8 +84,6 @@
     <script>
         const bgMusic = document.getElementById('bg-music');
         let hasStarted = false;
-      
-        // Ensure it's muted on page load
         bgMusic.muted = true;
       
         function startMusic() {
@@ -92,7 +91,6 @@
             hasStarted = true;
             bgMusic.play()
               .then(() => {
-                // Give browsers time to accept playback before unmuting
                 setTimeout(() => {
                   bgMusic.muted = false;
                 }, 300);
@@ -105,7 +103,6 @@
       
         document.addEventListener('mousemove', startMusic, { once: true });
       </script>   
-        <!-- site-wide footer -->
   <footer class="site-footer">
     <ul class="footer-links">
       <li><a href="info.html#terms">Terms</a></li>
