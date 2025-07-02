@@ -4,7 +4,7 @@ body {
   margin: 0;
   font-family: 'EB Garamond', serif;
   color: #fce5cd;
-  background: url('/elvenhistoricalchronicle/assets/art/zinazshari_bg2.png') no-repeat center center fixed;
+  background: url('assets/art/zinazshari_bg2.png') no-repeat center center fixed;
   background-size: cover;
   background-attachment: fixed;
 }
