@@ -87,6 +87,7 @@ nav.menu-bar.sticky {
 /*  Dropdown container positioning  */
 nav.menu-bar li.dropdown {
   position: relative;
+  display: inline-block;
 }
 
 /*  Hide submenu by default  */
@@ -94,7 +95,7 @@ nav.menu-bar .dropdown-menu {
   display: none;
   position: absolute;
   top: 100%;
-  margin-top: -4px;
+  margin-top: -2px;
   left: 0;
   background-color: rgba(0,0,0,0.85); /* matches nav */
   list-style: none;
@@ -124,6 +125,8 @@ nav.menu-bar li.dropdown:hover .dropdown-menu {
 /*  Make the toggle cursor-friendly  */
 nav.menu-bar .dropdown-toggle {
   cursor: pointer;
+  padding: 0.5rem 1rem;
+  display: inline-block;
 }
 
 
