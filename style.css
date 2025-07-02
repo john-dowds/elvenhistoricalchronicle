@@ -4,7 +4,7 @@ body {
   margin: 0;
   font-family: 'EB Garamond', serif;
   color: #fce5cd;
-  background: url('assets/art/zinazshari_bg2.png') no-repeat center center fixed;
+  background: url('art/zinazshari_bg2.png') no-repeat center center fixed;
   background-size: cover;
   background-attachment: fixed;
 }
@@ -13,7 +13,7 @@ body {
 header.banner {
   width: 100%;
   height: 250px; /* Adjust height based on actual image */
-  background: url('assets/art/zinazshari_bg1.png') no-repeat center center;
+  background: url('art/zinazshari_bg1.png') no-repeat center center;
   background-size: cover;
   position: relative;
   z-index: 100;
