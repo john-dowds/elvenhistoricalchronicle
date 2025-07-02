@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Chronicle – Volume 1</title>
+        <link rel="stylesheet" href="assets/style.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+      </head>
+      
+      <body>
+        <!--Elven Sigil-->
+        <img src="assets/art/sigil_master1trans.png" alt="Elven Sigil" class="sigil-overlay" />
+        <header class="banner">
+            <h1 class="site-title">The Elven Historical Chronicle</h1>
+          </header>
+          
+          <nav class="menu-bar">
+            <audio id="bg-music" controls autoplay loop>
+                <source src="assets/audio/theme.mp3" type="audio/mpeg">
+                Your browser does not support audio.
+              </audio>
+              
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li class="dropdown">
+                  <a href="#" class="dropdown-toggle">Chronicle ▾</a>
+                  <ul class="dropdown-menu">
+                    <li><a href="volume1.html">Volume 1</a></li>
+                    <li><a href="volume2.html">Volume 2</a></li>
+                    <li><a href="volume3.html">Volume 3</a></li>
+                    <li><a href="volume4.html">Volume 4</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Apply</a></li>
+                <li><a href="archive.html">Archives</a></li>
+                <li><a href="about.html">About</a></li>
+                </ul>
+            </nav>
+          
+  </header>
+
+  <main class="content">
+    <section class="text-block">
+        <p>
+            <h1>To All Scholars, Welcome</h1>
+          Your journey into both truth and legend begins here, with your pursuit of the ancient lore tied to the great elven people of Azeroth. The stories and lessons kept within the four volumes of the Elven Historical Chronicle meanders through the complete history of the elven people, including their greatest heights and most terrible falls, all carefully knitting through an understanding of the past.
+          These documents represent over twenty thousand years of record-keeping, as well as a decade of careful research, countless interviews, and mediation between the great elven races to gain access to records and tomes long sealed away. From the temples of Suramar and archives of Zin'Azshari, to the singular scraps of paper buried in small villages across the world, the Chronicle brings together a boundless trove of history that delves where few have before desired to explore-the crossroads where ego must give way to truth.
+        </p>
+      </section>
+    
+      <img src="assets/art/3rd Covers Spread.jpeg" alt="Covers" class="showcase-image" />
+    
+      <section class="text-block">
+        <p>
+          The first volume focuses on the ancient Kaldorei and Highborne dominion, tracing the evolution of their empire through geography, architecture, faith, and conflict, and ultimately its demise. The first volume concludes with the opening of the Dark Portal, an event which forever transformed Azeroth and its people.
+          <br>
+          <br>
+          The second volume explores the height of conflict between the elven people and the terrible forces of evil: the Scourge, and the Burning Legion. 
+          <br>
+          <br>
+          The third volume journeys deeper into the conflicts between the mortal races of Azeroth, including the near annihilation of the elven people at one another's hands.
+          <br>
+          <br>
+          The fourth and final volume of the Chronicle examines the future paths of the elven people, charting their course from the brink of annihilation at one another's hands to a place of rebirth and reconstruction, and ultimately to a place where they might stand united against a greater darkness.
+        </p>
+      </section>
+    
+      <img src="assets/art/map_Suramar.jpeg" alt="Map of Suramar" class="showcase-image" />
+    
+      <section class="text-block">
+        <p>
+          While these texts explore in depth history largely already known to the people of Azeroth, it is the unique trait of these texts that the perspectives of all races are placed side by side. For too long, elven history has been divided by sect and culture, with political divisiveness serving too powerful a force to
+          bring differing perspectives to the same table. Through these four volumes, readers can see for themselves the way that the actions of one race have so deeply affected the others, and how events we thought we understood were in truth far more complicated, and in other cases less so. The root of all conflict is a 
+          lack of understanding. There is hope that these texts might help to alleviate that fatal issue, and perhaps remind the elven people that they share more in common than not.
+        </p>
+      </section>
+    
+      <img src="assets/art/map_Zin'Azshari.png" alt="Map of Zin'Azshari" class="showcase-image" />
+    
+    </main>
+    <script>
+        const bgMusic = document.getElementById('bg-music');
+        let hasStarted = false;
+      
+        // Ensure it's muted on page load
+        bgMusic.muted = true;
+      
+        function startMusic() {
+          if (!hasStarted) {
+            hasStarted = true;
+            bgMusic.play()
+              .then(() => {
+                // Give browsers time to accept playback before unmuting
+                setTimeout(() => {
+                  bgMusic.muted = false;
+                }, 300);
+              })
+              .catch(err => {
+                console.log("Autoplay blocked:", err);
+              });
+          }
+        }
+      
+        document.addEventListener('mousemove', startMusic, { once: true });
+      </script>   
+        <!-- site-wide footer -->
+  <footer class="site-footer">
+    <ul class="footer-links">
+      <li><a href="info.html#terms">Terms</a></li>
+      <li><a href="info.html#contact">Contact</a></li>
+      <li><a href="info.html#volunteer">Volunteer</a></li>
+    </ul>
+    <p>© 2025 The Elven Historical Chronicle  </p>
+    <p>Blizzard Entertainment, Inc. and all respective artists retain all rights to the names, images and other intellectual property featured here of their own creation.</p> 
+    <p>This site is a fan-created, non-commercial project and is not endorsed or affiliated with Blizzard Entertainment.</p>  </footer>
+</body>
+</html>
+  
+</body>
+</html>
