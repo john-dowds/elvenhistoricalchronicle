@@ -114,6 +114,32 @@
     <p>© 2025 The Elven Historical Chronicle  </p>
     <p>Blizzard Entertainment, Inc. and all respective artists retain all rights to the names, images and other intellectual property featured here of their own creation.</p> 
     <p>This site is a fan-created, non-commercial project and is not endorsed or affiliated with Blizzard Entertainment.</p>    </footer>
+<script>
+  document.querySelectorAll('nav.menu-bar li.dropdown').forEach(dropdown => {
+    let hideTimer;
+
+    // when mouse enters, show immediately
+    dropdown.addEventListener('mouseenter', () => {
+      clearTimeout(hideTimer);
+      dropdown.classList.add('open');
+    });
+
+    // when mouse leaves, wait before hiding
+    dropdown.addEventListener('mouseleave', () => {
+      hideTimer = setTimeout(() => {
+        dropdown.classList.remove('open');
+      }, 1000); // stay open for 1 second
+    });
+
+    // optional: also open/close on click for touch users
+    dropdown.querySelector('.dropdown-toggle').addEventListener('click', e => {
+      e.preventDefault();
+      clearTimeout(hideTimer);
+      dropdown.classList.toggle('open');
+    });
+  });
+</script>
+
 </body>
 </html>
 
