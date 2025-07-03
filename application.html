@@ -5,7 +5,8 @@
   <title>The Elven Historical Chronicle – Application</title>
   <link rel="stylesheet" href="/style.css" />
   <style>
-    /* Login modal */
+    
+    /* Login modal
     #loginModal {
       position: fixed; top:0; left:0; width:100%; height:100%;
       display:none; backdrop-filter: blur(4px);
@@ -15,7 +16,7 @@
       transform: translate(-50%,-50%);
       background:#111; padding:2rem; border-radius:8px;
       box-shadow:0 0 20px rgba(0,0,0,0.8); color:#fff;
-    }
+    } */
     /* Timeline bar */
     .timeline-bar {
       width:100%; height:3rem; background:#222; color:#fce5cd;
@@ -83,7 +84,7 @@
     <div class="right" id="qaFeed"></div>
   </div>
 
-  <!-- Login / New Character Modal -->
+  <!-- Login / New Character Modal 
   <div id="loginModal">
     <div class="modal-content">
       <h2>Sign In to Application</h2>
@@ -101,136 +102,112 @@
       <p id="loginMsg" style="color:#f88;"></p>
     </div>
   </div>
+  -->
 
   <script>
-  (function(){
-    const API_BASE = '/.netlify/functions';
-    let schema = [], currentUser = null, answers = [];
-    // Elements
-    const loginModal = document.getElementById('loginModal');
-    const loginName  = document.getElementById('loginName');
-    const loginPin   = document.getElementById('loginPin');
-    const btnNew     = document.getElementById('btnNew');
-    const btnForgot  = document.getElementById('btnForgot');
-    const btnEnter   = document.getElementById('btnEnter');
-    const qaFeed     = document.getElementById('qaFeed');
-    const edition    = document.getElementById('editionSelect');
-    const pdfViewer  = document.getElementById('pdfViewer');
-
-    // 1) Load questions.json
-    fetch('/questions.json')
-      .then(r=>r.json())
-      .then(j=>schema=j)
-      .catch(()=>schema=[]);
-
-    // 2) Show login
-    window.addEventListener('load', ()=> {
-      loginModal.style.display = 'block';
-    });
-
-    // 3) PDF selector
-    edition.addEventListener('change', e => {
-      pdfViewer.src = e.target.value;
-    });
-
-    // New Character → createUser
-    btnNew.onclick = async () => {
-      const name = prompt('New character name:')?.trim();
-      if (!name) return alert('Name required.');
-      const pin  = prompt('Choose a 4-digit PIN:')?.trim();
-      if (!/^\d{4}$/.test(pin)) return alert('PIN must be exactly 4 digits.');
-      const res = await fetch(`${API_BASE}/createUser`, {
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body: JSON.stringify({ name, pin })
-      }).then(r=>r.json());
-      if (res.error) alert('Error: '+res.error);
-      else           alert('Created—please log in.');
-    };
-
-    // Forgot PIN (your Discord logic)
-    btnForgot.onclick = () => {
-      const name = loginName.value.trim();
-      // … your existing forgot-pin POST …
-      alert('If you exist, a PIN has been sent via Discord.');
-    };
-
-    // Enter → loginUser
-    btnEnter.onclick = async () => {
-      const name = loginName.value.trim();
-      const pin  = loginPin.value.trim();
-      if (!name || !pin) {
-        document.getElementById('loginMsg').textContent = 'Fill both fields.';
-        return;
-      }
-      const res = await fetch(`${API_BASE}/loginUser`, {
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body: JSON.stringify({ name, pin })
-      }).then(r=>r.json());
-      if (res.error) {
-        document.getElementById('loginMsg').textContent = res.error;
-      } else {
-        currentUser = name;
-        answers     = res.answers || [];
-        loginModal.style.display = 'none';
-        renderQuestion(0);
-      }
-    };
-
-    // Q&A flow
-    function renderQuestion(i) {
-      if (i >= schema.length) return showFinish();
-      const q = schema[i];
-      qaFeed.innerHTML = `<p class="question-text">${q.text}</p>`;
-      if (q.options) {
-        const opts = document.createElement('div');
-        opts.className = 'options';
-        q.options.forEach(opt => {
-          const b = document.createElement('button');
-          b.textContent = opt;
-          b.onclick = () => {
-            answers.push({ id: q.id, answer: opt });
-            renderQuestion(i+1);
-          };
-          opts.appendChild(b);
+    document.addEventListener('DOMContentLoaded', () => {
+      // ─── State ───────────────────────────────────────
+      let schema = [];      // full list of questions
+      let cursor = 0;       // index into schema
+      const answers = [];   // store { id, text, answer }
+    
+      // ─── Elements ────────────────────────────────────
+      const qaFeed = document.getElementById('qaFeed');
+    
+      // ─── Load questions.json ─────────────────────────
+      fetch('questions.json')
+        .then(r => r.json())
+        .then(j => {
+          schema = j;
+          showQuestion();
+        })
+        .catch(err => {
+          qaFeed.innerHTML = `<p style="color:red">Failed to load questions.json:</p><pre>${err}</pre>`;
         });
-        qaFeed.appendChild(opts);
-      } else {
-        const ta = document.createElement('textarea');
-        ta.rows = 3; ta.style.width = '100%';
-        const b = document.createElement('button');
-        b.textContent = 'Save';
-        b.onclick = () => {
-          answers.push({ id: q.id, answer: ta.value });
-          renderQuestion(i+1);
-        };
-        qaFeed.appendChild(ta);
-        qaFeed.appendChild(b);
+    
+      // ─── Render one question ─────────────────────────
+      function showQuestion() {
+        // If we've gone past the last question, show summary
+        if (cursor >= schema.length) {
+          return showSummary();
+        }
+    
+        const q = schema[cursor];
+        qaFeed.innerHTML = '';  // clear previous
+    
+        // Question text
+        const block = document.createElement('div');
+        block.className = 'question-block';
+        block.innerHTML = `<p class="question-text">${q.text}</p>`;
+    
+        // Multiple choice
+        if (q.options) {
+          const opts = document.createElement('div');
+          opts.className = 'options';
+          q.options.forEach(opt => {
+            const btn = document.createElement('button');
+            btn.textContent = opt;
+            btn.addEventListener('click', () => handleAnswer(opt));
+            opts.appendChild(btn);
+          });
+          block.appendChild(opts);
+    
+        // Free text
+        } else {
+          const ta = document.createElement('textarea');
+          ta.rows = 4;
+          ta.style.width = '100%';
+          const btn = document.createElement('button');
+          btn.textContent = 'Save';
+          btn.addEventListener('click', () => handleAnswer(ta.value));
+          block.appendChild(ta);
+          block.appendChild(btn);
+        }
+    
+        qaFeed.appendChild(block);
+        block.scrollIntoView({ behavior:'smooth' });
       }
-    }
-
-    // Finish screen
-    function showFinish() {
-      qaFeed.innerHTML = `
-        <p><strong>You’re done—thank you, ${currentUser}!</strong></p>
-        <button id="btnFinish">Finish & Submit</button>
-      `;
-      document.getElementById('btnFinish').onclick = submitAnswers;
-    }
-
-    // Submit answers
-    async function submitAnswers() {
-      const res = await fetch(`${API_BASE}/submitAnswers`, {
-        method:'POST',
-        headers:{'Content-Type':'application/json'},
-        body: JSON.stringify({ name: currentUser, answers })
-      }).then(r=>r.json());
-      if (res.error) alert('Error: '+res.error);
-      else           alert('All saved—thanks!');
-    }
-  })();
-  </script>
+    
+      // ─── Handle an answer, advance cursor ────────────
+      function handleAnswer(answer) {
+        const q = schema[cursor];
+        answers.push({ id: q.id, text: q.text, answer });
+    
+        // Branching: if q.next exists, use mapping; else move sequentially
+        if (q.next) {
+          const key = q.next[answer] || q.next.default;
+          if (key) {
+            const nextIdx = schema.findIndex(item => item.id === key);
+            cursor = nextIdx >= 0 ? nextIdx : cursor + 1;
+          } else {
+            cursor++;
+          }
+        } else {
+          cursor++;
+        }
+    
+        showQuestion();
+      }
+    
+      // ─── Final summary screen ────────────────────────
+      function showSummary() {
+        qaFeed.innerHTML = `
+          <h3>All done—thank you!</h3>
+          <p>You answered ${answers.length} question${answers.length===1?'':'s'}.</p>
+          <button id="btnReview">Review Answers</button>
+        `;
+        document.getElementById('btnReview').addEventListener('click', () => {
+          qaFeed.innerHTML = answers.map(a =>
+            `<div class="qa-item">
+              <p class="question-text"><strong>Q:</strong> ${a.text}</p>
+              <p class="answer-text"><em>A:</em> ${a.answer}</p>
+            </div>`
+          ).join('');
+        });
+      }
+    });
+    </script>
+    
 
   <footer class="site-footer">
     <ul class="footer-links">
