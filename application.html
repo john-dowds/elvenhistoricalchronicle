@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>The Elven Historical Chronicle – Application</title>
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    /* Login modal */
+    #loginModal {
+      position: fixed; top:0; left:0; width:100%; height:100%;
+      display:none; backdrop-filter: blur(4px);
+    }
+    #loginModal .modal-content {
+      position: absolute; top:50%; left:50%;
+      transform: translate(-50%,-50%);
+      background:#111; padding:2rem; border-radius:8px;
+      box-shadow:0 0 20px rgba(0,0,0,0.8); color:#fff;
+    }
+    /* Timeline bar */
+    .timeline-bar {
+      width:100%; height:3rem; background:#222; color:#fce5cd;
+      display:flex; align-items:center; justify-content:center;
+      margin-bottom:1rem;
+    }
+    /* Hero layout */
+    .hero {
+      display:grid; grid-template-columns:60% 40%; gap:2rem;
+      padding:0 2rem;
+    }
+    .hero .left,
+    .hero .right {
+      background:rgba(0,0,0,0.6); padding:1rem; border-radius:8px;
+    }
+  </style>
+</head>
+<body>
+  <img src="assets/art/sigil_master1trans.png" alt="Elven Sigil" class="sigil-overlay" />
+  <header class="banner">
+    <h1 class="site-title">The Elven Historical Chronicle</h1>
+  </header>
+  <nav class="menu-bar">
+    <audio controls loop>
+      <source src="assets/audio/theme.mp3" type="audio/mpeg">
+    </audio>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">Chronicle ▾</a>
+        <ul class="dropdown-menu">
+          <li><a href="volume1.html">Volume 1</a></li>
+          <li><a href="volume2.html">Volume 2</a></li>
+          <li><a href="volume3.html">Volume 3</a></li>
+          <li><a href="volume4.html">Volume 4</a></li>
+        </ul>
+      </li>
+      <li><a href="form.html">Apply</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="archive.html">Archives</a></li>
+      <li><a href="about.html">About</a></li>
+    </ul>
+  </nav>
+
+  <div class="timeline-bar">Timeline placeholder</div>
+
+  <div class="hero">
+    <!-- PDF viewer -->
+    <div class="left">
+      <label for="editionSelect">View Chronicle:</label>
+      <select id="editionSelect">
+        <option value="assets/pdfs/book_volume1.pdf">Volume 1</option>
+        <option value="assets/pdfs/book_volume2.pdf">Volume 2</option>
+        <option value="assets/pdfs/book_volume3.pdf">Volume 3</option>
+        <option value="assets/pdfs/book_volume4.pdf">Volume 4</option>
+      </select>
+      <iframe
+        id="pdfViewer"
+        src="assets/pdfs/book_volume1.pdf"
+        style="width:100%; height:90vh; border:none;">
+      </iframe>
+    </div>
+
+    <!-- Q&A feed -->
+    <div class="right" id="qaFeed"></div>
+  </div>
+
+  <!-- Login / New Character Modal -->
+  <div id="loginModal">
+    <div class="modal-content">
+      <h2>Sign In to Application</h2>
+      <label>
+        Character Name (Discord):<br/>
+        <input type="text" id="loginName" />
+      </label><br/><br/>
+      <label>
+        PIN:<br/>
+        <input type="password" id="loginPin" />
+      </label><br/><br/>
+      <button id="btnNew">New Character</button>
+      <button id="btnForgot">Forgot PIN</button>
+      <button id="btnEnter">Enter</button>
+      <p id="loginMsg" style="color:#f88;"></p>
+    </div>
+  </div>
+
+  <script>
+  (function(){
+    const API_BASE = '/.netlify/functions';
+    let schema = [], currentUser = null, answers = [];
+    // Elements
+    const loginModal = document.getElementById('loginModal');
+    const loginName  = document.getElementById('loginName');
+    const loginPin   = document.getElementById('loginPin');
+    const btnNew     = document.getElementById('btnNew');
+    const btnForgot  = document.getElementById('btnForgot');
+    const btnEnter   = document.getElementById('btnEnter');
+    const qaFeed     = document.getElementById('qaFeed');
+    const edition    = document.getElementById('editionSelect');
+    const pdfViewer  = document.getElementById('pdfViewer');
+
+    // 1) Load questions.json
+    fetch('/questions.json')
+      .then(r=>r.json())
+      .then(j=>schema=j)
+      .catch(()=>schema=[]);
+
+    // 2) Show login
+    window.addEventListener('load', ()=> {
+      loginModal.style.display = 'block';
+    });
+
+    // 3) PDF selector
+    edition.addEventListener('change', e => {
+      pdfViewer.src = e.target.value;
+    });
+
+    // New Character → createUser
+    btnNew.onclick = async () => {
+      const name = prompt('New character name:')?.trim();
+      if (!name) return alert('Name required.');
+      const pin  = prompt('Choose a 4-digit PIN:')?.trim();
+      if (!/^\d{4}$/.test(pin)) return alert('PIN must be exactly 4 digits.');
+      const res = await fetch(`${API_BASE}/createUser`, {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({ name, pin })
+      }).then(r=>r.json());
+      if (res.error) alert('Error: '+res.error);
+      else           alert('Created—please log in.');
+    };
+
+    // Forgot PIN (your Discord logic)
+    btnForgot.onclick = () => {
+      const name = loginName.value.trim();
+      // … your existing forgot-pin POST …
+      alert('If you exist, a PIN has been sent via Discord.');
+    };
+
+    // Enter → loginUser
+    btnEnter.onclick = async () => {
+      const name = loginName.value.trim();
+      const pin  = loginPin.value.trim();
+      if (!name || !pin) {
+        document.getElementById('loginMsg').textContent = 'Fill both fields.';
+        return;
+      }
+      const res = await fetch(`${API_BASE}/loginUser`, {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({ name, pin })
+      }).then(r=>r.json());
+      if (res.error) {
+        document.getElementById('loginMsg').textContent = res.error;
+      } else {
+        currentUser = name;
+        answers     = res.answers || [];
+        loginModal.style.display = 'none';
+        renderQuestion(0);
+      }
+    };
+
+    // Q&A flow
+    function renderQuestion(i) {
+      if (i >= schema.length) return showFinish();
+      const q = schema[i];
+      qaFeed.innerHTML = `<p class="question-text">${q.text}</p>`;
+      if (q.options) {
+        const opts = document.createElement('div');
+        opts.className = 'options';
+        q.options.forEach(opt => {
+          const b = document.createElement('button');
+          b.textContent = opt;
+          b.onclick = () => {
+            answers.push({ id: q.id, answer: opt });
+            renderQuestion(i+1);
+          };
+          opts.appendChild(b);
+        });
+        qaFeed.appendChild(opts);
+      } else {
+        const ta = document.createElement('textarea');
+        ta.rows = 3; ta.style.width = '100%';
+        const b = document.createElement('button');
+        b.textContent = 'Save';
+        b.onclick = () => {
+          answers.push({ id: q.id, answer: ta.value });
+          renderQuestion(i+1);
+        };
+        qaFeed.appendChild(ta);
+        qaFeed.appendChild(b);
+      }
+    }
+
+    // Finish screen
+    function showFinish() {
+      qaFeed.innerHTML = `
+        <p><strong>You’re done—thank you, ${currentUser}!</strong></p>
+        <button id="btnFinish">Finish & Submit</button>
+      `;
+      document.getElementById('btnFinish').onclick = submitAnswers;
+    }
+
+    // Submit answers
+    async function submitAnswers() {
+      const res = await fetch(`${API_BASE}/submitAnswers`, {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({ name: currentUser, answers })
+      }).then(r=>r.json());
+      if (res.error) alert('Error: '+res.error);
+      else           alert('All saved—thanks!');
+    }
+  })();
+  </script>
+
+  <footer class="site-footer">
+    <ul class="footer-links">
+      <li><a href="info.html#terms">Terms</a></li>
+      <li><a href="info.html#contact">Contact</a></li>
+      <li><a href="info.html#volunteer">Volunteer</a></li>
+    </ul>
+    <p>© 2025 The Elven Historical Chronicle</p>
+    <p>Blizzard Entertainment, Inc. and all respective artists retain all rights to the names, images and other intellectual property featured here of their own creation.</p>
+    <p>This site is a fan-created, non-commercial project and is not endorsed or affiliated with Blizzard Entertainment.</p>
+  </footer>
+
+  <script>
+    // Dropdown hover/click
+    document.querySelectorAll('nav.menu-bar li.dropdown').forEach(dd => {
+      let hideT;
+      dd.addEventListener('mouseenter', ()=>{ clearTimeout(hideT); dd.classList.add('open'); });
+      dd.addEventListener('mouseleave', ()=>{ hideT = setTimeout(()=>dd.classList.remove('open'),1000); });
+      dd.querySelector('.dropdown-toggle').addEventListener('click', e=>{
+        e.preventDefault(); clearTimeout(hideT); dd.classList.toggle('open');
+      });
+    });
+  </script>
+</body>
+</html>
