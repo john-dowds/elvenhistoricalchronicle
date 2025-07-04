@@ -187,7 +187,7 @@ body {
   right: 1rem;        /* tweak horizontal offset */
   width: 300px;       /* adjust size as needed */
   pointer-events: none; /* clicks pass through to underlying elements */
-  z-index: 205;
+  z-index: 1000;
 }
 
 /* ——————————————————————————————
@@ -342,7 +342,7 @@ body {
   background: rgba(0,0,0,0.75);
   display: none;
   backdrop-filter: blur(4px);
-  z-index: 1000;
+  z-index: 2000;
 }
 #infoModal .modal-content {
   max-width: 400px;
