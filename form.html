@@ -2,26 +2,49 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Chronicle – Feedback</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap"
-    rel="stylesheet"
-  />
+  <title>The Elven Historical Chronicle – Application</title>
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+
+    /* Hero layout */
+    .hero {
+      display:grid; grid-template-columns:55% 45%; gap:2rem;
+      padding:0 3rem;
+      margin-top: 1.5rem; /* tweak this value to taste */
+
+    }
+    .hero .left,
+    .hero .right {
+      background:rgba(0,0,0,0.6); padding:1rem; border-radius:8px;
+    }
+  </style>
 </head>
 <body>
-  <!-- Elven Sigil & Header/Nav -->
+    <!-- Info Modal -->
+    <div id="infoModal">
+      <div class="modal-content">
+        <h2>The Chronicle Side Car</h2>
+        <p>
+          The Chronicle Side Car feature allows users to work on filling out their character’s application side by side with the latest editions of the Chronicle, allowing a good frame of reference when needed.  
+          Be sure you are logged into your email account, otherwise it may not save.
+        </p>
+        <p style="color: #f88; font-weight: bold;">
+          Warning: Clearing your browser cache or history may risk erasing your progress if you haven’t submitted.
+        </p>
+        <div class="modal-actions">
+          <button id="btnInfoStart">Get Started</button>
+          <button id="btnInfoEmail">Give me the link instead</button>
+        </div>
+      </div>
+    </div>
+  
   <img src="assets/art/sigil_master1trans.png" alt="Elven Sigil" class="sigil-overlay" />
   <header class="banner">
     <h1 class="site-title">The Elven Historical Chronicle</h1>
   </header>
-  
   <nav class="menu-bar">
     <audio controls loop>
       <source src="assets/audio/theme.mp3" type="audio/mpeg">
-      Your browser does not support audio.
     </audio>
     <ul>
       <li><a href="index.html">Home</a></li>
@@ -40,21 +63,39 @@
       <li><a href="about.html">About</a></li>
     </ul>
   </nav>
-  
-  <!-- Main Form Content -->
-  <main class="content">
-    <iframe
+
+  <div class="hero">
+    <!-- PDF viewer -->
+    <div class="left">
+      <label for="editionSelect">View Chronicle:</label>
+      <select id="editionSelect">
+        <option value="/assets/pdfs/book_volume1.pdf">Volume 1</option>
+        <option value="/assets/pdfs/book_volume2.pdf">Volume 2</option>
+        <option value="/assets/pdfs/book_volume3.pdf">Volume 3</option>
+        <option value="/assets/pdfs/book_volume4.pdf">Volume 4</option>
+      </select>
+      <iframe
+        id="pdfViewer"
+        src="/assets/pdfs/book_volume1.pdf"
+        style="width:100%; height:110vh; border:none;">
+      </iframe>
+    </div>
+    <div class="right">
+      <iframe
       src="https://docs.google.com/forms/d/e/1FAIpQLSf2ZTI80ZKQvqdBsexqOmKtFzstsp6FXA5UlCPIVcQLEd5GjQ/viewform"
       width="100%"
       height="900"
       frameborder="0"
       marginheight="0"
       marginwidth="0"
-    >
+      >
       Loading…
     </iframe>
-  </main>
-  
+  </div>
+  </div>
+</main>
+    
+
   <footer class="site-footer">
     <ul class="footer-links">
       <li><a href="info.html#terms">Terms</a></li>
@@ -62,14 +103,49 @@
       <li><a href="info.html#volunteer">Volunteer</a></li>
     </ul>
     <p>© 2025 The Elven Historical Chronicle</p>
-    <p>
-      Blizzard Entertainment, Inc. and all respective artists retain all rights
-      to the names, images and other intellectual property featured here.
-    </p>
-    <p>
-      This site is a fan-created, non-commercial project and is not endorsed or
-      affiliated with Blizzard Entertainment.
-    </p>
+    <p>Blizzard Entertainment, Inc. and all respective artists retain all rights to the names, images and other intellectual property featured here of their own creation.</p>
+    <p>This site is a fan-created, non-commercial project and is not endorsed or affiliated with Blizzard Entertainment.</p>
   </footer>
+
+  <script>
+    // Dropdown hover/click
+    document.querySelectorAll('nav.menu-bar li.dropdown').forEach(dd => {
+      let hideT;
+      dd.addEventListener('mouseenter', ()=>{ clearTimeout(hideT); dd.classList.add('open'); });
+      dd.addEventListener('mouseleave', ()=>{ hideT = setTimeout(()=>dd.classList.remove('open'),1000); });
+      dd.querySelector('.dropdown-toggle').addEventListener('click', e=>{
+        e.preventDefault(); clearTimeout(hideT); dd.classList.toggle('open');
+      });
+    });
+  </script>
+
+<script>
+  document
+    .getElementById('editionSelect')
+    .addEventListener('change', e => {
+      document.getElementById('pdfViewer').src = e.target.value;
+    });
+</script>
+
+<script>
+  // Show the info modal on page load
+  window.addEventListener('load', () => {
+    document.getElementById('infoModal').style.display = 'block';
+  });
+
+  // Dismiss & continue
+  document.getElementById('btnInfoStart').onclick = () => {
+    document.getElementById('infoModal').style.display = 'none';
+  };
+
+  // Replace the email flow with a simple prompt showing the URL
+document.getElementById('btnInfoEmail').onclick = () => {
+  const formURL = 'https://docs.google.com/forms/d/e/1FAIpQLSf2ZTI80ZKQvqdBsexqOmKtFzstsp6FXA5UlCPIVcQLEd5GjQ/viewform?usp=sf_link';
+  // This opens a small input box pre-filled with the link for easy copy/paste:
+  prompt('Copy the intake form link below:', formURL);
+};
+</script>
+</script>
+
 </body>
 </html>
