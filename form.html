@@ -18,7 +18,7 @@
     .hero {
       display:grid; grid-template-columns:55% 45%; gap:2rem;
       padding:0 3rem;
-      margin-top: 1.5rem; /* tweak this value to taste */
+      margin-top: 1.5rem; 
 
     }
     .hero .left,
@@ -136,7 +136,6 @@
 </script>
 
 <script>
-  // Show the info modal on page load
   window.addEventListener('load', () => {
     document.getElementById('infoModal').style.display = 'block';
   });
@@ -146,10 +145,8 @@
     document.getElementById('infoModal').style.display = 'none';
   };
 
-  // Replace the email flow with a simple prompt showing the URL
 document.getElementById('btnInfoEmail').onclick = () => {
   const formURL = 'https://docs.google.com/forms/d/e/1FAIpQLSf2ZTI80ZKQvqdBsexqOmKtFzstsp6FXA5UlCPIVcQLEd5GjQ/viewform?usp=sf_link';
-  // This opens a small input box pre-filled with the link for easy copy/paste:
   prompt('Copy the intake form link below:', formURL);
 };
 </script>
