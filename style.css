@@ -12,7 +12,7 @@ body {
 /* Header banner image */
 header.banner {
   width: 100%;
-  height: 250px; /* Adjust height based on actual image */
+  height: 250px; 
   background: url('assets/art/zinazshari_bg1.png') no-repeat center center;
   background-size: cover;
   position: relative;
@@ -22,7 +22,7 @@ header.banner {
 
 .site-title {
     position: absolute;
-    top: 15%; /* Position higher inside the header */
+    top: 15%; 
     left: 50%;
     transform: translateX(-50%);
     font-family: 'EB Garamond', serif;
@@ -109,7 +109,6 @@ nav.menu-bar .dropdown-menu {
   z-index: 200; 
 }
 
-/*  Individual submenu links  */
 nav.menu-bar .dropdown-menu li a {
   display: block;
   padding: 0.5rem 1rem;
@@ -118,21 +117,19 @@ nav.menu-bar .dropdown-menu li a {
   white-space: nowrap;
 }
 
-/*  Show submenu on hover  */
 nav.menu-bar li.dropdown:open .dropdown-menu {
   display: block;
   text-decoration: underline;
 
 }
 
-/*  Make the toggle cursor-friendly  */
+
 nav.menu-bar .dropdown-toggle {
   cursor: pointer;
   padding: 0.5rem 1rem;
   display: inline-block;
 }
 
-/* keep the menu open when you hover over it directly */
 nav.menu-bar li.dropdown:hover .dropdown-menu,
 nav.menu-bar .dropdown-menu:hover {
   display: block;
@@ -140,12 +137,11 @@ nav.menu-bar .dropdown-menu:hover {
 
 nav.menu-bar ul li a,
 nav.menu-bar .dropdown-toggle {
-  display: inline-block;      /* ensure padding applies consistently */
-  padding: 0.5rem 1rem;       /* same vertical/horizontal padding */
-  line-height: 1;             /* tighten up vertical alignment */
+  display: inline-block;      
+  padding: 0.5rem 1rem;      
+  line-height: 1;           
 }
 
-/* Push content down below the fixed-height header and menu */
 main.content {
   padding: 2em;
   max-width: 1000px;
@@ -153,7 +149,7 @@ main.content {
 }
 
 .text-block {
-    background: rgba(0, 0, 0, 0.6);  /* translucent black */
+    background: rgba(0, 0, 0, 0.6);
     padding: 1.5em;
     margin: 2em auto;
     max-width: 900px;
@@ -172,21 +168,19 @@ main.content {
     border: 2px solid #fce5cd;
     box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
   }
-  
-  /* Ensure we can absolutely position against the page */
+
 body {
   position: relative;
   margin: 0;
-  /* ...other existing rules... */
 }
 
-/* Sigil overlay */
+
 .sigil-overlay {
   position: absolute;
-  top: 7rem;          /* tweak vertical offset */
-  right: 1rem;        /* tweak horizontal offset */
-  width: 300px;       /* adjust size as needed */
-  pointer-events: none; /* clicks pass through to underlying elements */
+  top: 7rem;        
+  right: 1rem;       
+  width: 300px;      
+  pointer-events: none; 
   z-index: 1000;
 }
 
@@ -223,7 +217,6 @@ body {
   /* ——————————————————————————————
    About page hero layout
    —————————————————————————————— */
-/* convert hero to 2-row grid, images in col 1, text spanning both */
 .about-hero {
   display: grid;
   grid-template-columns: 40% 1fr;
@@ -246,13 +239,11 @@ body {
   grid-row: 1 / span 2;
 }
 
-/* full-width image below remains unchanged */
 .full-image .showcase-image {
   width: 100%;
   margin-top: 2em;
 }
 
-/* caption above full-width image */
 .image-caption {
   text-align: center;
   color: #fce5cd;
@@ -281,17 +272,15 @@ body {
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
-/* Style the question bar */
 .faq-item summary {
   cursor: pointer;
   padding: 1rem;
   font-size: 1.2rem;
   color: #fce5cd;
-  list-style: none; /* remove default arrow */
+  list-style: none; 
   position: relative;
 }
 
-/* Add our own arrow indicator */
 .faq-item summary::after {
   content: "▾";
   position: absolute;
@@ -299,17 +288,14 @@ body {
   transition: transform 0.2s;
 }
 
-/* Rotate the arrow when open */
 .faq-item[open] summary::after {
   transform: rotate(180deg);
 }
 
-/* Hide default disclosure triangle */
 .faq-item summary::-webkit-details-marker {
   display: none;
 }
 
-/* Style the answer area */
 .faq-answer {
   padding: 0 1rem 1rem;
   color: #fce5cd;
@@ -334,7 +320,6 @@ body {
 }
 .options button:hover { background: #777; }
 
-/* Info Modal */
 #infoModal {
   position: fixed;
   top: 0; left: 0;
