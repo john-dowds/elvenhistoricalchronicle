@@ -1,0 +1,4491 @@
+{
+    "meta": {
+      "title": "Elven Historical Chronicle Questionnaire",
+      "version": 1,
+      "range": "Q1–Q432",
+      "parts": [
+        "Q1–Q120",
+        "Q121–Q184",
+        "Q185–Q240",
+        "Q241–Q432"
+      ]
+    },
+    "questions": [
+      {
+        "id": "q1",
+        "number": 1,
+        "text": "Is there an email we can reach you at if Discord isn't available?",
+        "type": "text",
+        "required": false,
+        "next": "q2"
+      },
+      {
+        "id": "q2",
+        "number": 2,
+        "text": "What is your Discord username for fast OOC communication?",
+        "type": "text",
+        "required": true,
+        "next": "q3"
+      },
+      {
+        "id": "q3",
+        "number": 3,
+        "text": "What is your character's IC given name, and surname, at birth?",
+        "type": "text",
+        "required": true,
+        "next": "q4"
+      },
+      {
+        "id": "q4",
+        "number": 4,
+        "text": "Do you consent to have any information shared adopted into the Chronicle?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "yes",
+            "label": "Yes",
+            "next": "q6"
+          },
+          {
+            "value": "no",
+            "label": "No",
+            "next": "q5"
+          }
+        ]
+      },
+      {
+        "id": "q5",
+        "number": 5,
+        "text": "Farewell, stranger; we barely knew you. Without consent we cannot adopt proceed with your interview. You may leave feedback here if you desire.",
+        "type": "textarea",
+        "required": false
+      },
+      {
+        "id": "q6",
+        "number": 6,
+        "text": "What titles or statuses of nobility apply to you now, here in the present?",
+        "type": "textarea",
+        "required": false,
+        "next": "q7"
+      },
+      {
+        "id": "q7",
+        "number": 7,
+        "text": "And what lineage and branch of elvenkin best represents your identity?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "kaldorei",
+            "label": "Kaldorei"
+          },
+          {
+            "value": "highborne",
+            "label": "Highborne (Noble Kaldorei)"
+          },
+          {
+            "value": "shal_dorei",
+            "label": "Shal'dorei"
+          },
+          {
+            "value": "quel_dorei",
+            "label": "Quel'dorei"
+          },
+          {
+            "value": "sin_dorei",
+            "label": "Sin'dorei"
+          },
+          {
+            "value": "ren_dorei",
+            "label": "Ren'dorei"
+          },
+          {
+            "value": "half_elf",
+            "label": "Half Elf"
+          },
+          {
+            "value": "darkfallen",
+            "label": "Darkfallen/San'layn"
+          },
+          {
+            "value": "other",
+            "label": "Other"
+          }
+        ],
+        "next": "q8"
+      },
+      {
+        "id": "q8",
+        "number": 8,
+        "text": "What is your sex?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "male",
+            "label": "Male"
+          },
+          {
+            "value": "female",
+            "label": "Female"
+          },
+          {
+            "value": "intersex",
+            "label": "Intersex"
+          }
+        ],
+        "next": "q9"
+      },
+      {
+        "id": "q9",
+        "number": 9,
+        "text": "What is your gender?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "male",
+            "label": "Male"
+          },
+          {
+            "value": "female",
+            "label": "Female"
+          },
+          {
+            "value": "nonbinary",
+            "label": "Non-binary"
+          },
+          {
+            "value": "other",
+            "label": "Other"
+          }
+        ],
+        "next": "q10"
+      },
+      {
+        "id": "q10",
+        "number": 10,
+        "text": "Preferred pronouns (check all that apply)",
+        "type": "checkbox",
+        "required": true,
+        "options": [
+          {
+            "value": "he_him",
+            "label": "He/Him"
+          },
+          {
+            "value": "she_her",
+            "label": "She/Her"
+          },
+          {
+            "value": "they_them",
+            "label": "They/Them"
+          },
+          {
+            "value": "other",
+            "label": "Other"
+          }
+        ],
+        "next": "q11"
+      },
+      {
+        "id": "q11",
+        "number": 11,
+        "text": "What is your parentage? This would include their names if known, and also any known professions or callings. Caretakers and mentors can be included as well.",
+        "type": "textarea",
+        "required": true,
+        "next": "q12"
+      },
+      {
+        "id": "q12",
+        "number": 12,
+        "text": "Do you have any siblings? Please provide names, profession/trades, sex and gender, years of birth, etc.",
+        "type": "textarea",
+        "required": false,
+        "next": "q13"
+      },
+      {
+        "id": "q13",
+        "number": 13,
+        "text": "And yourself? What year were you born? (use Chronicle references if needed)",
+        "type": "text",
+        "required": true,
+        "next": "q14"
+      },
+      {
+        "id": "q14",
+        "number": 14,
+        "text": "And now into the details; your early years. What was it like growing up? What were your schooling arrangements, or major life events during your younger years?",
+        "type": "textarea",
+        "required": false,
+        "next": "q15"
+      },
+      {
+        "id": "q15",
+        "number": 15,
+        "text": "And now, presently, what profession or calling can you claim for yourself?",
+        "type": "checkbox",
+        "required": true,
+        "options": [
+          {
+            "value": "hunter_ranger",
+            "label": "Hunter/Spellbow/Ranger"
+          },
+          {
+            "value": "mage",
+            "label": "Mage"
+          },
+          {
+            "value": "sorcerer_warlock",
+            "label": "Sorcerer/Warlock"
+          },
+          {
+            "value": "shaman_druid",
+            "label": "Shaman/Druid"
+          },
+          {
+            "value": "monk_priest_paladin",
+            "label": "Monk/Priest/Paladin"
+          },
+          {
+            "value": "rogue",
+            "label": "Rogue"
+          },
+          {
+            "value": "dk_warrior_soldier",
+            "label": "Death Knight/Warrior/Soldier"
+          },
+          {
+            "value": "civilian_other",
+            "label": "Civilian/Craftsman/Politician"
+          },
+          {
+            "value": "other",
+            "label": "Other"
+          }
+        ],
+        "next": "q16"
+      },
+      {
+        "id": "q16",
+        "number": 16,
+        "text": "Around how old are you presently?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "<=50_EK",
+            "label": "(Young High Elves)<br>50 years or younger, and born on the Eastern Kingdoms.",
+            "next": "q109"
+          },
+          {
+            "value": "50_500_EK",
+            "label": "(Adult High Elves)<br>Between 50 and 500 years old, and born on the Eastern Kingdoms.",
+            "next": "q106"
+          },
+          {
+            "value": "500_2800_EK",
+            "label": "(Elderly High Elves, born anytime after the founding of Quel'Thalas)<br>Between 500 and 2,800 years old and born on the Eastern Kingdoms.",
+            "next": "q94"
+          },
+          {
+            "value": "2800_6800_any",
+            "label": "(High Elves born between the Exile and the start of the Troll Wars)<br>Between 2,800 and 6,800 years old.",
+            "next": "q88"
+          },
+          {
+            "value": "15_10000_shaldorei",
+            "label": "(Shal'dorei born in Suramar after the Sundering)<br>10,000 or fewer years old.",
+            "next": "q38"
+          },
+          {
+            "value": "50_6800_kalimdor",
+            "label": "(Kaldorei born after the Quel'dorei's exile)<br>Between 50 and 6,800 years old, and born on Kalimdor.",
+            "next": "q84"
+          },
+          {
+            "value": "6800_10000",
+            "label": "(Ancient Kaldorei born after the Sundering)<br>Between 6,800 and 10,000 years old.",
+            "next": "q50"
+          },
+          {
+            "value": "10000_plus",
+            "label": "(Ancient Kaldorei born before the Sundering)<br>10,000 or more years old.",
+            "next": "q17"
+          }
+        ]
+      },
+      {
+        "id": "q17",
+        "number": 17,
+        "text": "Before the Sundering of Kalimdor, please speak more about your young adult experiences. This can include any further training or involvement in organizations such as the Sisterhood of Elune, or the early druids, or any other caste or group.",
+        "type": "textarea",
+        "required": false,
+        "next": "q18",
+        "_note": "WOTA INITIAL ROUTE."
+      },
+      {
+        "id": "q18",
+        "number": 18,
+        "text": "Were there any specific skills, trades, or fields of magic that you mastered before the War of the Ancients began?",
+        "type": "textarea",
+        "required": false,
+        "next": "q19"
+      },
+      {
+        "id": "q19",
+        "number": 19,
+        "text": "If you grew into adulthood before the War of the Ancients began, say more about your adulthood experiences; this could be resettlement somewhere, promotions, marriages, the birth of children, and so on.",
+        "type": "textarea",
+        "required": false,
+        "next": "q20"
+      },
+      {
+        "id": "q20",
+        "number": 20,
+        "text": "If you were one of Queen Azshara's Highborne, what were your experiences specific to that, leading up to the start of the War of the Ancients?",
+        "type": "textarea",
+        "required": false,
+        "next": "q21"
+      },
+      {
+        "id": "q21",
+        "number": 21,
+        "text": "After the War of the Ancients began, were you a loyalist member of Azshara's Highborne?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "loyalist_yes",
+            "label": "Yes, I remained a loyalist.",
+            "next": "q22",
+            "_note": "JUMP TO LOYALIST ROUTE."
+          },
+          {
+            "value": "loyalist_no",
+            "label": "No. (not Highborne or not loyal)",
+            "next": "q30",
+            "_note": "JUMP TO REBEL ROUTE."
+          }
+        ]
+      },
+      {
+        "id": "q22",
+        "number": 22,
+        "text": "What were your experiences immediately preceding the outbreak of the war, including the time when the Well of Eternity was first used to contact the Burning Legion?",
+        "type": "textarea",
+        "required": false,
+        "next": "q23",
+        "_note": "WOTA LOYALIST ROUTE."
+      },
+      {
+        "id": "q23",
+        "number": 23,
+        "text": "Were you aware of Queen Azshara's pact and Legion? If so, to what extent?",
+        "type": "textarea",
+        "required": false,
+        "next": "q24"
+      },
+      {
+        "id": "q24",
+        "number": 24,
+        "text": "After the pact had been made, what were your experiences as one of the loyalists or Highborne? Did you accept that bargain?",
+        "type": "textarea",
+        "required": false,
+        "next": "q25"
+      },
+      {
+        "id": "q25",
+        "number": 25,
+        "text": "The Legion launched a brutal invasion of Azeroth, starting first in Zin-Azshari itself. Where were you, and what were your experiences?",
+        "type": "textarea",
+        "required": false,
+        "next": "q26"
+      },
+      {
+        "id": "q26",
+        "number": 26,
+        "text": "Following the sacking of the lower caste districts of Zin-Azshari, war spread across Kalimdor. What was your role in the conflict during this time? Were there specific battles or campaigns, or events, in which you had direct involvement?",
+        "type": "textarea",
+        "required": false,
+        "next": "q27"
+      },
+      {
+        "id": "q27",
+        "number": 27,
+        "text": "If you defected at any point from loyalists, when was this, why did you defect, and how did it happen?",
+        "type": "textarea",
+        "required": false,
+        "next": "q28"
+      },
+      {
+        "id": "q28",
+        "number": 28,
+        "text": "What other experiences did you have towards the end of the war, before the Sundering?",
+        "type": "textarea",
+        "required": false,
+        "next": "q29"
+      },
+      {
+        "id": "q29",
+        "number": 29,
+        "text": "Just before the Sundering, the Kaldorei of Suramar, under Grand Magistrix Elisande, conjured a barrier to surround the city and sever it from the world; were you present in the city when the arcane barrier was erected?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "suramar_yes",
+            "label": "Yes, I was within Suramar.",
+            "next": "q36",
+            "_note": "SHALDOREI STARTER."
+          },
+          {
+            "value": "suramar_no",
+            "label": "No, I was not in Suramar.",
+            "next": "q50",
+            "_note": "KALDOREI STARTER."
+          }
+        ]
+      },
+      {
+        "id": "q30",
+        "number": 30,
+        "text": "When and how did you first become aware of the Legion's invasion; where were you?",
+        "type": "textarea",
+        "required": false,
+        "next": "q31",
+        "_note": "WOTA REBEL ROUTE."
+
+      },
+      {
+        "id": "q31",
+        "number": 31,
+        "text": "When the Legion first invaded, they began with the lowborne districts in the capital of Zin-Azshari. Where were you, and what were your experiences during the early days of the invasion?",
+        "type": "textarea",
+        "required": false,
+        "next": "q32"
+      },
+      {
+        "id": "q32",
+        "number": 32,
+        "text": "How and when did you join the Kaldorei Resistance, if at all?",
+        "type": "textarea",
+        "required": false,
+        "next": "q33"
+      },
+      {
+        "id": "q33",
+        "number": 33,
+        "text": "Following the sacking of the lower caste districts of Zin-Azshari, war spread across Kalimdor. What was your role in the conflict during this time? Were there specific battles or campaigns, or events, in which you had direct involvement?",
+        "type": "textarea",
+        "required": false,
+        "next": "q34"
+      },
+      {
+        "id": "q34",
+        "number": 34,
+        "text": "What other experiences did you have towards the end of the war, before the Sundering?",
+        "type": "textarea",
+        "required": false,
+        "next": "q35"
+      },
+      {
+        "id": "q35",
+        "number": 35,
+        "text": "Just before the Sundering, the Kaldorei of Suramar, under Grand Magistrix Elisande, conjured a barrier to surround the city and sever it from the world; were you present in the city when the arcane barrier was erected?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "suramar_yes",
+            "label": "Yes, I was within Suramar.",
+            "next": "q36",
+            "_note": "SHALDOREI STARTER."
+          },
+          {
+            "value": "suramar_no",
+            "label": "No, I was not in Suramar.",
+            "next": "q50",
+            "_note": "KALDOREI STARTER."
+          }
+        ]
+      },
+      {
+        "id": "q36",
+        "number": 36,
+        "text": "What were your experiences immediately preceding the erection of Suramar's barrier, if any, when the Grand Magistrix and her forces led an assault to close the Legion's portal near Suramar?",
+        "type": "textarea",
+        "required": false,
+        "next": "q37",
+        "_note": "SHALDOREI ROUTE."
+      },
+      {
+        "id": "q37",
+        "number": 37,
+        "text": "Did you have any involvement in erecting the Suramar barrier? What was your station, rank, or place within Suramar at the time?",
+        "type": "textarea",
+        "required": false,
+        "next": "q38"
+      },
+      {
+        "id": "q38",
+        "number": 38,
+        "text": "What was it like being cut off from family and the world outside the shield, if it was even a matter for you at all?",
+        "type": "textarea",
+        "required": false,
+        "next": "q39"
+      },
+      {
+        "id": "q39",
+        "number": 39,
+        "text": "Did you have any involvement in purging Legion or Azshara loyalists within the city after shield was erected?",
+        "type": "textarea",
+        "required": false,
+        "next": "q40"
+      },
+      {
+        "id": "q40",
+        "number": 40,
+        "text": "Did you play any role in creation of the Nightwell, and the shaping of what would later become Shal'dorei culture?",
+        "type": "textarea",
+        "required": false,
+        "next": "q41"
+      },
+      {
+        "id": "q41",
+        "number": 41,
+        "text": "Did you play any role in the development or production of arcwine?",
+        "type": "textarea",
+        "required": false,
+        "next": "q42"
+      },
+      {
+        "id": "q42",
+        "number": 42,
+        "text": "What were your experiences during the millennia spent under shield in Suramar? Speak on culture, history, politics, innovation, and anything else you deem relevant.",
+        "type": "textarea",
+        "required": false,
+        "next": "q43"
+      },
+      {
+        "id": "q43",
+        "number": 43,
+        "text": "Were there any other notable experiences while Suramar was still sealed? Awareness of people exiled from the city, commentary on technology and magic?",
+        "type": "textarea",
+        "required": false,
+        "next": "q44"
+      },
+      {
+        "id": "q44",
+        "number": 44,
+        "text": "Did you have any awareness of Grand Magistrix Elisande's reluctant pact with Gul'dan and intended submission to Legion? If so, what was the extent of your awareness or involvement?",
+        "type": "textarea",
+        "required": false,
+        "next": "q45"
+      },
+      {
+        "id": "q45",
+        "number": 45,
+        "text": "What role did you play (if any) in the failed Dusk Lily Coup and escape and exile of First Arcanist Thalyssra?",
+        "type": "textarea",
+        "required": false,
+        "next": "q46"
+      },
+      {
+        "id": "q46",
+        "number": 46,
+        "text": "Following the failed Dusk Lily Coup, the shield around Suramar was brought down; what were your experiences after that, and during the arrival of Legion in Suramar and on the Broken Isles?",
+        "type": "textarea",
+        "required": false,
+        "next": "q47"
+      },
+      {
+        "id": "q47",
+        "number": 47,
+        "text": "Regardless of whether or not you aligned yourself with Grand Magistrix Elisande and her Legion supporters, what were your experiences immediately after the fall of the shield?",
+        "type": "textarea",
+        "required": false,
+        "next": "q48"
+      },
+      {
+        "id": "q48",
+        "number": 48,
+        "text": "Did you at any point venture outside the city after the collapse of the barrier? What were your experiences and thoughts on discovering the continued survival of the world after ten thousand years of isolation?",
+        "type": "textarea",
+        "required": false,
+        "next": "q49"
+      },
+      {
+        "id": "q49",
+        "number": 49,
+        "text": "What were your first experiences with the 'Outlanders' who arrived on the Broken Isles to battle the Burning Legion?",
+        "type": "textarea",
+        "required": false,
+        "next": "q366"
+      },
+      {
+        "id": "q50",
+        "number": 50,
+        "text": "In the closing days of the War of the Ancients, the Kaldorei Rebellion launched an assault on the capital of Zin-Azshari and destroyed portal within the Well of Eternity, which in turn began the Sundering of Kalimdor. During these fateful and terror filled days, what were your experiences, and how did you escape the destruction?",
+        "type": "textarea",
+        "required": false,
+        "next": "q51",
+        "_note": "SUNDERING ROUTE."
+      },
+      {
+        "id": "q51",
+        "number": 51,
+        "text": "What part of Kalimdor were you in, specifically, during the Sundering?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "north",
+            "label": "The North (Modern day Northrend)",
+            "next": "q55",
+            "_note": "NORTHREND ROUTE."
+          },
+          {
+            "value": "west",
+            "label": "Western Kalimdor (Modern day Kalimdor)",
+            "next": "q59",
+            "_note": "KALIMDOR ROUTE."
+          },
+          {
+            "value": "east",
+            "label": "Eastern Kalimdor (Modern day Eastern Kingdoms)",
+            "next": "q66",
+            "_note": "EASTERN KINGDOMS ROUTE."
+          },
+          {
+            "value": "central",
+            "label": "Central Kalimdor (Broken Isles, Kul Tiras, Zandalar, other islands)",
+            "next": "q72",
+            "_note": "CENTRAL ROUTE."
+          },
+          {
+            "value": "south",
+            "label": "Southern Kalimdor (Modern day Pandaria)",
+            "next": "q79",
+            "_note": "PANDARIA ROUTE."
+          },
+          {
+            "value": "druid_sleep",
+            "label": "As a druid, I entered the Emerald Dream for a long sleep",
+            "next": "q52",
+            "_note": "DRUID ROUTE."
+          },
+          {
+            "value": "suramar_born",
+            "label": "I was born after the Sundering in Suramar",
+            "next": "q36",
+            "_note": "SHALDOREI ROUTE."
+          }
+        ]
+      },
+      {
+        "id": "q52",
+        "number": 52,
+        "text": "At what point did you initially enter the Emerald Dream to sleep?",
+        "type": "text",
+        "required": true,
+        "next": "q53"
+      },
+      {
+        "id": "q53",
+        "number": 53,
+        "text": "What were your experiences, if any, during your slumber? This could be tied to the Emerald Nightmare, or any other stirrings.",
+        "type": "textarea",
+        "required": false,
+        "next": "q54"
+      },
+      {
+        "id": "q54",
+        "number": 54,
+        "text": "At what point did you emerge from your slumber?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "satyr",
+            "label": "During the War of the Satyr (Year -6,300)",
+            "next": "q63"
+          },
+          {
+            "value": "hyjal",
+            "label": "During the Battle for Mount Hyjal (Year 21)",
+            "next": "q203"
+          },
+          {
+            "value": "vanilla",
+            "label": "After renewal of conflict between the Horde and Alliance (Year 25, Classic)",
+            "next": "q245"
+          },
+          {
+            "value": "tbc",
+            "label": "During the invasion of the Outlands (Year 26, TBC)",
+            "next": "q252"
+          },
+          {
+            "value": "wotlk",
+            "label": "During the war against the Lich King Year 27, WotLK)",
+            "next": "q301"
+          },
+          {
+            "value": "cata",
+            "label": "After the Shattering (Years 28-29, Cata)",
+            "next": "q337"
+          },
+          {
+            "value": "mop",
+            "label": "During the latter half of the Alliance-Horde War (Years 30-31, MoP)",
+            "next": "q343"
+          },
+          {
+            "value": "wod",
+            "label": "After conclusion of the Alliance-Horde War (Year 31, WoD)",
+            "next": "q362"
+          },
+          {
+            "value": "legion",
+            "label": "During the Burning Legion's third invasion (Years 32-33, Legion)",
+            "next": "q366"
+          },
+          {
+            "value": "bfa",
+            "label": "During the Fourth War (Year 34, BFA)",
+            "next": "q390"
+          },
+          {
+            "value": "sl",
+            "label": "After the end of the Fourth War (Year 35, Shadowlands)",
+            "next": "q419"
+          },
+          {
+            "value": "df",
+            "label": "During the awakening of the Dragon Isles (Year 40, Dragonflight)",
+            "next": "q422"
+          },
+          {
+            "value": "tww",
+            "label": "At the onset of the Void War. (Year 41, TWW)",
+            "next": "q429"
+          }
+        ]
+      },
+      {
+        "id": "q55",
+        "number": 55,
+        "text": "What were your experiences in Northrend in the wake of the Sundering? Did you settle with other elves in places like Shandaral, or along the southern or western coasts?",
+        "type": "textarea",
+        "required": false,
+        "next": "q56",
+        "_note": "NORTHREND ROUTE."
+      },
+      {
+        "id": "q56",
+        "number": 56,
+        "text": "If you settled in Shandaral, what was your experience with the withdrawal from the magic of the Well of Eternity, as well as the subsequent conflict with azure dragons and the crystalizing ritual that destroyed Moonsong?",
+        "type": "textarea",
+        "required": false,
+        "next": "q57"
+      },
+      {
+        "id": "q57",
+        "number": 57,
+        "text": "What other noteworthy experiences did you have on the continent leading up to the rise of the Scourge in that region?",
+        "type": "textarea",
+        "required": false,
+        "next": "q58"
+      },
+      {
+        "id": "q58",
+        "number": 58,
+        "text": "Did you remain here permanently, or travel away sometime before the rise of the Scourge?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "remained",
+            "label": "I stayed until the war in Northrend.",
+            "next": "q301",
+            "_note": "WOTLK ROUTE."
+          },
+          {
+            "value": "back_kalimdor",
+            "label": "I traveled back to Kalimdor.",
+            "next": "q61",
+            "_note": "KALIMDOR ROUTE."
+          }
+          ,
+          {
+            "value": "back_eastern_kingdoms",
+            "label": "I traveled back to the Eastern Kingdoms.",
+            "next": "q66",
+            "_note": "EASTERN KINGDOMS ROUTE."
+          }
+        ]
+      },
+      {
+        "id": "q59",
+        "number": 59,
+        "text": "What were your experiences on the remainder of Kalimdor's landmass in the west in the wake of the Sundering?",
+        "type": "textarea",
+        "required": false,
+        "next": "q60"
+      },
+      {
+        "id": "q60",
+        "number": 60,
+        "text": "Were you witness creation of second Well of Eternity upon the peak of Mount Hyjal, and the subsequent planting of Nordrassil and its blessing by the Aspects? If so, what is your recollection of the moments, and commentary on the new direction of the Kaldorei?",
+        "type": "textarea",
+        "required": false,
+        "next": "q61"
+      },
+      {
+        "id": "q61",
+        "number": 61,
+        "text": "Where did you settle in Kalimdor in wake the of the new well's creation, and what were your experiences leading up to War of the Satyr in the year -9,300?",
+        "type": "textarea",
+        "required": false,
+        "next": "q62"
+      },
+      {
+        "id": "q62",
+        "number": 62,
+        "text": "What was your involvement, if any, in War of the Satyr in the year -9,300? What were your experiences during that conflict which saw the first emergence of the worgen?",
+        "type": "textarea",
+        "required": false,
+        "next": "q63"
+      },
+      {
+        "id": "q63",
+        "number": 63,
+        "text": "Were there any other noteworthy experiences on Kalimdor after the War of the Satyr ended?",
+        "type": "textarea",
+        "required": false,
+        "next": "q64"
+      },
+      {
+        "id": "q64",
+        "number": 64,
+        "text": "What were your experiences regarding the renewed tension and conflict between the Kaldorei and surviving Highborne on Kalimdor.",
+        "type": "textarea",
+        "required": false,
+        "next": "q65"
+      },
+      {
+        "id": "q65",
+        "number": 65,
+        "text": "When the Highborne elves were exiled from Kalimdor, did you follow Dath'remar and become one of the early Quel'dorei?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "followed",
+            "label": "Yes, I followed Dath'remar (Quel'dorei)",
+            "next": "q88"
+          },
+          {
+            "value": "remained",
+            "label": "No, I remained on Kalimdor (Kaldorei)",
+            "next": "q84"
+          }
+        ]
+      },
+      {
+        "id": "q66",
+        "number": 66,
+        "text": "In the wake of the Sundering, what were your experiences in the lands that would later become the Eastern Kingdoms?",
+        "type": "textarea",
+        "required": false,
+        "next": "q67"
+      },
+      {
+        "id": "q67",
+        "number": 67,
+        "text": "Where did you settle; with whom?",
+        "type": "textarea",
+        "required": false,
+        "next": "q68"
+      },
+      {
+        "id": "q68",
+        "number": 68,
+        "text": "Were there any other notable experiences you had in the years between the Sundering and arrival of Quel'dorei exiles in the year -7,300?",
+        "type": "textarea",
+        "required": false,
+        "next": "q69"
+      },
+      {
+        "id": "q69",
+        "number": 69,
+        "text": "During your long years on the eastern continent, what were your experiences and interactions with denizens of that land like? Early vrykul and other primative species were present during this time.",
+        "type": "textarea",
+        "required": false,
+        "next": "q70"
+      },
+      {
+        "id": "q70",
+        "number": 70,
+        "text": "Centuries and millennia later, when the Highborne elves of Kalimdor arrived in Tirisfal after their exile, what were your initial interactions with the exiles like, if you had any, and what path did you take? Did you join the exiles in journeying to settle the kingdom of Quel'Thalas; or remain living elsewhere on the continent; or by chance return to Kalimdor?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "join_exiles",
+            "label": "I stayed until exiled Highborne arrived, and joined them in becoming the Quel'dorei.",
+            "next": "q88"
+          },
+          {
+            "value": "stay_nonjoin",
+            "label": "I stayed on the eastern continent, but did not join exiled Highborne.",
+            "next": "q94"
+          },
+          {
+            "value": "return_kalimdor",
+            "label": "I traveled back to Kalimdor at some point.",
+            "next": "q59"
+          }
+        ]
+      },
+      {
+        "id": "q72",
+        "number": 72,
+        "text": "Which islands or area were you initially stranded on after the Sundering?",
+        "type": "text",
+        "required": false,
+        "next": "q73"
+      },
+      {
+        "id": "q73",
+        "number": 73,
+        "text": "What were your experiences like in the years and centuries following that terrible event?",
+        "type": "textarea",
+        "required": false,
+        "next": "q74"
+      },
+      {
+        "id": "q74",
+        "number": 74,
+        "text": "Did you settle in other regions, or remain where you were initially stranded?",
+        "type": "textarea",
+        "required": false,
+        "next": "q75"
+      },
+      {
+        "id": "q75",
+        "number": 75,
+        "text": "What were your interactions like specifically with denizens of the region(s) where you settled during those years?",
+        "type": "textarea",
+        "required": false,
+        "next": "q76"
+      },
+      {
+        "id": "q76",
+        "number": 76,
+        "text": "If you were on the Broken Isles during these years, what were your experiences with exiled Shal'dorei from Suramar, if you ever met any at all?",
+        "type": "textarea",
+        "required": false,
+        "next": "q77"
+      },
+      {
+        "id": "q77",
+        "number": 77,
+        "text": "Did you stay on these central landmasses until the Third War, or did you travel back to Kalimdor at some point?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "stayed_to_thirdwar",
+            "label": "I stayed until the Third War, or sometime around that period.",
+            "next": "q203"
+          },
+          {
+            "value": "back_kalimdor",
+            "label": "I traveled back to Kalimdor at some point.",
+            "next": "q59"
+          }
+        ]
+      },
+      {
+        "id": "q79",
+        "number": 79,
+        "text": "what were your experiences in Pandaria like in wake of the Sundering",
+        "type": "textarea",
+        "required": false,
+        "next": "q80"
+      },
+      {
+        "id": "q80",
+        "number": 80,
+        "text": "Where did you settle, and with whom?",
+        "type": "textarea",
+        "required": false,
+        "next": "q81"
+      },
+      {
+        "id": "q81",
+        "number": 81,
+        "text": "What were your experiences and interactions like with denizens of Pandaria in that period?",
+        "type": "textarea",
+        "required": false,
+        "next": "q82"
+      },
+      {
+        "id": "q82",
+        "number": 82,
+        "text": "Did you remain on Pandaria until Alliance-Horde War reached the continent, or did you somehow manage to return to Kalimdor at some point?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "stayed_to_mop",
+            "label": "I stayed until Alliance-Horde War (MoP)",
+            "next": "q83"
+          },
+          {
+            "value": "back_kalimdor",
+            "label": "I traveled back to Kalimdor.",
+            "next": "q59"
+          }
+        ]
+      },
+      {
+        "id": "q83",
+        "number": 83,
+        "text": "What were some of your experiences during the long years between the Sundering and the parting of the Mists?",
+        "type": "textarea",
+        "required": false,
+        "next": "q343"
+      },
+      {
+        "id": "q84",
+        "number": 84,
+        "text": "What were your experiences during the Long Vigil between exile of high elves and War of the Shifting Sands",
+        "type": "textarea",
+        "required": false,
+        "next": "q85"
+      },
+      {
+        "id": "q85",
+        "number": 85,
+        "text": "What was your involvement with Eldre'Thalas, if any at all, and the binding of the demon and the deaths of the Shendralar?",
+        "type": "textarea",
+        "required": false,
+        "next": "q86"
+      },
+      {
+        "id": "q86",
+        "number": 86,
+        "text": "What were your experiences on Kalimdor at the onset of the War of the Shifting Sands? What changed for you, if anything, during the long years of war?",
+        "type": "textarea",
+        "required": false,
+        "next": "q87"
+      },
+      {
+        "id": "q87",
+        "number": 87,
+        "text": "In the wake of the conflict, what were your years like during the remainder of the Long Vigil between end of the War of the Shifting Sands and the onset of the Third War?",
+        "type": "textarea",
+        "required": false,
+        "next": "q203"
+      },
+      {
+        "id": "q88",
+        "number": 88,
+        "text": "What were your experiences like during the heightened tension between the Kaldorei survivors on Kalimdor and the Highborne who had joined the resistance? After the Highborne's exile, what was your experience like during the long voyage across the sea?",
+        "type": "textarea",
+        "required": false,
+        "next": "q89",
+        "_note": "EXILE OF THE HIGH ELVES ROUTE."
+      },
+      {
+        "id": "q89",
+        "number": 89,
+        "text": "The Highborne elves landed in what has since become known as Tirisfal-later called Lordaeron. What were your experiences like arriving in the cursed lands and struggling through the pains of withdrawal from the Well of Eternity?",
+        "type": "textarea",
+        "required": false,
+        "next": "q90"
+      },
+      {
+        "id": "q90",
+        "number": 90,
+        "text": "As Dath'remar Sunstrider led the elven exiles east into Amani territory, conflict escalated between the anceint foes. What were your experiences during the conflict between the two races, and the pursuit of new lands to claim by Quel'dorei?",
+        "type": "textarea",
+        "required": false,
+        "next": "q91"
+      },
+      {
+        "id": "q91",
+        "number": 91,
+        "text": "What is your recollection of events during the founding of Quel'Thalas in the year -6,800, including the birth of the Sunwell and the claiming of land?",
+        "type": "textarea",
+        "required": false,
+        "next": "q92"
+      },
+      {
+        "id": "q92",
+        "number": 92,
+        "text": "What was life like for you during the long years of war between Quel'dorei and Amani trolls?",
+        "type": "textarea",
+        "required": false,
+        "next": "q93"
+      },
+      {
+        "id": "q93",
+        "number": 93,
+        "text": "Did you or your family play any formative role in the shaping of Quel'Thalas and the expansion of the kingdom?",
+        "type": "textarea",
+        "required": false,
+        "next": "q94"
+      },
+      {
+        "id": "q94",
+        "number": 94,
+        "text": "What was your involvement and recollection of events during the escalating Amani attacks leading up to the Troll Wars during the year -2,800?",
+        "type": "textarea",
+        "required": false,
+        "next": "q95"
+      },
+      {
+        "id": "q95",
+        "number": 95,
+        "text": "What do you recall of the formal start of the Troll wars when the combined Amani and Zandalari armies launched their invasion of Quel'Thalas?",
+        "type": "textarea",
+        "required": false,
+        "next": "q96"
+      },
+      {
+        "id": "q96",
+        "number": 96,
+        "text": "If you were a founding member of the Farstriders during the Troll Wars, what were your experiences during that time, and what was the extent of your involvement?",
+        "type": "textarea",
+        "required": false,
+        "next": "q97"
+      },
+      {
+        "id": "q97",
+        "number": 97,
+        "text": "As the conflict escalated, did you play any role in the initial contact between the Quel'dorei and the Arathi in the south leading up to the First Alliance? If so, to what extent were you involved?",
+        "type": "textarea",
+        "required": false,
+        "next": "q98"
+      },
+      {
+        "id": "q98",
+        "number": 98,
+        "text": "What were your experiences during the latter half of the Troll Wars after the formation of the First Alliance, during which: the first one hundred human magi were trained; the armies of the Arathi Empire marched north to draw the trolls away; and the Quel'dorei advanced to push the trolls south.",
+        "type": "textarea",
+        "required": false,
+        "next": "q99"
+      },
+      {
+        "id": "q99",
+        "number": 99,
+        "text": "Were you present for the great immolation of the trolls by the first hundred human magi? If so, what was your recollection of this event, and the years that followed?",
+        "type": "textarea",
+        "required": false,
+        "next": "q100"
+      },
+      {
+        "id": "q100",
+        "number": 100,
+        "text": "As human faith in the Light and their ritual practices and ideologies began to rapidly spread across the north following the close of the Troll Wars, did you embrace the practices of the Church of the Holy Light, and if so, please detail your experiences and perspective on the matter.",
+        "type": "textarea",
+        "required": false,
+        "next": "q101"
+      },
+      {
+        "id": "q101",
+        "number": 101,
+        "text": "With the rapid expanse of magic across human nations, did you join in the founding of Dalaran and the Kirin Tor? If so, what were your experiences like during that time?",
+        "type": "textarea",
+        "required": false,
+        "next": "q102"
+      },
+      {
+        "id": "q102",
+        "number": 102,
+        "text": "If you settled in Dalaran as one of the early magi of the city, describe your experiences in the fledgling nation.",
+        "type": "textarea",
+        "required": false,
+        "next": "q103"
+      },
+      {
+        "id": "q103",
+        "number": 103,
+        "text": "What other experiences did you have in centuries following Troll Wars? This could include the establishment of the Kirin Tor, the Tirisgarde, the pursuit of rogue demons across the continent, or anything else relevant during these years.",
+        "type": "textarea",
+        "required": false,
+        "next": "q104"
+      },
+      {
+        "id": "q104",
+        "number": 104,
+        "text": "Did you have any other interactions with the mortal races outside of Quel'Thalas during these long years? If so, please expand upon them.",
+        "type": "textarea",
+        "required": false,
+        "next": "q105"
+      },
+      {
+        "id": "q105",
+        "number": 105,
+        "text": "Were you a Farstrider that helped establish the Ranger Lodges between the year -440, and the opening of the Dark Portal?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "yes_farstrider",
+            "label": "Yes, I played a role in this.",
+            "next": "q106"
+          },
+          {
+            "value": "no_farstrider",
+            "label": "No, I was not.",
+            "next": "q109"
+          }
+        ]
+      },
+      {
+        "id": "q106",
+        "number": 106,
+        "text": "What were your experiences like in venturing south to explore these new lands and establish the lodges?",
+        "type": "textarea",
+        "required": false,
+        "next": "q107"
+      },
+      {
+        "id": "q107",
+        "number": 107,
+        "text": "What were your experiences with denizens of the southern kingdoms during your time abroad?",
+        "type": "textarea",
+        "required": false,
+        "next": "q108"
+      },
+      {
+        "id": "q108",
+        "number": 108,
+        "text": "Were you stationed at a lodge at the onset of the First War, and if so did you venture south to aid the Kingdom of Stormwind against the Horde during that time?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "remained_quel",
+            "label": "No, I remained in Quel'Thalas during First War.",
+            "next": "q114"
+          },
+          {
+            "value": "at_lodge_no_participate",
+            "label": "I was at a lodge, but did not take part in the conflict.",
+            "next": "q114"
+          },
+          {
+            "value": "left_no_lodge",
+            "label": "I was not at a lodge, but did leave to join the war in the south.",
+            "next": "q110"
+          },
+          {
+            "value": "at_lodge_participated",
+            "label": "I was at a lodge and also aided in the conflict.",
+            "next": "q110"
+          }
+        ]
+      },
+      {
+        "id": "q109",
+        "number": 109,
+        "text": "Were you involved at all in the First War that started after the opening of the Dark Portal by the Fel Horde?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "no",
+            "label": "No, I was not.",
+            "next": "q114"
+          },
+          {
+            "value": "yes",
+            "label": "Yes, I was involved.",
+            "next": "q110"
+          }
+        ]
+      },
+      {
+        "id": "q110",
+        "number": 110,
+        "text": "When did you first become aware of the Horde's invasion?",
+        "type": "textarea",
+        "required": false,
+        "next": "q111"
+      },
+      {
+        "id": "q111",
+        "number": 111,
+        "text": "What prompted you to become involved in the First War?",
+        "type": "textarea",
+        "required": false,
+        "next": "q112"
+      },
+      {
+        "id": "q112",
+        "number": 112,
+        "text": "What as your level of involvement when Stormwind was invaded by the Horde?",
+        "type": "textarea",
+        "required": false,
+        "next": "q113"
+      },
+      {
+        "id": "q113",
+        "number": 113,
+        "text": "When did you withdraw north of Thandol Span?",
+        "type": "text",
+        "required": false,
+        "next": "q114"
+      },
+      {
+        "id": "q114",
+        "number": 114,
+        "text": "Were you involved at all in the Second War?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "no",
+            "label": "No, I was not.",
+            "next": "q154"
+          },
+          {
+            "value": "yes",
+            "label": "Yes, I was.",
+            "next": "q115"
+          }
+        ]
+      },
+      {
+        "id": "q115",
+        "number": 115,
+        "text": "When did you become aware of escalating conflict, if you weren't already involved?",
+        "type": "textarea",
+        "required": false,
+        "next": "q116"
+      },
+      {
+        "id": "q116",
+        "number": 116,
+        "text": "King Anasterian Sunstrider dispatched minimal forces to initially aid in the war; Ranger-Captain Alleria Windrunner also led forces, though against the King's wishes. Did you venture south with either of those forces?",
+        "type": "textarea",
+        "required": false,
+        "next": "q117"
+      },
+      {
+        "id": "q117",
+        "number": 117,
+        "text": "What were your impressions of the human forces as they began to assemble for war, and what commentary do you have on the nature of Quel'Thalas' limited involvement?",
+        "type": "textarea",
+        "required": false,
+        "next": "q118"
+      },
+      {
+        "id": "q118",
+        "number": 118,
+        "text": "If you were present and involved in the first battles in Hillsbrad Foothills, please describe your experiences fighting the Horde, and the subsequent battles that followed leading up to the invasion of Quel'Thalas.",
+        "type": "textarea",
+        "required": false,
+        "next": "q119"
+      },
+      {
+        "id": "q119",
+        "number": 119,
+        "text": "What was your involvement, if any, in preparing the High Home for growing war and the inevitable invasion of Quel'Thalas by the Horde and Amani forces?",
+        "type": "textarea",
+        "required": false,
+        "next": "q120"
+      },
+      {
+        "id": "q120",
+        "number": 120,
+        "text": "If you were deployed with Alleria's forces in the south, what was your involvement, if any, in pursuing the Horde through the Hinterlands and north towards Quel'Thalas?",
+        "type": "textarea",
+        "required": false,
+        "next": "q121"
+      },
+      {
+        "id": "q121",
+        "number": 121,
+        "text": "What were your experiences during the Orcish and Amani attacks on Quel'Thalas during their initial assault upon the High Home?",
+        "type": "textarea",
+        "required": false,
+        "next": "q122"
+      },
+      {
+        "id": "q122",
+        "number": 122,
+        "text": "What were your experiences and impressions during the immolation of the Eversong Woods by enslaved ruby dragons?",
+        "type": "textarea",
+        "required": false,
+        "next": "q123"
+      },
+      {
+        "id": "q123",
+        "number": 123,
+        "text": "If you were a combatant in the conflict, what was it like battling against the Horde throughout Quel'Thalas, leading up to the Siege of Silvermoon.",
+        "type": "textarea",
+        "required": false,
+        "next": "q124"
+      },
+      {
+        "id": "q124",
+        "number": 124,
+        "text": "If you were a non-combatant in the conflict, please describe your experiences during the Horde's invasion leading up to the Siege of Silvermoon.",
+        "type": "textarea",
+        "required": false,
+        "next": "q125"
+      },
+      {
+        "id": "q125",
+        "number": 125,
+        "text": "What was it like for you during the entrenched Siege of Silvermoon, after the defensive barrier was erected around the city?",
+        "type": "textarea",
+        "required": false,
+        "next": "q126"
+      },
+      {
+        "id": "q126",
+        "number": 126,
+        "text": "When the Alliance forces in the south relieved pressure on the High Home, what were your experiences as the Horde was drawn to the south and towards Lordaeron?",
+        "type": "textarea",
+        "required": false,
+        "next": "q127"
+      },
+      {
+        "id": "q127",
+        "number": 127,
+        "text": "What was the extent of your involvement, if any, in hunting down the Amani and sacking the city of Zul'Aman after the siege was lifted?",
+        "type": "textarea",
+        "required": false,
+        "next": "q128"
+      },
+      {
+        "id": "q128",
+        "number": 128,
+        "text": "What was the extent of your involvement, if any, in pursuing the Horde across Lordaeron, and breaking the Siege of Lordaeron itself at the cpaital city?",
+        "type": "textarea",
+        "required": false,
+        "next": "q129"
+      },
+      {
+        "id": "q129",
+        "number": 129,
+        "text": "What was the extent of your involvement, if any, in the pursuit of the Horde south through Khaz Modan?",
+        "type": "textarea",
+        "required": false,
+        "next": "q130"
+      },
+      {
+        "id": "q130",
+        "number": 130,
+        "text": "What was the extent of your involvement, if any, in the battle of the Burning Steppes at the base of Blackrock Mountain?",
+        "type": "textarea",
+        "required": false,
+        "next": "q131"
+      },
+      {
+        "id": "q131",
+        "number": 131,
+        "text": "Were you involved in pursuing the Horde farther south towards the Dark Portal, or did you return north?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "dark_portal",
+            "label": "I pursued the Horde and was present for destruction of the Dark Portal.",
+            "next": "q132"
+          },
+          {
+            "value": "returned_north",
+            "label": "I returned north after the victory on the Burning Steppes.",
+            "next": "q136"
+          }
+        ]
+      },
+      {
+        "id": "q132",
+        "number": 132,
+        "text": "What was your experience in pursuing the Horde back to the Dark Portal through the swamps of the Black Morass?",
+        "type": "textarea",
+        "required": false,
+        "next": "q133"
+      },
+      {
+        "id": "q133",
+        "number": 133,
+        "text": "What do you recall of the destruction of the Dark Portal by the magus known as Khadgar?",
+        "type": "textarea",
+        "required": false,
+        "next": "q134"
+      },
+      {
+        "id": "q134",
+        "number": 134,
+        "text": "What was your involvement, if any, in construction and establishment of Nethergarde Keep?",
+        "type": "textarea",
+        "required": false,
+        "next": "q135"
+      },
+      {
+        "id": "q135",
+        "number": 135,
+        "text": "At what point did you return north?",
+        "type": "text",
+        "required": false,
+        "next": "q136"
+      },
+      {
+        "id": "q136",
+        "number": 136,
+        "text": "What were your experiences in the immediate wake of the Second War's end?",
+        "type": "textarea",
+        "required": false,
+        "next": "q137"
+      },
+      {
+        "id": "q137",
+        "number": 137,
+        "text": "Your thoughts/involvement in political turmoil and internment camps post-War",
+        "type": "textarea",
+        "required": false,
+        "next": "q138"
+      },
+      {
+        "id": "q138",
+        "number": 138,
+        "text": "What was the extent of your involvement, if any, in reconstruction efforts across Quel'Thalas, Lordaeron, Arathi, Khaz Modan, Stormwind, or Nethergarde?",
+        "type": "textarea",
+        "required": false,
+        "next": "q139"
+      },
+      {
+        "id": "q139",
+        "number": 139,
+        "text": "Were there any other notable experiences experiences you had during or immediately after the Second War?",
+        "type": "textarea",
+        "required": false,
+        "next": "q140"
+      },
+      {
+        "id": "q140",
+        "number": 140,
+        "text": "Did you join the Alliance Expedition to Draenor?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "joined",
+            "label": "Yes, I joined.",
+            "next": "q141"
+          },
+          {
+            "value": "no",
+            "label": "No, I remained on Azeroth.",
+            "next": "q154"
+          }
+        ]
+      },
+      {
+        "id": "q141",
+        "number": 141,
+        "text": "What was your initial reaction to news of the Horde's resurgent attacks on Azeroth, and the call for the Alliance Expedition to be formed?",
+        "type": "textarea",
+        "required": false,
+        "next": "q142"
+      },
+      {
+        "id": "q142",
+        "number": 142,
+        "text": "What spurred you on to volunteer for the Expedition?",
+        "type": "textarea",
+        "required": false,
+        "next": "q143"
+      },
+      {
+        "id": "q143",
+        "number": 143,
+        "text": "What were your experiences immediately preceeding the Expedition's venture through the Portal?",
+        "type": "textarea",
+        "required": false,
+        "next": "q144"
+      },
+      {
+        "id": "q144",
+        "number": 144,
+        "text": "When the Expedition breached the portal and invaded Draenor, what were your initial impressions of the desolate world?",
+        "type": "textarea",
+        "required": false,
+        "next": "q145"
+      },
+      {
+        "id": "q145",
+        "number": 145,
+        "text": "What was the extent of your involvement in the battles of the Expedition? (Honor Hold, Hellfire Citadel, Auchindoun, Black Temple etc.)",
+        "type": "textarea",
+        "required": false,
+        "next": "q146"
+      },
+      {
+        "id": "q146",
+        "number": 146,
+        "text": "Please describe your impressions and experience during the opening of Ner'zhul's gateways, and Draenor's violent destruction.",
+        "type": "textarea",
+        "required": false,
+        "next": "q147"
+      },
+      {
+        "id": "q147",
+        "number": 147,
+        "text": "Did you escape back to Azeroth through the Dark Portal?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "yes",
+            "label": "Yes, I returned.",
+            "next": "q151"
+          },
+          {
+            "value": "no",
+            "label": "No, I did not make it back.",
+            "next": "q148"
+          }
+        ]
+      },
+      {
+        "id": "q148",
+        "number": 148,
+        "text": "What was it like for you during the destruction of Draenor?",
+        "type": "textarea",
+        "required": false,
+        "next": "q149"
+      },
+      {
+        "id": "q149",
+        "number": 149,
+        "text": "How did you survive the destruction?",
+        "type": "textarea",
+        "required": false,
+        "next": "q150"
+      },
+      {
+        "id": "q150",
+        "number": 150,
+        "text": "What were your experiences during the 14 years between Draenor's destruction and Lord Illidan Stormrage's arrival?",
+        "type": "textarea",
+        "required": false,
+        "next": "q220"
+      },
+      {
+        "id": "q151",
+        "number": 151,
+        "text": "What was it like for you immediately upon returning from Draenor and witnessing the collapse of the Dark Portal?",
+        "type": "textarea",
+        "required": false,
+        "next": "q152"
+      },
+      {
+        "id": "q152",
+        "number": 152,
+        "text": "If you returned to Quel'Thalas, what was it like for you upon returning home?",
+        "type": "textarea",
+        "required": false,
+        "next": "q153"
+      },
+      {
+        "id": "q153",
+        "number": 153,
+        "text": "If you did not return to Quel'Thalas, what were your experiences after portal's closure? Where you travel and what did you do?",
+        "type": "textarea",
+        "required": false,
+        "next": "q154"
+      },
+      {
+        "id": "q154",
+        "number": 154,
+        "text": "After the presumed loss of Alliance Expedition, Quel'Thalas withdraws from Alliance. If you were alive at this time, what was your initial reaction and response to this?",
+        "type": "textarea",
+        "required": false,
+        "next": "q155"
+      },
+      {
+        "id": "q155",
+        "number": 155,
+        "text": "What were your experiences, if any, during the ten years between the destruction of the Dark Portal and rise of the Scourge?",
+        "type": "textarea",
+        "required": false,
+        "next": "q156"
+      },
+      {
+        "id": "q156",
+        "number": 156,
+        "text": "Are there any other experiences immediately preceeding the Third War you want to mention that are not specifically related to: the rise of the Cult of the Damned; the revolt in the orcish internment camps; or the arrival of the orcs on Kalimdor?",
+        "type": "textarea",
+        "required": false,
+        "next": "q157"
+      },
+      {
+        "id": "q157",
+        "number": 157,
+        "text": "What was the extent of your involvement, if any, in crisis and conflicts throughout Lordaeron as the orcs escaped from the internment camps?",
+        "type": "textarea",
+        "required": false,
+        "next": "q158"
+      },
+      {
+        "id": "q158",
+        "number": 158,
+        "text": "What was the extent of your involvement, if any, in addressing the Plague in Lordaeron early during its outbreak?",
+        "type": "textarea",
+        "required": false,
+        "next": "q159"
+      },
+      {
+        "id": "q159",
+        "number": 159,
+        "text": "What was your reaction, and your experience, after extent of plague's impact on Lordaeron became known?",
+        "type": "textarea",
+        "required": false,
+        "next": "q160"
+      },
+      {
+        "id": "q160",
+        "number": 160,
+        "text": "What was the extent of your involvement, if any, in Prince Arthas' expedition to Northrend?",
+        "type": "textarea",
+        "required": false,
+        "next": "q161"
+      },
+      {
+        "id": "q161",
+        "number": 161,
+        "text": "What was the extent of your involvement, if any, in battling the Scourge forces under Prince Arthas' command in Lordaeron before the invasion of Quel'Thalas?",
+        "type": "textarea",
+        "required": false,
+        "next": "q162"
+      },
+      {
+        "id": "q162",
+        "number": 162,
+        "text": "Concerning the Fall of Quel'Thalas to the Scourge: which applies?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "present_defense",
+            "label": "I was present, and aided in the defense.",
+            "next": "q163"
+          },
+          {
+            "value": "not_present",
+            "label": "I was not present at the time.",
+            "next": "q176"
+          },
+          {
+            "value": "slain_pre_fall",
+            "label": "I was slain just before the invasion, and raised into undeath.",
+            "next": "q178"
+          }
+        ]
+      },
+      {
+        "id": "q163",
+        "number": 163,
+        "text": "What was your experience like during initial invasion of Quel'Thalas through the Greenwood Pass, before first Elf Gate was destroyed.",
+        "type": "textarea",
+        "required": false,
+        "next": "q164"
+      },
+      {
+        "id": "q164",
+        "number": 164,
+        "text": "What was your experience after the Scourge breached first Elf Gate and pushed into southern Quel'Thalas? Were you yet aware of what was occuring?",
+        "type": "textarea",
+        "required": false,
+        "next": "q165"
+      },
+      {
+        "id": "q165",
+        "number": 165,
+        "text": "What were your experiences, if any, in battling the Scourge south of the Elrendar River, including the fighting at Windrunner Village, the various sanctums, the Farstrider Enclave, and the mother tree Thas'alah?",
+        "type": "textarea",
+        "required": false,
+        "next": "q166"
+      },
+      {
+        "id": "q166",
+        "number": 166,
+        "text": "What were your experiences, if any, defending the second Elf Gate and the townships of Tranquillien and Goldenmist Village from the Scourge and Prince Arthas?",
+        "type": "textarea",
+        "required": false,
+        "next": "q167"
+      },
+      {
+        "id": "q167",
+        "number": 167,
+        "text": "After the fall of the second Elf Gate and the southern half of Quel'Thalas, what were your experiences, if any, in battling the Scourge north of Elrendar River, before the assault on Silvermoon City itself?",
+        "type": "textarea",
+        "required": false,
+        "next": "q168"
+      },
+      {
+        "id": "q168",
+        "number": 168,
+        "text": "Did you play any role in evacuating civilians, or yourself for that matter, through the Sunsail Anchorage or other ports along the coast?",
+        "type": "textarea",
+        "required": false,
+        "next": "q169"
+      },
+      {
+        "id": "q169",
+        "number": 169,
+        "text": "What role did you play, if any, in the preparations for the Scourge's assault on Silvermoon City? This includes the defenses of the outskirts led by Ranger-General Sylvanas Windrunner, preparations inside the city organized by Grand Magister Belo'vir Salonar.",
+        "type": "textarea",
+        "required": false,
+        "next": "q170"
+      },
+      {
+        "id": "q170",
+        "number": 170,
+        "text": "What were your experiences, if any, during the siege and fall of Silvermoon City? If you escaped, please detail how.",
+        "type": "textarea",
+        "required": false,
+        "next": "q171"
+      },
+      {
+        "id": "q171",
+        "number": 171,
+        "text": "If you rallied at Isle of Quel'Danas with other survivors, please detail your involvement, if any, in helping to prepare for the Quel'dorei's final stand at the Sunwell Plateau.",
+        "type": "textarea",
+        "required": false,
+        "next": "q172"
+      },
+      {
+        "id": "q172",
+        "number": 172,
+        "text": "If you fought in the defense of the Isle of Quel'Danas and the Sunwell, please detail your experiences.",
+        "type": "textarea",
+        "required": false,
+        "next": "q173"
+      },
+      {
+        "id": "q173",
+        "number": 173,
+        "text": "What was your experience in immediate wake of Sunwell's destruction?",
+        "type": "textarea",
+        "required": false,
+        "next": "q174"
+      },
+      {
+        "id": "q174",
+        "number": 174,
+        "text": "Are there any other accounts you can share on individuals you know who perished during the Fall, and were either laid to rest, or raised into undeath? Work on the Chronicle includes trying to account for many of those lost in the chaos of the war.",
+        "type": "textarea",
+        "required": false,
+        "next": "q175"
+      },
+      {
+        "id": "q175",
+        "number": 175,
+        "text": "Were you slain and reanimated into one of the Darkfallen during the fighting in Quel'Thalas at any point?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "no",
+            "label": "No, not slain.",
+            "next": "q176"
+          },
+          {
+            "value": "yes",
+            "label": "Yes, I was slain and reanimated.",
+            "next": "q178"
+          }
+        ]
+      },
+      {
+        "id": "q176",
+        "number": 176,
+        "text": "What were your experiences, if any, immediately following the Fall of Quel'Thalas, before the return of Prince Kael'thas Sunstrider from Dalaran?",
+        "type": "textarea",
+        "required": false,
+        "next": "q177"
+      },
+      {
+        "id": "q177",
+        "number": 177,
+        "text": "If you were present at the time, did you remain in Quel'Thalas after its fall to the Scourge, or did leave for safer havens?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "remained",
+            "label": "I stayed in Quel'Thalas until Prince Kael'thas' return.",
+            "next": "q218"
+          },
+          {
+            "value": "refugees",
+            "label": "I joined refugees seeking out shelter with Veressa Windrunner's forces in Dalaran.",
+            "next": "q185"
+          },
+          {
+            "value": "theramore",
+            "label": "I joined refugees who joined Lady Jaina Proudmoore in her expedition to Kalimdor.",
+            "next": "q199"
+          },
+          {
+            "value": "notalive",
+            "label": "I had not yet been born at this time, or it didn't affect it.",
+            "next": "q240"
+          }
+        ]
+      },
+      {
+        "id": "q178",
+        "number": 178,
+        "text": "At what point were you slain by the Scourge?",
+        "type": "text",
+        "required": false,
+        "next": "q179"
+      },
+      {
+        "id": "q179",
+        "number": 179,
+        "text": "How would you describe the nature of your reanimation?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "sanlayn",
+            "label": "Raised as one of the San'layn in Northrend. (Vampyric Darkfallen)"
+          },
+          {
+            "value": "darkfallen",
+            "label": "Raised as one of the Darkfallen. (Non-vampyric, reanimated high elves)"
+          },
+          {
+            "value": "deathknight",
+            "label": "Raised as one of the Darkfallen or Kaldorei Death Knights. (Ebon Blade)"
+          },
+          {
+            "value": "undead_kaldorei",
+            "label": "Raised as one of the undead Kaldorei during the War in Northrend or the Fourth War."
+          }
+        ],
+        "next": "q180"
+      },
+      {
+        "id": "q180",
+        "number": 180,
+        "text": "What was your initial experience after reanimation? What can you recall of it?",
+        "type": "textarea",
+        "required": false,
+        "next": "q181"
+      },
+      {
+        "id": "q181",
+        "number": 181,
+        "text": "While under the thrall of the Scourge, what campaigns and battles were you a part of? Please describe your experiences in detail.",
+        "type": "textarea",
+        "required": false,
+        "next": "q182"
+      },
+      {
+        "id": "q182",
+        "number": 182,
+        "text": "At what point were you liberated from the from the necromantic control of the forces that reanimated you?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "sylvanas_rebellion",
+            "label": "During Sylvanas' rebellion in year 22.",
+            "next": "q245"
+          },
+          {
+            "value": "wc3_vanilla",
+            "label": "During the years between the battle for Mount Hyjal in year 21, and the renewal of conflict in the year 25. (WC3-Classic)",
+            "next": "q245"
+          },
+          {
+            "value": "bc",
+            "label": "After the reopening of the Dark Portal in year 26.",
+            "next": "q252"
+          },
+          {
+            "value": "wotlk_lightshope",
+            "label": "At the battle for Light's Hope Chapel in year 27.",
+            "next": "q305"
+          },
+          {
+            "value": "wotlk_wrathgate",
+            "label": "Sometime before the battle of the Wrath Gate in year 27.",
+            "next": "q301"
+          },
+          {
+            "value": "wotlk_post_wrathgate",
+            "label": "After the battle of the Wrath Gate, but before fall of the Lich King in year 27.",
+            "next": "q318"
+          },
+          {
+            "value": "postlk_cata",
+            "label": "Sometime after Lich King's defeat in year 27.)",
+            "next": "q337"
+          },
+          {
+            "value": "fourthwar",
+            "label": "Towards the end of the Fourth War, before the release of N'zoth from his prison.)",
+            "next": "q407"
+          }
+        ]
+      },
+      {
+        "id": "q185",
+        "number": 185,
+        "text": "What were your experiences in Lordaeron leading up to, and including during the Scourge's assault on Dalaran and its destruction by Archimonde?",
+        "type": "textarea",
+        "required": false,
+        "next": "q186"
+      },
+      {
+        "id": "q186",
+        "number": 186,
+        "text": "Did you leave after the destruction of Dalaran, or remain to rebuild?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "hyjal",
+            "label": "I traveled overseas to aid Jaina Proudmoore's forces in the battle for Mount Hyjal.",
+            "next": "q199"
+          },
+          {
+            "value": "remained",
+            "label": "I returned to Quel'Thalas.",
+            "next": "q218"
+          },
+          {
+            "value": "dalaran_rebuild",
+            "label": "I remained in the ruins of Dalaran and aided in its reconstruction.",
+            "next": "q187"
+          },
+          {
+            "value": "slain",
+            "label": "I was slain in fall of Dalaran and reanimated by Scourge.",
+            "next": "q178"
+          }
+        ]
+      },
+      {
+        "id": "q187",
+        "number": 187,
+        "text": "What were your experiences reclaiming the ruins of Dalaran the Scourge?",
+        "type": "textarea",
+        "required": false,
+        "next": "q188"
+      },
+      {
+        "id": "q188",
+        "number": 188,
+        "text": "What was your involvement, if any, in aiding Sunfury Army under Prince Kael'thas Sunstrider in their restoration of the Kirin Tor's beacons?",
+        "type": "textarea",
+        "required": false,
+        "next": "q189"
+      },
+      {
+        "id": "q189",
+        "number": 189,
+        "text": "What was your involvement, if any, in the imprisonment of the Sunfury Army in Dalaran?",
+        "type": "textarea",
+        "required": false,
+        "next": "q190"
+      },
+      {
+        "id": "q190",
+        "number": 190,
+        "text": "What was your reaction to the imprisonment and sentencing of the Sunfury Army by Grand Marshal Othmar Garithos?",
+        "type": "textarea",
+        "required": false,
+        "next": "q191"
+      },
+      {
+        "id": "q191",
+        "number": 191,
+        "text": "What was your involvement, if any, during the Sunfury Army's escape from Dalaran to the Outlands?",
+        "type": "textarea",
+        "required": false,
+        "next": "q192"
+      },
+      {
+        "id": "q192",
+        "number": 192,
+        "text": "Following the escape of the Sunfury Army, what was your involvement, if any, during the erection of the barrier around the ruins of Dalaran?",
+        "type": "textarea",
+        "required": false,
+        "next": "q193"
+      },
+      {
+        "id": "q193",
+        "number": 193,
+        "text": "What were your experiences during Dalaran's reconstruction under the shield? This time period spans between years 22-27.",
+        "type": "textarea",
+        "required": false,
+        "next": "q194"
+      },
+      {
+        "id": "q194",
+        "number": 194,
+        "text": "What were your experiences in contacting outsiders during those years just before Nexus War began in year 27?",
+        "type": "textarea",
+        "required": false,
+        "next": "q195"
+      },
+      {
+        "id": "q195",
+        "number": 195,
+        "text": "When did you first hear of the turmoil within the Blue Dragonflight and their affairs leading up to Malygos' declaration of the Nexus War against Azeroth's magic users?",
+        "type": "text",
+        "required": false,
+        "next": "q196"
+      },
+      {
+        "id": "q196",
+        "number": 196,
+        "text": "What were your experiences during the period of assaults on magi by azure dragons?",
+        "type": "textarea",
+        "required": false,
+        "next": "q197"
+      },
+      {
+        "id": "q197",
+        "number": 197,
+        "text": "What was your involvement, if any, in the levitation and teleportation of Dalaran to Northrend?",
+        "type": "textarea",
+        "required": false,
+        "next": "q198"
+      },
+      {
+        "id": "q198",
+        "number": 198,
+        "text": "Upon the admission of the Sin'dorei under Archmage Aethas Sunreaver to Dalaran, did you join the Silver Covenant or the Sunreavers?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "silver_covenant",
+            "label": "Yes, joined Alliance-aligned Silver Covenant under Ranger-General Veressa Windrunner.",
+            "next": "q301"
+          },
+          {
+            "value": "sunreavers",
+            "label": "Yes, joined Horde-aligned Sunreavers under Archmage Aethas Sunreaver.",
+            "next": "q301"
+          },
+          {
+            "value": "neutral",
+            "label": "No, remained neutral Kirin Tor.",
+            "next": "q301"
+          }
+        ]
+      },
+      {
+        "id": "q199",
+        "number": 199,
+        "text": "What were your experiences during the voyage across the Great Sea to Kalimdor under Lady Jaina Proudmoore following your escape from the Eastern Kingdoms?",
+        "type": "textarea",
+        "required": false,
+        "next": "q200"
+      },
+      {
+        "id": "q200",
+        "number": 200,
+        "text": "What were your early experiences upon first arriving in Kalimdor?",
+        "type": "textarea",
+        "required": false,
+        "next": "q201"
+      },
+      {
+        "id": "q201",
+        "number": 201,
+        "text": "What was the extent of your involvement, if any, in establishing the port city of Theramore in the Dustwallow Marsh?",
+        "type": "textarea",
+        "required": false,
+        "next": "q202"
+      },
+      {
+        "id": "q202",
+        "number": 202,
+        "text": "What were your first impressions with the local denizens of Kalimdor, including the centaur, orcs, tauren, trolls, ogres, quilboar, and others?",
+        "type": "textarea",
+        "required": false,
+        "next": "q203"
+      },
+      {
+        "id": "q203",
+        "number": 203,
+        "text": "What was were your initial impressions upon encountering the various factions on Kalimdor at this time, including Thrall's Horde, the Kaldorei, and the Theramore Expedition.",
+        "type": "textarea",
+        "required": false,
+        "next": "q204"
+      },
+      {
+        "id": "q204",
+        "number": 204,
+        "text": "What was the extent of your involvement, if any, leading up to battle for Mount Hyjal?",
+        "type": "textarea",
+        "required": false,
+        "next": "q205"
+      },
+      {
+        "id": "q205",
+        "number": 205,
+        "text": "What was the extent of your involvement, if any, in waking the Kaldorei druids in the weeks leading up to the climactic battle?",
+        "type": "textarea",
+        "required": false,
+        "next": "q206"
+      },
+      {
+        "id": "q206",
+        "number": 206,
+        "text": "What was the extent of your involvement, if any, in releasing Illidan Stormrage from Barrow Dens",
+        "type": "textarea",
+        "required": false,
+        "next": "q207"
+      },
+      {
+        "id": "q207",
+        "number": 207,
+        "text": "What was the extent of your involvement, if any, in battling the Warsong Clan after their resurgent fel consumption and enslavement under the pit lord Mannaroth?",
+        "type": "textarea",
+        "required": false,
+        "next": "q208"
+      },
+      {
+        "id": "q208",
+        "number": 208,
+        "text": "What was the extent of your involvement, if any, in battling the forces of the Burning Legion and the Scourge during battle for Mount Hyjal?",
+        "type": "textarea",
+        "required": false,
+        "next": "q209"
+      },
+      {
+        "id": "q209",
+        "number": 209,
+        "text": "After Hyjal, did you remain on Kalimdor, return north, or join Maiev pursuing Illidan?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "remain",
+            "label": "I remained on Kalimdor.",
+            "next": "q210"
+          },
+          {
+            "value": "return_north",
+            "label": "I returned to the Eastern Kingdoms.",
+            "next": "q220"
+          },
+          {
+            "value": "pursue_illidan",
+            "label": "I joined Maiev to pursue Illidan",
+            "next": "q213"
+          }
+        ]
+      },
+      {
+        "id": "q210",
+        "number": 210,
+        "text": "What was your involvement, if any, in the conflict between Thrall's Horde and the Kul Tiran and conscripted Theramore forces under Grand Admiral Daelin Proudmoore after the battle for Mount Hyjal?",
+        "type": "textarea",
+        "required": false,
+        "next": "q211"
+      },
+      {
+        "id": "q211",
+        "number": 211,
+        "text": "If one of the high elves, did you remain in contact with any elven forces in Quel'Thalas following the end of major fighting on Kalimdor?",
+        "type": "textarea",
+        "required": false,
+        "next": "q212"
+      },
+      {
+        "id": "q212",
+        "number": 212,
+        "text": "If one of the Kaldorei, what were your experiences in dealing with the newcomers to Kalimdor, and the growing presence of the Horde??",
+        "type": "textarea",
+        "required": false,
+        "next": "q240"
+      },
+      {
+        "id": "q213",
+        "number": 213,
+        "text": "What were your experiences, if any, in pursuing Lord Illidan Stormrage across the Great Sea?",
+        "type": "textarea",
+        "required": false,
+        "next": "q214"
+      },
+      {
+        "id": "q214",
+        "number": 214,
+        "text": "What was your involvement, if any, in battling Lord Illidan Stormrage and his naga forces on the Broken Isles.",
+        "type": "textarea",
+        "required": false,
+        "next": "q215"
+      },
+      {
+        "id": "q215",
+        "number": 215,
+        "text": "Did you encounter any native denizens of Broken Isles, such as the ancient Kaldorei Moon Guard magi, the druids of Val'sharah, or exiled Shal'dorei from the city of Suramar? If so, what were those encounters like?",
+        "type": "textarea",
+        "required": false,
+        "next": "q216"
+      },
+      {
+        "id": "q216",
+        "number": 216,
+        "text": "What was your involvement, if any, in following Maiev's forces onwards to Lordaeron to continue the hunt for Illidan Stormrage?",
+        "type": "textarea",
+        "required": false,
+        "next": "q217"
+      },
+      {
+        "id": "q217",
+        "number": 217,
+        "text": "What were your encounters like with the Sin'dorei Sunfury forces under Prince Kael'thas Sunstrider?",
+        "type": "textarea",
+        "required": false,
+        "next": "q240"
+      },
+      {
+        "id": "q218",
+        "number": 218,
+        "text": "What was it like for you in Quel'Thalas upon Prince Kael'thas Sunstrider's return to the High Home?",
+        "type": "textarea",
+        "required": false,
+        "next": "q219"
+      },
+      {
+        "id": "q219",
+        "number": 219,
+        "text": "Did you embrace Sin'dorei identity, or reject it and later face exile?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "embraced",
+            "label": "Yes, embraced identity of Sin'dorei.",
+            "next": "q220"
+          },
+          {
+            "value": "exiled",
+            "label": "No, I refused to embrace the new identity and later departed or was exiled from Quel'Thalas.",
+            "next": "q240"
+          }
+        ]
+      },
+      {
+        "id": "q220",
+        "number": 220,
+        "text": "What were your experiences following creation of Sunfury army under Prince Kael'Thas, and did you formally enlist?",
+        "type": "textarea",
+        "required": false,
+        "next": "q221"
+      },
+      {
+        "id": "q221",
+        "number": 221,
+        "text": "What was the extent of your involvement, if any, in Prince Kael'thas' mission to destroy tainted Sunwell?",
+        "type": "textarea",
+        "required": false,
+        "next": "q222"
+      },
+      {
+        "id": "q222",
+        "number": 222,
+        "text": "If you remained in Quel'Thalas after Prince Kael'thas' forces journeyed south, what were your experiences in aiding with the reconstruction of Silvermoon and reclaimation of elven land from the Scourge?",
+        "type": "textarea",
+        "required": false,
+        "next": "q223"
+      },
+      {
+        "id": "q223",
+        "number": 223,
+        "text": "In the months after the Fall of Quel'Thalas, as the survivors beagn to reorganize, did you learn anything of your family and friends who may have bene lost or perished during the Scourge's invasion?",
+        "type": "textarea",
+        "required": false,
+        "next": "q224"
+      },
+      {
+        "id": "q224",
+        "number": 224,
+        "text": "If you followed Prince Kael'thas Sunstrider into Lordaeron, what were your experiences like in battling the Scourge in Lordaeron?",
+        "type": "textarea",
+        "required": false,
+        "next": "q225"
+      },
+      {
+        "id": "q225",
+        "number": 225,
+        "text": "What was the extent of your involvement in the affairs concerning the Kaldorei's pursuit of Illidan Stormrage and Tyrande Whisperwind?",
+        "type": "textarea",
+        "required": false,
+        "next": "q226"
+      },
+      {
+        "id": "q226",
+        "number": 226,
+        "text": "Did you return to or remain in Quel'Thalas after this, or continue on with the Sunfury Army in Lordaeron, and later the Outlands?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "remained",
+            "label": "I returned to or remained in Quel'Thalas.",
+            "next": "q240"
+          },
+          {
+            "value": "outlands",
+            "label": "I remained with Prince Kael'thas and the Sunfury Army in Lordaeron.",
+            "next": "q227"
+          }
+        ]
+      },
+      {
+        "id": "q227",
+        "number": 227,
+        "text": "What were your experiences like in suffering from magical withdrawal after the destruction of the Sunwell while in Lordaeron?",
+        "type": "textarea",
+        "required": false,
+        "next": "q228"
+      },
+      {
+        "id": "q228",
+        "number": 228,
+        "text": "What was the extent of your involvement in the Sunfury's activity serving under Alliance remnant in ruins of Dalaran? Did you encounter other surviving high elves, or did you mostly work with the human and dwarven forces, as well as the naga?",
+        "type": "textarea",
+        "required": false,
+        "next": "q229"
+      },
+      {
+        "id": "q229",
+        "number": 229,
+        "text": "What was your experience, if any, in working alongside the naga and the later imprisonment of the Sunfury army in the ruins of Dalaran?",
+        "type": "textarea",
+        "required": false,
+        "next": "q230"
+      },
+      {
+        "id": "q230",
+        "number": 230,
+        "text": "What was your involvement in, if any, the Sunfury Army's escape from the dungeons of Dalaran and the arrival of Prince Kael'thas' forces in the Outlands?",
+        "type": "textarea",
+        "required": false,
+        "next": "q231"
+      },
+      {
+        "id": "q231",
+        "number": 231,
+        "text": "What were your initial experiences and impressions like when first arriving in the Outlands?",
+        "type": "textarea",
+        "required": false,
+        "next": "q232"
+      },
+      {
+        "id": "q232",
+        "number": 232,
+        "text": "If you embraced fel magic at the behest of Prince Kael'thas and Lord Illidan Stormrage, what was your experience like, and how did your perspective on the matter change over time?",
+        "type": "textarea",
+        "required": false,
+        "next": "q233"
+      },
+      {
+        "id": "q233",
+        "number": 233,
+        "text": "What was the extent of your involvement, if any, in the affairs of Sunfury, Naga, and demonic forces under Lord Illidan Stormrage in the Outlands?",
+        "type": "textarea",
+        "required": false,
+        "next": "q234"
+      },
+      {
+        "id": "q234",
+        "number": 234,
+        "text": "If you became a demon hunter under the tutelage of Lord Illidan Stormrage, what were your initial experiences like before returning to Azeroth to aid Illidan's forces in assaulting Icecrown?",
+        "type": "textarea",
+        "required": false,
+        "next": "q235"
+      },
+      {
+        "id": "q235",
+        "number": 235,
+        "text": "After Lord Illidan and Prince Kael'thas' defeat at the hands of Prince Arthas Menethil in Northrend, what path did you take?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "returned_outlands",
+            "label": "I returned to Outlands with Lord Illidan and Prince Kael'thas.",
+            "next": "q237"
+          },
+          {
+            "value": "slain_scourge",
+            "label": "I was slain in Northrend and reanimated by Scourge.",
+            "next": "q178"
+          },
+          {
+            "value": "returned_quel",
+            "label": "I returned to Quel'Thalas.",
+            "next": "q240"
+          }
+        ]
+      },
+      {
+        "id": "q237",
+        "number": 237,
+        "text": "What were your experiences immediately following the Lich King's ascension, and Lord Illidan's subsequent conquest of Outlands?",
+        "type": "textarea",
+        "required": false,
+        "next": "q238"
+      },
+      {
+        "id": "q238",
+        "number": 238,
+        "text": "Did you have any encounters with high elven survivors of Alliance Expedition in the Outlands?",
+        "type": "textarea",
+        "required": false,
+        "next": "q239"
+      },
+      {
+        "id": "q239",
+        "number": 239,
+        "text": "What was your involvement, if any, in storming the Tempest Keep upon its arrival, the capturing of the naaru M'uru, and the later foritifcation of the Netherstorm and the construction of the mana-forges?",
+        "type": "textarea",
+        "required": false,
+        "next": "q252"
+      },
+      {
+        "id": "q240",
+        "number": 240,
+        "text": "What were your experiences during the four years between the battle of Mount Hyjal and renewal of conflict between the Horde and Alliance? (Classic)",
+        "type": "textarea",
+        "required": false,
+        "next": "q241"
+      },
+      {
+        "id": "q241",
+        "number": 241,
+        "text": "What was your involvement, if any, in the events occurring in the Outlands during this time? (Expansion of the Sunfury ranks and construction of the Sunfury outposts; training of the demon hunters; growing presence of Burning Legion demons; continued survival of the Alliance Expedition forces, etc.)",
+        "type": "textarea",
+        "required": false,
+        "next": "q242"
+      },
+      {
+        "id": "q242",
+        "number": 242,
+        "text": "What was your involvement, if any, in the creation of the new world tree, Teldrassil?",
+        "type": "textarea",
+        "required": false,
+        "next": "q243"
+      },
+      {
+        "id": "q243",
+        "number": 243,
+        "text": "If residing on Kalimdor, what were your experiences during the mass migration of the Kaldorei to Darnassus after its creation?",
+        "type": "textarea",
+        "required": false,
+        "next": "q244"
+      },
+      {
+        "id": "q244",
+        "number": 244,
+        "text": "During the four years between conflicts, regarding Illidan Stormrage...",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "train_illidari",
+            "label": "I sought out Lord Illidan to train under him as a demon hunter.",
+            "next": "q279"
+          },
+          {
+            "value": "no_illidari",
+            "label": "I was on Azeroth and did not engage with the Illidari.",
+            "next": "q245"
+          }
+        ]
+      },
+      {
+        "id": "q245",
+        "number": 245,
+        "text": "Experiences during the renewal of conflict between the Horde and Alliance (Classic WoW)",
+        "type": "textarea",
+        "required": false,
+        "next": "q246"
+      },
+      {
+        "id": "q246",
+        "number": 246,
+        "text": "If you remained in Quel'Thalas, what were your experiences with and impressions of the deepening reliance and consumption of fel magic in Quel'Thalas, and the Sunfury's alignment with Lord Illidan Stormrage. (Classic WoW)",
+        "type": "textarea",
+        "required": false,
+        "next": "q247"
+      },
+      {
+        "id": "q247",
+        "number": 247,
+        "text": "If you remained in Quel'Thalas, what were your experiences, if any, with aiding in the reclaimation of territory from the Scourge? (TBC Starting Area)",
+        "type": "textarea",
+        "required": false,
+        "next": "q248"
+      },
+      {
+        "id": "q248",
+        "number": 248,
+        "text": "If you remained on Kalimdor, what were your experiences amid the renewing hostilities between the Alliance and Horde as the Kaldorei formally sought membership within the Alliance? (Classic WoW)",
+        "type": "textarea",
+        "required": false,
+        "next": "q249"
+      },
+      {
+        "id": "q249",
+        "number": 249,
+        "text": "Were there any other notable experiences or efforts you undertook during this time? (Classic WoW)",
+        "type": "textarea",
+        "required": false,
+        "next": "q250"
+      },
+      {
+        "id": "q250",
+        "number": 250,
+        "text": "If you remained in Quel'Thalas or the Outlands, what was your response to and impressions of the admission of the Sin'dorei into the Horde, once the despoilers of Quel'Thalas?",
+        "type": "textarea",
+        "required": false,
+        "next": "q251"
+      },
+      {
+        "id": "q251",
+        "number": 251,
+        "text": "What was your involvement, if any, in events occurring in the Outlands during this time? (Classic WoW)",
+        "type": "textarea",
+        "required": false,
+        "next": "q252"
+      },
+      {
+        "id": "q252",
+        "number": 252,
+        "text": "What was the extent of your involvement, if any, during the Burning Legion’s initial invasion of Azeroth through the Dark Portal in the year 26. (TBC)",
+        "type": "textarea",
+        "required": false,
+        "next": "q253"
+      },
+      {
+        "id": "q253",
+        "number": 253,
+        "text": "Regarding the events in the Outlands...",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "stay_azeroth",
+            "label": "I stayed on Azeroth and was not involved in Outlands conflict.",
+            "next": "q254"
+          },
+          {
+            "value": "hellfire_coalition",
+            "label": "I joined the Hellfire Coalition and invaded the Outlands.",
+            "next": "q256"
+          },
+          {
+            "value": "served_sunfury",
+            "label": "I was already serving amongst the Sunfury Army in the Outlands.",
+            "next": "q267"
+          },
+          {
+            "value": "served_illidari",
+            "label": "I was already serving amongst the Illidari in the Outlands.",
+            "next": "q279"
+          },
+          {
+            "value": "alliance_expedition",
+            "label": "I was already attached to the Alliance Expedition in the Outlands, and aided the coalition as it arrived.",
+            "next": "q256"
+          }
+        ]
+      },
+      {
+        "id": "q254",
+        "number": 254,
+        "text": "What were your experiences on Azeroth during the Outlands conflict?",
+        "type": "textarea",
+        "required": false,
+        "next": "q255"
+      },
+      {
+        "id": "q255",
+        "number": 255,
+        "text": "Regarding your time on Azeroth during the Outlands conflict...",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "uninvolved",
+            "label": "I remained uninvolved through the conflict.",
+            "next": "q301"
+          },
+          {
+            "value": "zulaman",
+            "label": "I took part in events only starting during the assault on Zul'Aman.",
+            "next": "q290"
+          },
+          {
+            "value": "queldanas",
+            "label": "I took part in events only starting during the battle for Quel'Danas.",
+            "next": "q292"
+          }
+        ]
+      },
+      {
+        "id": "q256",
+        "number": 256,
+        "text": "What was the extent of your involvement, if any, in the Hellfire Coalition's assault on the Dark Portal and its subsequent invasion of the Outlands?",
+        "type": "textarea",
+        "required": false,
+        "next": "q257"
+      },
+      {
+        "id": "q257",
+        "number": 257,
+        "text": "What role did you play, if any, in the campaign efforts throughout the Hellfire Peninsula?",
+        "type": "textarea",
+        "required": false,
+        "next": "q258"
+      },
+      {
+        "id": "q258",
+        "number": 258,
+        "text": "What role did you play, if any, in the campaign efforts throughout the Zangarmarsh region?",
+        "type": "textarea",
+        "required": false,
+        "next": "q259"
+      },
+      {
+        "id": "q259",
+        "number": 259,
+        "text": "What role did you play, if any, in the campaign efforts throughout Terokkar Forest?",
+        "type": "textarea",
+        "required": false,
+        "next": "q260"
+      },
+      {
+        "id": "q260",
+        "number": 260,
+        "text": "What role did you play, if any, in the campaign efforts throughout the Blade's Edge Mountains?",
+        "type": "textarea",
+        "required": false,
+        "next": "q261"
+      },
+      {
+        "id": "q261",
+        "number": 261,
+        "text": "What role did you play, if any, in the campaign efforts throughout Nagrand?",
+        "type": "textarea",
+        "required": false,
+        "next": "q262"
+      },
+      {
+        "id": "q262",
+        "number": 262,
+        "text": "What role did you play, if any, in the campaign efforts throughout the Netherstorm against the Burning Legion and the Sunfury Army?",
+        "type": "textarea",
+        "required": false,
+        "next": "q263"
+      },
+      {
+        "id": "q263",
+        "number": 263,
+        "text": "What role did you play, if any, in the assault on the Tempest Keep and the defeat of Prince Kael’thas Sunstrider and his forces?",
+        "type": "textarea",
+        "required": false,
+        "next": "q264"
+      },
+      {
+        "id": "q264",
+        "number": 264,
+        "text": "What role did you play, if any, in the campaign efforts throughout Shadowmoon Valley against the Burning Legion, the Sunfury Army, and the Illidari and naga forces, including the siege of the Black Temple?",
+        "type": "textarea",
+        "required": false,
+        "next": "q265"
+      },
+      {
+        "id": "q265",
+        "number": 265,
+        "text": "Did you return to Azeroth to assist with the assault on Zul’Aman after Lord Illidan’s defeat at the Black Temple?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "returned_for_zulaman",
+            "label": "Yes, I returned to Azeroth to assist.",
+            "next": "q290"
+          },
+          {
+            "value": "remained_outlands",
+            "label": "No, I remained engaged in Outlands until at least the battle for Quel’Danas.",
+            "next": "q292"
+          }
+        ]
+      },
+      {
+        "id": "q267",
+        "number": 267,
+        "text": "What were your experiences in Outlands leading up to Burning Legion’s reopening of the Dark Portal?",
+        "type": "textarea",
+        "required": false,
+        "next": "q268"
+      },
+      {
+        "id": "q268",
+        "number": 268,
+        "text": "What was your involvement, if any, in efforts against the Hellfire Coalition, the Sha'tari, and the Alliance Expedition throughout the Hellfire Peninsula?",
+        "type": "textarea",
+        "required": false,
+        "next": "q269"
+      },
+      {
+        "id": "q269",
+        "number": 269,
+        "text": "What was your involvement, if any, in efforts against the Hellfire Coalition, the Sha'tari, and the Alliance Expedition throughout the Zangarmarsh region?",
+        "type": "textarea",
+        "required": false,
+        "next": "q270"
+      },
+      {
+        "id": "q270",
+        "number": 270,
+        "text": "What was your involvement, if any, in efforts against the Hellfire Coalition, the Sha'tari, and the Alliance Expedition throughout Terokkar Forest?",
+        "type": "textarea",
+        "required": false,
+        "next": "q271"
+      },
+      {
+        "id": "q271",
+        "number": 271,
+        "text": "What was your involvement, if any, in efforts against the Hellfire Coalition, the Sha'tari, and the Alliance Expedition throughout the Blade's Edge Mountains?",
+        "type": "textarea",
+        "required": false,
+        "next": "q272"
+      },
+      {
+        "id": "q272",
+        "number": 272,
+        "text": "What was your involvement, if any, in efforts against the Hellfire Coalition, the Sha'tari, and the Alliance Expedition throughout Nagrand?",
+        "type": "textarea",
+        "required": false,
+        "next": "q273"
+      },
+      {
+        "id": "q273",
+        "number": 273,
+        "text": "What was your involvement, if any, in efforts against the Hellfire Coalition, the Sha'tari, and the Alliance Expedition throughout the Netherstorm?",
+        "type": "textarea",
+        "required": false,
+        "next": "q274"
+      },
+      {
+        "id": "q274",
+        "number": 274,
+        "text": "What role did you play, if any, in the defense of the Tempest Keep and the subsequent defeat of the Sunfury Army to the Hellfire Coalition and Sha'tari forces?",
+        "type": "textarea",
+        "required": false,
+        "next": "q275"
+      },
+      {
+        "id": "q275",
+        "number": 275,
+        "text": "After the defeat at the Tempest Keep, did you withdraw to aid Prince Kael’thas in his capture of the Isle of Quel’Danas?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "joined_queldanas",
+            "label": "Yes, I joined Prince Kael’thas at Quel’Danas.",
+            "next": "q292"
+          },
+          {
+            "value": "remained_shadowmoon",
+            "label": "No, I remained under Illidan Stormrage in the Outlands.",
+            "next": "q281"
+          },
+          {
+            "value": "captured_at_keep",
+            "label": "I was captured during assault on the Tempest Keep.",
+            "next": "q277"
+          }
+        ]
+      },
+      {
+        "id": "q277",
+        "number": 277,
+        "text": "What were your experiences after being captured?",
+        "type": "textarea",
+        "required": false,
+        "next": "q278"
+      },
+      {
+        "id": "q278",
+        "number": 278,
+        "text": "At what point and under what conditions were you eventually released?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "join_shattered_sun",
+            "label": "I was released on condition of joining the Shattered Sun Offensive.",
+            "next": "q292"
+          },
+          {
+            "value": "released_after_war",
+            "label": "I was released only after conclusion of the war.",
+            "next": "q301"
+          },
+          {
+            "value": "imprisoned_wardens",
+            "label": "I was imprisoned by the Kaldorei in the Vault of the Wardens.",
+            "next": "q279"
+          }
+        ]
+      },
+      {
+        "id": "q279",
+        "number": 279,
+        "text": "What circumstances specifically prompted you to seek training under Illidan Stormrage in the Outlands?",
+        "type": "textarea",
+        "required": false,
+        "next": "q280"
+      },
+      {
+        "id": "q280",
+        "number": 280,
+        "text": "What were your experiences like during your training under Illidan Stormrage?",
+        "type": "textarea",
+        "required": false,
+        "next": "q267"
+      },
+      {
+        "id": "q281",
+        "number": 281,
+        "text": "What was your involvement, if any, in efforts against the Hellfire Coalition, the Sha'tari, and the Alliance Expedition throughout Shadowmoon Valley?",
+        "type": "textarea",
+        "required": false,
+        "next": "q282"
+      },
+      {
+        "id": "q282",
+        "number": 282,
+        "text": "What was your involvement, if any, in efforts against the Hellfire Coalition, the Sha'tari, and the Alliance Expedition during their siege of the Black Temple?",
+        "type": "textarea",
+        "required": false,
+        "next": "q283"
+      },
+      {
+        "id": "q283",
+        "number": 283,
+        "text": "Concerning the siege of the Black Temple...",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "assault_mardum",
+            "label": "I was part of the Illidari assault on Mardum to secure the Sargerite Keystone.",
+            "next": "q284"
+          },
+          {
+            "value": "captured_early",
+            "label": "I was captured during the early stages of the siege, but not by the Wardens.",
+            "next": "q277"
+          },
+          {
+            "value": "defected",
+            "label": "I defected and aided the coalition forces in defeating Illidan's forces.",
+            "next": "q290"
+          }
+        ]
+      },
+      {
+        "id": "q284",
+        "number": 284,
+        "text": "What was the extent of your involvement in the Illidari assault on Mardum?",
+        "type": "textarea",
+        "required": false,
+        "next": "q285"
+      },
+      {
+        "id": "q285",
+        "number": 285,
+        "text": "What was your experience upon returning to Black Temple and finding Lord Illidan Stormrage slain and his forces defeated?",
+        "type": "textarea",
+        "required": false,
+        "next": "q289"
+      },
+      {
+        "id": "q289",
+        "number": 289,
+        "text": "Concerning the demon hunters…",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "evaded_returned",
+            "label": "I evaded capture by the Wardens and returned to Azeroth, or remained in Outlands.",
+            "next": "q301"
+          },
+          {
+            "value": "released_legion",
+            "label": "I was imprisoned, and later released upon Legion’s return.",
+            "next": "q366"
+          }
+        ]
+      },
+      {
+        "id": "q290",
+        "number": 290,
+        "text": "What role did you play, if any, in the assault on Zul’Aman",
+        "type": "textarea",
+        "required": false,
+        "next": "q291"
+      },
+      {
+        "id": "q291",
+        "number": 291,
+        "text": "Were you involved in the assault on the Isle of Quel'Danas to liberate the Sunwell from the Dawnblade forces of Prince Kael'thas Sunstrider and the demons of the Burning Legion?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "assisted",
+            "label": "Yes, I assisted the Shattered Sun Offensive on the Isle of Quel'Danas.",
+            "next": "q292"
+          },
+          {
+            "value": "no_waited_wotlk",
+            "label": "No, I was otherwise occupied until renewal of the Lich King’s war.",
+            "next": "q301"
+          }
+        ]
+      },
+      {
+        "id": "q292",
+        "number": 292,
+        "text": "What was the extent of your involvement, if any, in the assault on Dawnstar Village and Sun’s Reach Anchorage?",
+        "type": "textarea",
+        "required": false,
+        "next": "q293"
+      },
+      {
+        "id": "q293",
+        "number": 293,
+        "text": "What was the extent of your involvement, if any, in the assault on the Plateaue's main gates down the Dead Scar?",
+        "type": "textarea",
+        "required": false,
+        "next": "q294"
+      },
+      {
+        "id": "q294",
+        "number": 294,
+        "text": "What was the extent of your involvement, if any, in the skirmishes along the eastern coast or out at sea?",
+        "type": "textarea",
+        "required": false,
+        "next": "q295"
+      },
+      {
+        "id": "q295",
+        "number": 295,
+        "text": "What was the extent of your involvement, if any, in the assault on the Magister’s Terrace?",
+        "type": "textarea",
+        "required": false,
+        "next": "q296"
+      },
+      {
+        "id": "q296",
+        "number": 296,
+        "text": "What was the extent of your involvement, if any, in the assault on Sunwell Plateau itself?",
+        "type": "textarea",
+        "required": false,
+        "next": "q297"
+      },
+      {
+        "id": "q297",
+        "number": 297,
+        "text": "What was your experience witnessing the emergence of Kil’jaeden the Deceiever through the Sunwell?",
+        "type": "textarea",
+        "required": false,
+        "next": "q298"
+      },
+      {
+        "id": "q298",
+        "number": 298,
+        "text": "What was your involvement, if any, in the final battle for the Sunwell against the demons of the Burning Legion?",
+        "type": "textarea",
+        "required": false,
+        "next": "q299"
+      },
+      {
+        "id": "q299",
+        "number": 299,
+        "text": "What was your reaction to the rebirth of the Sunwell?",
+        "type": "textarea",
+        "required": false,
+        "next": "q300"
+      },
+      {
+        "id": "q300",
+        "number": 300,
+        "text": "Were there any other experiences worth noting during the close of the conflict?",
+        "type": "textarea",
+        "required": false,
+        "next": "q301"
+      },
+      {
+        "id": "q301",
+        "number": 301,
+        "text": "What were your experiences in the wake of the conflict's end, but before the resurgence of the Scourge?",
+        "type": "textarea",
+        "required": false,
+        "next": "q303"
+      },
+      {
+        "id": "q303",
+        "number": 303,
+        "text": "What was your experience during the outbreak of the plague the resurgence of the Scourge and its assaults on major cities across the globe?",
+        "type": "textarea",
+        "required": false,
+        "next": "q304"
+      },
+      {
+        "id": "q304",
+        "number": 304,
+        "text": "If you were engaged in the defense of world cities against the Scourge, what was your experience like during that time?",
+        "type": "textarea",
+        "required": false,
+        "next": "q305"
+      },
+      {
+        "id": "q305",
+        "number": 305,
+        "text": "What was the extent of your involvement, if any, during the conflict between the Ebon Blade and the Argent Dawn at Light’s Hope Chapel?",
+        "type": "textarea",
+        "required": false,
+        "next": "q306"
+      },
+      {
+        "id": "q306",
+        "number": 306,
+        "text": "During the ongoing Scourge assaults across the world, the maddened blue aspect Malygos ignited the Nexus War against the magic users of Azeroth. What was the extent of your involvement, if any, in aiding the Kirin Tor against these assaults in the early days of the conflict before the invasion of Northrend?",
+        "type": "textarea",
+        "required": false,
+        "next": "q307"
+      },
+      {
+        "id": "q307",
+        "number": 307,
+        "text": "Concerning the war in Northrend...",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "to_northrend",
+            "label": "I joined the campaigns in Northrend at some point.",
+            "next": "q309"
+          },
+          {
+            "value": "stayed_elsewhere",
+            "label": "I did not join any of the campaigns in Northrend.",
+            "next": "q308"
+          }
+        ]
+      },
+      {
+        "id": "q308",
+        "number": 308,
+        "text": "As the war in Northrend began in earnest, where on Azeroth were you, and what were you involved in doing?",
+        "type": "textarea",
+        "required": false,
+        "next": "q337"
+      },
+      {
+        "id": "q309",
+        "number": 309,
+        "text": "What were your initial experiences during the early days of the conflict in Northrend as the armies of the Horde, Alliance, Argent Crusade, and the Ebon Blade launc a multipronged invasion of the continent.",
+        "type": "textarea",
+        "required": false,
+        "next": "q310"
+      },
+      {
+        "id": "q310",
+        "number": 310,
+        "text": "Which organization(s) did you enlist in during the campaigns in Northrend, or provide aid to?",
+        "type": "checkbox",
+        "required": false,
+        "options": [
+          {
+            "value": "valiance",
+            "label": "Valiance Expedition (Alliance)"
+          },
+          {
+            "value": "legion7",
+            "label": "7th Legion (Alliance)"
+          },
+          {
+            "value": "silver_covenant",
+            "label": "Silver Covenant (Alliance – Kirin Tor)"
+          },
+          {
+            "value": "warsong",
+            "label": "Warsong Offensive (Horde)"
+          },
+          {
+            "value": "hand_of_vengeance",
+            "label": "Hand of Vengeance (Horde)"
+          },
+          {
+            "value": "sunreavers",
+            "label": "Sunreavers (Horde – Kirin Tor)"
+          },
+          {
+            "value": "kirin_tor",
+            "label": "Kirin Tor (Neutral)"
+          },
+          {
+            "value": "ebon_blade",
+            "label": "Knights of the Ebon Blade (Neutral)"
+          },
+          {
+            "value": "argent_crusade",
+            "label": "Argent Crusade (Neutral)"
+          },
+          {
+            "value": "ashen_verdict",
+            "label": "Ashen Verdict (Neutral)"
+          },
+          {
+            "value": "scarlet_onslaught",
+            "label": "Scarlet Onslaught (Non‑aligned)"
+          },
+          {
+            "value": "explorers_league",
+            "label": "Explorer’s League (Alliance – Neutral)"
+          },
+          {
+            "value": "wyrmrest",
+            "label": "Wyrmrest Accord (Neutral)"
+          }
+        ],
+        "next": "q311"
+      },
+      {
+        "id": "q311",
+        "number": 311,
+        "text": "What was the extent of your involvement, if any, in the campaigns across the western Borean Tundra and Sholazar Basin regions?",
+        "type": "textarea",
+        "required": false,
+        "next": "q312"
+      },
+      {
+        "id": "q312",
+        "number": 312,
+        "text": "What was the extent of your involvement, if any, in the campaigns across the eastern Howling Fjord region?",
+        "type": "textarea",
+        "required": false,
+        "next": "q313"
+      },
+      {
+        "id": "q313",
+        "number": 313,
+        "text": "What was the extent of your involvement, if any, in the campaigns across the eastern Grizzly Hills region?",
+        "type": "textarea",
+        "required": false,
+        "next": "q314"
+      },
+      {
+        "id": "q314",
+        "number": 314,
+        "text": "What was the extent of your involvement, if any, in the campaigns across the central Dragonblight region?",
+        "type": "textarea",
+        "required": false,
+        "next": "q315"
+      },
+      {
+        "id": "q315",
+        "number": 315,
+        "text": "What was the extent of your involvement, if any, in the campaign to topple the lich Kel'Thuzad and cripple the dread citadel Naxxramas?",
+        "type": "textarea",
+        "required": false,
+        "next": "q316"
+      },
+      {
+        "id": "q316",
+        "number": 316,
+        "text": "What was the extent of your involvement, if any, in the Battle of Angrathar, the Wrath Gate?",
+        "type": "textarea",
+        "required": false,
+        "next": "q317"
+      },
+      {
+        "id": "q317",
+        "number": 317,
+        "text": "Were you slain and reanimated by the Scourge at any point during this conflict up to this point?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "yes",
+            "label": "Yes, I was slain and reanimated.",
+            "next": "q178"
+          },
+          {
+            "value": "no",
+            "label": "No, I was not slain and reanimated.",
+            "next": "q318"
+          }
+        ]
+      },
+      {
+        "id": "q318",
+        "number": 318,
+        "text": "What was the extent of your involvement, if any, in the siege and subsequent battle of the Undercity?",
+        "type": "textarea",
+        "required": false,
+        "next": "q319"
+      },
+      {
+        "id": "q319",
+        "number": 319,
+        "text": "As conflict erupted between the Horde and Alliance, what were your experiences during the early days and weeks of the ever-expanding Horde–Alliance conflict?",
+        "type": "textarea",
+        "required": false,
+        "next": "q320"
+      },
+      {
+        "id": "q320",
+        "number": 320,
+        "text": "What other campaigns or battles and efforts were you involved in before the assaults on Zul Drak, the Storm Peaks, Ulduar, and Icecrown began?",
+        "type": "textarea",
+        "required": false,
+        "next": "q321"
+      },
+      {
+        "id": "q321",
+        "number": 321,
+        "text": "What was the extent of your involvement, if any, in the ongoing Nexus War against the azure dragons of the Blue Dragonflight, including the final assault on the Eye of Eternity and the slaying of Malygos, the crazed Aspect?",
+        "type": "textarea",
+        "required": false,
+        "next": "q322"
+      },
+      {
+        "id": "q322",
+        "number": 322,
+        "text": "What was the extent of your involvement, if any, in the campaigns to topple of the Drakkari trolls in Zul’Drak.",
+        "type": "textarea",
+        "required": false,
+        "next": "q323"
+      },
+      {
+        "id": "q323",
+        "number": 323,
+        "text": "What was the extent of your involvement, if any, in the doomed assault on gates of Icecrown in which the Alliance offensive was ambushed by the Horde's forces?",
+        "type": "textarea",
+        "required": false,
+        "next": "q324"
+      },
+      {
+        "id": "q324",
+        "number": 324,
+        "text": "Following the collapse of the offensives into Icecrown, what was the extent of your involvement, if any, in the campaigns into the Storm Peaks?",
+        "type": "textarea",
+        "required": false,
+        "next": "q325"
+      },
+      {
+        "id": "q325",
+        "number": 325,
+        "text": "What was the extent of your involvement, if any, in the joint Ebon Blade–Argent Crusade assault on Icecrown, the sacking of Scourgeholme, and the establishment of Crusader’s Pinnacle?",
+        "type": "textarea",
+        "required": false,
+        "next": "q326"
+      },
+      {
+        "id": "q326",
+        "number": 326,
+        "text": "What was the extent of your involvement, if any, in the subsequent invasion of Icecrown glacier and the ongoing battles against the Scourge?",
+        "type": "textarea",
+        "required": false,
+        "next": "q327"
+      },
+      {
+        "id": "q327",
+        "number": 327,
+        "text": "What was the extent of your involvement, if any, in the ongoing Horde–Alliance battles across Icecrown?",
+        "type": "textarea",
+        "required": false,
+        "next": "q328"
+      },
+      {
+        "id": "q328",
+        "number": 328,
+        "text": "What was the extent of your involvement, if any, in the affairs of the Argent Tournament?",
+        "type": "textarea",
+        "required": false,
+        "next": "q329"
+      },
+      {
+        "id": "q329",
+        "number": 329,
+        "text": "Did you take part in the siege of Ulduar?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "yes",
+            "label": "Yes, I was involved.",
+            "next": "q330"
+          },
+          {
+            "value": "no",
+            "label": "No, I was not involved.",
+            "next": "q331"
+          }
+        ]
+      },
+      {
+        "id": "q330",
+        "number": 330,
+        "text": "What was the extent of your involvement in the siege of Ulduar, and the battles against the fallen Keepers and the Old God Yogg‑Saron?",
+        "type": "textarea",
+        "required": false,
+        "next": "q331"
+      },
+      {
+        "id": "q331",
+        "number": 331,
+        "text": "What was the extent of your involvement, if any, in the siege of Icecrown Citadel, including the ramparts, the dungeons, the lower spire, and the upper spire?",
+        "type": "textarea",
+        "required": false,
+        "next": "q332"
+      },
+      {
+        "id": "q332",
+        "number": 332,
+        "text": "What were your experiences in the immediate wake of the Lich King’s defeat?",
+        "type": "textarea",
+        "required": false,
+        "next": "q333"
+      },
+      {
+        "id": "q333",
+        "number": 333,
+        "text": "What was the extent of your involvement, if any, in responding to the attack on Wyrmrest Temple by elements Black Dragonflight?",
+        "type": "textarea",
+        "required": false,
+        "next": "q334"
+      },
+      {
+        "id": "q334",
+        "number": 334,
+        "text": "After the conflict in Northrend came to an end, did you return home or remain in Northrend?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "remained",
+            "label": "I remained in Northrend to continue clean up operations.",
+            "next": "q335"
+          },
+          {
+            "value": "returned",
+            "label": "I returned home, or deployed elsewhere.",
+            "next": "q337"
+          }
+        ]
+      },
+      {
+        "id": "q335",
+        "number": 335,
+        "text": "Describe your experiences in Northrend after the Lich King’s defeat.",
+        "type": "textarea",
+        "required": false,
+        "next": "q336"
+      },
+      {
+        "id": "q336",
+        "number": 336,
+        "text": "When did you finally leave Northrend?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "left_shattering",
+            "label": "I left during the Horde–Alliance War, after the Shattering.",
+            "next": "q337"
+          },
+          {
+            "value": "left_pandaria",
+            "label": "I left when the Horde-Alliance War expanded to Pandaria.",
+            "next": "q343"
+          },
+          {
+            "value": "left_after",
+            "label": "I left sometime after conclusion of the Horde-Alliance War.",
+            "next": "q362"
+          }
+        ]
+      },
+      {
+        "id": "q337",
+        "number": 337,
+        "text": "What were your experiences during the escalating conflict between the Horde and Alliance, and the period of elemental unrest just before the emergence of Deathwing caused the Shattering.",
+        "type": "textarea",
+        "required": false,
+        "next": "q338"
+      },
+      {
+        "id": "q338",
+        "number": 338,
+        "text": "What was your experience during the Shattering caused by Deathwing’s emergence?",
+        "type": "textarea",
+        "required": false,
+        "next": "q339"
+      },
+      {
+        "id": "q339",
+        "number": 339,
+        "text": "What were your experiences in the immediate wake of the Shattering?",
+        "type": "textarea",
+        "required": false,
+        "next": "q340"
+      },
+      {
+        "id": "q340",
+        "number": 340,
+        "text": "What was the extent of your involvement in the rapidly expanding Horde–Alliance conflict across Azeroth? Specify which battles, campaigns, and efforts you were involved in.",
+        "type": "textarea",
+        "required": false,
+        "next": "q341"
+      },
+      {
+        "id": "q341",
+        "number": 341,
+        "text": "What was the extent of your involvement, if any, in the ongoing campaigns against the Black Dragonflight and Deathwing the Destroyer, once Aspect of the Black Dragonflight?",
+        "type": "textarea",
+        "required": false,
+        "next": "q342"
+      },
+      {
+        "id": "q342",
+        "number": 342,
+        "text": "What was the extent of your involvement, if any, in the final battle against Deathwing beginning in the Dragonblight region of Northrend?",
+        "type": "textarea",
+        "required": false,
+        "next": "q343"
+      },
+      {
+        "id": "q343",
+        "number": 343,
+        "text": "What was the extent of your involvement in the Horde-Alliance conflict, if any, during the invasion of Ashenvale just prior to the bombing of Theramore?",
+        "type": "textarea",
+        "required": false,
+        "next": "q344"
+      },
+      {
+        "id": "q344",
+        "number": 344,
+        "text": "What were your experiences, if any, related to the siege and subsequent bombing of Theramore Isle by the Horde?",
+        "type": "textarea",
+        "required": false,
+        "next": "q345"
+      },
+      {
+        "id": "q345",
+        "number": 345,
+        "text": "What were your experiences in the wake of the bombing of Theramore, prior to the invasion of Pandaria?",
+        "type": "textarea",
+        "required": false,
+        "next": "q346"
+      },
+      {
+        "id": "q346",
+        "number": 346,
+        "text": "Concerning the invasion of Pandaria...",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "joined_pandaria",
+            "label": "Yes, I joined Horde/Alliance campaigns on Pandaria.",
+            "next": "q347"
+          },
+          {
+            "value": "did_not_join",
+            "label": "No, I did not join the Horde/Alliance campaigns on Pandaria.",
+            "next": "q349"
+          }
+        ]
+      },
+      {
+        "id": "q347",
+        "number": 347,
+        "text": "What was the extent of your involvement in the conflict and crises spreading across Pandaria leading up to the Purge of Dalaran?",
+        "type": "textarea",
+        "required": false,
+        "next": "q348"
+      },
+      {
+        "id": "q348",
+        "number": 348,
+        "text": "Were you involved or affected by the Purge of Dalaran?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "involved",
+            "label": "Yes, I was involved or affected.",
+            "next": "q351"
+          },
+          {
+            "value": "not_involved",
+            "label": "No, I was far removed from the event.",
+            "next": "q354"
+          }
+        ]
+      },
+      {
+        "id": "q349",
+        "number": 349,
+        "text": "What were your experiences elsewhere on Azeroth as the conflict on Pandaria continued to escalate?",
+        "type": "textarea",
+        "required": false,
+        "next": "q350"
+      },
+      {
+        "id": "q350",
+        "number": 350,
+        "text": "Concerning the Purge of Dalaran and the war against the Thunder King...",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "involved_purge",
+            "label": "I was involved or directly affected by Purge of Dalaran or the war against the Thunder King.",
+            "next": "q351"
+          },
+          {
+            "value": "removed",
+            "label": "I was not involved or affected by either event.",
+            "next": "q362"
+          },
+          {
+            "value": "later_involved",
+            "label": "Far removed at first but involved later.",
+            "next": "q354"
+          }
+        ]
+      },
+      {
+        "id": "q351",
+        "number": 351,
+        "text": "What was the nature of your relationship with either the Kirin Tor, the Sunreavers, or the Silver Covenant in Dalaran prior to the Purge?",
+        "type": "textarea",
+        "required": false,
+        "next": "q352"
+      },
+      {
+        "id": "q352",
+        "number": 352,
+        "text": "What was the extent of your involvement, if any, and your experience during the Purge of Dalaran?",
+        "type": "textarea",
+        "required": false,
+        "next": "q353"
+      },
+      {
+        "id": "q353",
+        "number": 353,
+        "text": "What were your experiences in the immediate wake of the Purge?",
+        "type": "textarea",
+        "required": false,
+        "next": "q354"
+      },
+      {
+        "id": "q354",
+        "number": 354,
+        "text": "What were your experiences as hostilities continued to escalate across Azeroth post‑Purge?",
+        "type": "textarea",
+        "required": false,
+        "next": "q355"
+      },
+      {
+        "id": "q355",
+        "number": 355,
+        "text": "What was the extent of your involvement, if any, in the formation of the Kirin Tor Offensive or the Sunreaver Onslaught?",
+        "type": "textarea",
+        "required": false,
+        "next": "q356"
+      },
+      {
+        "id": "q356",
+        "number": 356,
+        "text": "Did you have any other experiences elsewhere on Pandaria before the assault on the Isle of Thunder?",
+        "type": "textarea",
+        "required": false,
+        "next": "q357"
+      },
+      {
+        "id": "q357",
+        "number": 357,
+        "text": "What was the extent of your involvement, if any, in the start of the Sunreaver Onslaught and the Kirin Tor Offensive's dual campaigns onto the Isle of Thunder?",
+        "type": "textarea",
+        "required": false,
+        "next": "q358"
+      },
+      {
+        "id": "q358",
+        "number": 358,
+        "text": "As that campaign progressed, what were your experiences during the fall of the Thunder King's fortress, and the subsequent forging of a truce between the two elven factions in favor of deposing Warchief Garrosh Hellscream?",
+        "type": "textarea",
+        "required": false,
+        "next": "q359"
+      },
+      {
+        "id": "q359",
+        "number": 359,
+        "text": "What was the extent of your involvement, if any, in the first siege of Orgrimmar, when the forces of the Alliance and the rebel army of the Horde amassed to assault the city's gates and overthrow its leader?",
+        "type": "textarea",
+        "required": false,
+        "next": "q360"
+      },
+      {
+        "id": "q360",
+        "number": 360,
+        "text": "With a ceasefire secured in the wake of Garrosh's defeat and capture, what were your experiences in the immediate wake of the conflict?",
+        "type": "textarea",
+        "required": false,
+        "next": "q361"
+      },
+      {
+        "id": "q361",
+        "number": 361,
+        "text": "Were there any notable events in your life between the end of the open conflict, and the reopening of the Dark Portal by the Iron Horde?",
+        "type": "textarea",
+        "required": false,
+        "next": "q362"
+      },
+      {
+        "id": "q362",
+        "number": 362,
+        "text": "With the reopening of the Dark Portal, the Iron Tide swept through into Azeroth on the orders of Warchief Grommash Hellscream and the deposed warchief Garrosh Hellsream. What was the extent of your involvement, if any, and your experience during that of crisis when the armies of Azeroth rushed to gather and drive back the invaders?",
+        "type": "textarea",
+        "required": false,
+        "next": "q363"
+      },
+      {
+        "id": "q363",
+        "number": 363,
+        "text": "Were you involved in the conflict on Draenor?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "yes",
+            "label": "Yes, I aided the Vanguard in invading Draenor through the Dark Portal.",
+            "next": "q364"
+          },
+          {
+            "value": "yes-later",
+            "label": "I was involved in the conflict, but journeyed there later and did not go through the Dark Portal.",
+            "next": "q364"
+          },
+          {
+            "value": "no",
+            "label": "No, I remained on Azeroth and was uninvolved.",
+            "next": "q365"
+          }
+        ]
+      },
+      {
+        "id": "q364",
+        "number": 364,
+        "text": "What was the extent of your involvement, if any, in the conflict on Draenor? This might include any of the campaign efforts in Shadowmoon Valley, Gorgrond, Frostfire Ridge, Talador, Nagrand, Ashran, or the Tanaan Jungle where the Fel Horde was reborn.",
+        "type": "textarea",
+        "required": false,
+        "next": "q366"
+      },
+      {
+        "id": "q365",
+        "number": 365,
+        "text": "During the time of conflight on Draenor, what were your experiences back on Azeroth?",
+        "type": "textarea",
+        "required": false,
+        "next": "q366"
+      },
+      {
+        "id": "q366",
+        "number": 366,
+        "text": "After returning to Azeroth, at what point did you become aware of the Burning Legion’s return, and under what context?",
+        "type": "textarea",
+        "required": false,
+        "next": "q367"
+      },
+      {
+        "id": "q367",
+        "number": 367,
+        "text": "Please describe your experiences during the initial assaults across Azeroth by the Burning Legion's invasion forces, including any involvement in repelling the demonic incursions.",
+        "type": "textarea",
+        "required": false,
+        "next": "q368"
+      },
+      {
+        "id": "q368",
+        "number": 368,
+        "text": "Concerning the Broken Isles...",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "fought_broken_isles",
+            "label": "I took part in fighting on the Broken Shore or the Broken Isles.",
+            "next": "q369"
+          },
+          {
+            "value": "did_not_fight_broken",
+            "label": "I did not take part in fighting there, and was engaged elsewhere.",
+            "next": "q378"
+          }
+        ]
+      },
+      {
+        "id": "q369",
+        "number": 369,
+        "text": "If you took part in the initial assault on the Broken Shore, or any of the campaigns across the Broken Isles, please describe your experience and the extent of your involvement.",
+        "type": "textarea",
+        "required": false,
+        "next": "q370"
+      },
+      {
+        "id": "q370",
+        "number": 370,
+        "text": "What was the extent of your involvement, if any, in aiding any of the independent orders that later formed into the Armies of Legionfall?",
+        "type": "textarea",
+        "required": false,
+        "next": "q371"
+      },
+      {
+        "id": "q371",
+        "number": 371,
+        "text": "What was the extent of your involvement, if any, in aiding the Kaldorei against the Nightmare Lord Xavius and his followers in Val’sharah?",
+        "type": "textarea",
+        "required": false,
+        "next": "q372"
+      },
+      {
+        "id": "q372",
+        "number": 372,
+        "text": "What was the extent of your involvement, if any, in the renewal of conflict between the Horde and Alliance on the Broken Isles?",
+        "type": "textarea",
+        "required": false,
+        "next": "q373"
+      },
+      {
+        "id": "q373",
+        "number": 373,
+        "text": "Concerning the Shal’dorei and Suramar...",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "aided_nightfallen",
+            "label": "I aided the Nightfallen insurrection in Suramar.",
+            "next": "q374"
+          },
+          {
+            "value": "did_not_aid",
+            "label": "I did not aid the Nightfallen, and was engaged elsewhere.",
+            "next": "q380"
+          }
+        ]
+      },
+      {
+        "id": "q374",
+        "number": 374,
+        "text": "What was the extent of your involvement in the Nightfallen Insurrection in Suramar?",
+        "type": "textarea",
+        "required": false,
+        "next": "q375"
+      },
+      {
+        "id": "q375",
+        "number": 375,
+        "text": "What were your experiences specifically during fighting that gripped the city during the time of the insurrection?",
+        "type": "textarea",
+        "required": false,
+        "next": "q376"
+      },
+      {
+        "id": "q376",
+        "number": 376,
+        "text": "What was it like for you encountering either outlanders or the Shal'dorei for the first time in ten thousand years?",
+        "type": "textarea",
+        "required": false,
+        "next": "q377"
+      },
+      {
+        "id": "q377",
+        "number": 377,
+        "text": "What was the extent of your involvement, if any, in the final battles and march on the Nighthold, which culminated in the death of Gul'dan and the resurrection of Lord Illidan Stormrage?",
+        "type": "textarea",
+        "required": false,
+        "next": "q380"
+      },
+      {
+        "id": "q378",
+        "number": 378,
+        "text": "Please describe your experiences elsewhere on Azeroth during the war against the Legion.",
+        "type": "textarea",
+        "required": false,
+        "next": "q379"
+      },
+      {
+        "id": "q379",
+        "number": 379,
+        "text": "At what later point did you travel to the Broken Isles to aid in the war against the Legion, if at all?",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "aided_insurrection",
+            "label": "I aided the Nightfallen in their insurrection.",
+            "next": "q374"
+          },
+          {
+            "value": "second_broken_shore",
+            "label": "I took part in second assault on the Broken Shore.",
+            "next": "q380"
+          },
+          {
+            "value": "assault_argus",
+            "label": "I aided in the assault on Argus.",
+            "next": "q384"
+          },
+          {
+            "value": "remained_uninvolved",
+            "label": "I remained uninvolved through end of the conflict.",
+            "next": "q390"
+          }
+        ]
+      },
+      {
+        "id": "q380",
+        "number": 380,
+        "text": "What was the extent of your involvement, if any, during the initial push onto the Broken Shore by the Armies of Legionfall?",
+        "type": "textarea",
+        "required": false,
+        "next": "q381"
+      },
+      {
+        "id": "q381",
+        "number": 381,
+        "text": "Please describe your experiences in battling the Legion on the Broken Shore, after the Armies of Legionfall established their foothold.",
+        "type": "textarea",
+        "required": false,
+        "next": "q382"
+      },
+      {
+        "id": "q382",
+        "number": 382,
+        "text": "What was the extent of your involvement, if any, during the final assault on the Tomb of Sargeras and the felling of Kil'jaeden the Deceiver?",
+        "type": "textarea",
+        "required": false,
+        "next": "q383"
+      },
+      {
+        "id": "q383",
+        "number": 383,
+        "text": "Concerning the assault on Argus...",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "invaded_argus",
+            "label": "I aided the Armies of Legionfall in invading Argus.",
+            "next": "q384"
+          },
+          {
+            "value": "stayed_azeroth",
+            "label": "I remained on Azeroth during this campaign.",
+            "next": "q390"
+          }
+        ]
+      },
+      {
+        "id": "q384",
+        "number": 384,
+        "text": "Describe your experiences leading up to the invasion of Argus aboard the Vindicaar.",
+        "type": "textarea",
+        "required": false,
+        "next": "q385"
+      },
+      {
+        "id": "q385",
+        "number": 385,
+        "text": "What was the extent of your involvement during the initial arrival at and incursion onto the Legion controlled world of Argus?",
+        "type": "textarea",
+        "required": false,
+        "next": "q386"
+      },
+      {
+        "id": "q386",
+        "number": 386,
+        "text": "Please describe your experiences in working alongside Ranger-Captain Alleria and High Exarch Turalyon, if any, as well as any experiences fighting alongside the Army of the Light.",
+        "type": "textarea",
+        "required": false,
+        "next": "q387"
+      },
+      {
+        "id": "q387",
+        "number": 387,
+        "text": "What campaigns or battles were you apart of during the Argus campaign?",
+        "type": "textarea",
+        "required": false,
+        "next": "q388"
+      },
+      {
+        "id": "q388",
+        "number": 388,
+        "text": "What was the extent of your involvement, if any, in the assault on Antorus, the throne of the Burning Legion, and the subsequent defeat of that demonic army?",
+        "type": "textarea",
+        "required": false,
+        "next": "q389"
+      },
+      {
+        "id": "q389",
+        "number": 389,
+        "text": "Please describe your experience in returning to Azeroth after the wounding of the world.",
+        "type": "textarea",
+        "required": false,
+        "next": "q391"
+      },
+      {
+        "id": "q390",
+        "number": 390,
+        "text": "Please detail your recollection of events during the wounding of the world when the Mad Titan’s blade plunged into Azeroth.",
+        "type": "textarea",
+        "required": false,
+        "next": "q391"
+      },
+      {
+        "id": "q391",
+        "number": 391,
+        "text": "In  the wake of the Legion's defeat, what were your experiences in the brief period of time leading up to the War of Thorns?",
+        "type": "textarea",
+        "required": false,
+        "next": "q392"
+      },
+      {
+        "id": "q392",
+        "number": 392,
+        "text": "What was the extent of your involvement, if any, in the War of Thorns, including the battles of Ashenvale, Darkshore, Felwood, and Teldrassil?",
+        "type": "textarea",
+        "required": false,
+        "next": "q393"
+      },
+      {
+        "id": "q393",
+        "number": 393,
+        "text": "Did you have any personal involvement in the burning of Teldrassil, either as a responsible party, or as an individual affected by it?",
+        "type": "textarea",
+        "required": false,
+        "next": "q394"
+      },
+      {
+        "id": "q394",
+        "number": 394,
+        "text": "Are there any other experiences or details you feel necessary to include regarding the War of Thorns and the Burning of Teldrassil?",
+        "type": "textarea",
+        "required": false,
+        "next": "q395"
+      },
+      {
+        "id": "q395",
+        "number": 395,
+        "text": "Concerning the War of Thorns...",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "slain_thralled",
+            "label": "I was slain and forcibly reanimated by the Forsaken.",
+            "next": "q396"
+          },
+          {
+            "value": "slain_joined_forsaken",
+            "label": "I was slain and embraced the Forsaken as one of the Darkfallen.",
+            "next": "q396"
+          },
+          {
+            "value": "not_kaldorei_or_not_slain",
+            "label": "I'm neither a Kaldorei nor was I slain.",
+            "next": "q396"
+          },
+          {
+            "value": "filling_for_deceased",
+            "label": "I'm submitting this for a deceased relative or friend who was slain at this point.",
+            "next": "q426"
+          }
+        ]
+      },
+      {
+        "id": "q396",
+        "number": 396,
+        "text": "What was your experience in the immediate aftermath of the Burning of Teldrassil, including any political fall out related to the event?",
+        "type": "textarea",
+        "required": false,
+        "next": "q397"
+      },
+      {
+        "id": "q397",
+        "number": 397,
+        "text": "What was the extent of your involvement, if any, in the Siege of Lordaeron?",
+        "type": "textarea",
+        "required": false,
+        "next": "q398"
+      },
+      {
+        "id": "q398",
+        "number": 398,
+        "text": "What was the extent of your involvement, if any, in the escalating conflict between the Horde and Alliance?",
+        "type": "textarea",
+        "required": false,
+        "next": "q399"
+      },
+      {
+        "id": "q399",
+        "number": 399,
+        "text": "Please describe any experiences related to battles on Kalimdor.",
+        "type": "textarea",
+        "required": false,
+        "next": "q400"
+      },
+      {
+        "id": "q400",
+        "number": 400,
+        "text": "Please describe any experiences related to battles on the Eastern Kingdoms.",
+        "type": "textarea",
+        "required": false,
+        "next": "q401"
+      },
+      {
+        "id": "q401",
+        "number": 401,
+        "text": "Please describe any experiences related to battles on Northrend.",
+        "type": "textarea",
+        "required": false,
+        "next": "q402"
+      },
+      {
+        "id": "q402",
+        "number": 402,
+        "text": "Please describe any experiences related to battles on the Broken Isles.",
+        "type": "textarea",
+        "required": false,
+        "next": "q403"
+      },
+      {
+        "id": "q403",
+        "number": 403,
+        "text": "Please describe any experiences related to battles in Kul Tiras.",
+        "type": "textarea",
+        "required": false,
+        "next": "q404"
+      },
+      {
+        "id": "q404",
+        "number": 404,
+        "text": "Please describe any experiences related to battles in Zandalar.",
+        "type": "textarea",
+        "required": false,
+        "next": "q405"
+      },
+      {
+        "id": "q405",
+        "number": 405,
+        "text": "Please describe any experiences related to battles in Pandaria.",
+        "type": "textarea",
+        "required": false,
+        "next": "q406"
+      },
+      {
+        "id": "q406",
+        "number": 406,
+        "text": "Please describe any experiences related to battles on the high seas.",
+        "type": "textarea",
+        "required": false,
+        "next": "q407"
+      },
+      {
+        "id": "q407",
+        "number": 407,
+        "text": "If you were a non‑combatant, what were your experiences during the escalation in global conflict?",
+        "type": "textarea",
+        "required": false,
+        "next": "q408"
+      },
+      {
+        "id": "q408",
+        "number": 408,
+        "text": "What was the extent of your involvement, if any, in aiding World Speaker Magni Bronzebeard in tending to the world’s wound?",
+        "type": "textarea",
+        "required": false,
+        "next": "q409"
+      },
+      {
+        "id": "q409",
+        "number": 409,
+        "text": "What was the extent of your involvement, if any, in the incursion into Naz’jatar and the subsequent battles against Queen Azshara and her naga?",
+        "type": "textarea",
+        "required": false,
+        "next": "q410"
+      },
+      {
+        "id": "q410",
+        "number": 410,
+        "text": "What was the extent of your involvement, if any, in the rebellion against Warchief Sylvanas Windrunner, either as a member of the Alliance, a Horde rebel, or a loyalist of the Warchief?",
+        "type": "textarea",
+        "required": false,
+        "next": "q411"
+      },
+      {
+        "id": "q411",
+        "number": 411,
+        "text": "What was the extent of your involvement, if any, in the second siege of Orgrimmar?",
+        "type": "textarea",
+        "required": false,
+        "next": "q412"
+      },
+      {
+        "id": "q412",
+        "number": 412,
+        "text": "What was your experience during the emergence of N’Zoth and spread of his influence across Azeroth?",
+        "type": "textarea",
+        "required": false,
+        "next": "q413"
+      },
+      {
+        "id": "q413",
+        "number": 413,
+        "text": "What was the extent of your involvement, if any, in battling the forces of N’Zoth across Azeroth?",
+        "type": "textarea",
+        "required": false,
+        "next": "q414"
+      },
+      {
+        "id": "q414",
+        "number": 414,
+        "text": "Describe your experiences in the immediate wake of the armistice being signed between the Horde and Alliance.",
+        "type": "textarea",
+        "required": false,
+        "next": "q415"
+      },
+      {
+        "id": "q415",
+        "number": 415,
+        "text": "Concerning the Fourth War...",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "survived",
+            "label": "I survived the Fourth War, or was raised by the Forsaken.",
+            "next": "q419"
+          },
+          {
+            "value": "raised_ebon_blade",
+            "label": "I was slain and raised to serve the Ebon Blade sometime after the fall of the Lich King.",
+            "next": "q416"
+          },
+          {
+            "value": "filling_for_deceased",
+            "label": "I'm submitting for a deceased relative or friend killed during the war.",
+            "next": "q426"
+          }
+        ]
+      },
+      {
+        "id": "q416",
+        "number": 416,
+        "text": "At what point were you slain, and what were the circumstances surrounding your death?",
+        "type": "textarea",
+        "required": false,
+        "next": "q417"
+      },
+      {
+        "id": "q417",
+        "number": 417,
+        "text": "Classification of undeath:",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "sanlayn",
+            "label": "San’layn (vampyric undead elf)"
+          },
+          {
+            "value": "darkfallen",
+            "label": "Darkfallen (non‑vampyric undead elf)"
+          },
+          {
+            "value": "darkfallen_dk",
+            "label": "Darkfallen Death Knight (Ebon Blade)"
+          },
+          {
+            "value": "shaldorei_dk",
+            "label": "Shal’dorei Death Knight"
+          }
+        ],
+        "next": "q418"
+      },
+      {
+        "id": "q418",
+        "number": 418,
+        "text": "What were your initial experiences after reanimation, to the best of your recollection?",
+        "type": "textarea",
+        "required": false,
+        "next": "q419"
+      },
+      {
+        "id": "q419",
+        "number": 419,
+        "text": "At what point did you become aware of the resurgent threat of the undead, and the sundering of the sky above Northrend?",
+        "type": "textarea",
+        "required": false,
+        "next": "q420"
+      },
+      {
+        "id": "q420",
+        "number": 420,
+        "text": "What was the extent of your involvement, if any, in battling the resurgent undead in Northrend or elsewhere across Azeroth following Bolvar Fordragon’s defeat?",
+        "type": "textarea",
+        "required": false,
+        "next": "q421"
+      },
+      {
+        "id": "q421",
+        "number": 421,
+        "text": "What was the extent of your involvement, if any, in the hunt for Sylvanas beyond the shattered veil?",
+        "type": "textarea",
+        "required": false,
+        "next": "q422"
+      },
+      {
+        "id": "q422",
+        "number": 422,
+        "text": "What were your experiences on Azeroth, or elsewhere, between the end of the Fourth War and rediscovery of the Dragon Isles?",
+        "type": "textarea",
+        "required": false,
+        "next": "q423"
+      },
+      {
+        "id": "q423",
+        "number": 423,
+        "text": "What was the extent of your involvement, if any, in the Dragonscale Expedition’s venture to the Dragon Isles, or in your own independent travels to the Isles?",
+        "type": "textarea",
+        "required": false,
+        "next": "q424"
+      },
+      {
+        "id": "q424",
+        "number": 424,
+        "text": "What was the extent of your involvement, if any, in the preservation and defense of Amirdrassil, the World Tree after its awakening into the world?",
+        "type": "textarea",
+        "required": false,
+        "next": "q425"
+      },
+      {
+        "id": "q425",
+        "number": 425,
+        "text": "Please describe the events of the years between the shattering of the veil, and the expedition to the isle of Khaz Algar.",
+        "type": "textarea",
+        "required": false,
+        "next": "q429"
+      },
+      {
+        "id": "q426",
+        "number": 426,
+        "text": "Please describe the circumstances of the death of this interview subject",
+        "type": "textarea",
+        "required": true,
+        "next": "q427"
+      },
+      {
+        "id": "q427",
+        "number": 427,
+        "text": "Concerning the Shadowlands…",
+        "type": "radio",
+        "required": true,
+        "options": [
+          {
+            "value": "encountered_beyond",
+            "label": "I believe the subject was encountered beyond the shattered Veil; I have testimony.",
+            "next": "q428"
+          },
+          {
+            "value": "no_testimony",
+            "label": "No testimony regarding such encounters.",
+            "next": "q432"
+          }
+        ]
+      },
+      {
+        "id": "q428",
+        "number": 428,
+        "text": "What information have you to share regarding the spirit of a deceased elf of Azeroth?",
+        "type": "textarea",
+        "required": false,
+        "next": "q432"
+      },
+      {
+        "id": "q429",
+        "number": 429,
+        "text": "Were you involved in the battle and subsequent destruction of Dalaran? If so, what were your experiences, and to what extent were you involved?",
+        "type": "textarea",
+        "required": false,
+        "next": "q430"
+      },
+      {
+        "id": "q430",
+        "number": 430,
+        "text": "What role did you play, if any, specific to the conflict on the isle of Khaz Algar, and the subterranian regions beneath it?",
+        "type": "textarea",
+        "required": false,
+        "next": "q431"
+      },
+      {
+        "id": "q431",
+        "number": 431,
+        "text": "Were you involved at all in the conflict on the ruins of K'aresh against Dimensius the All-Devouring?",
+        "type": "textarea",
+        "required": false,
+        "next": "q432"
+      },
+      {
+        "id": "q432",
+        "number": 432,
+        "text": "Thank you for completing the Chronicle. If you have any feedback, include it here.",
+        "type": "textarea",
+        "required": false
+      }
+    ]
+  }
