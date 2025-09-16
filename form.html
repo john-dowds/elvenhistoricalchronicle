@@ -155,31 +155,108 @@
     <p>This site is a fan-created, non-commercial project and is not endorsed or affiliated with Blizzard Entertainment.</p>
   </footer>
 
-  <!-- Menus & PDF selector -->
   <script>
-    // Dropdown hover/click
-    document.querySelectorAll('nav.menu-bar li.dropdown').forEach(dd => {
-      let hideT;
-      dd.addEventListener('mouseenter', ()=>{ clearTimeout(hideT); dd.classList.add('open'); });
-      dd.addEventListener('mouseleave', ()=>{ hideT = setTimeout(()=>dd.classList.remove('open'),1000); });
-      dd.querySelector('.dropdown-toggle').addEventListener('click', e=>{
-        e.preventDefault(); clearTimeout(hideT); dd.classList.toggle('open');
+    (function(){
+      // ===== Menu dropdowns =====
+      var dropdowns = document.querySelectorAll('nav.menu-bar li.dropdown');
+      for (var i = 0; i < dropdowns.length; i++) {
+        (function(dd){
+          var hideT;
+          dd.addEventListener('mouseenter', function(){ clearTimeout(hideT); dd.classList.add('open'); });
+          dd.addEventListener('mouseleave', function(){ hideT = setTimeout(function(){ dd.classList.remove('open'); }, 1000); });
+          var toggle = dd.querySelector('.dropdown-toggle');
+          if (toggle) {
+            toggle.addEventListener('click', function(e){
+              e.preventDefault();
+              clearTimeout(hideT);
+              dd.classList.toggle('open');
+            });
+          }
+        })(dropdowns[i]);
+      }
+    
+      // ===== Chronicle volume selector =====
+      var editionSelect = document.getElementById('editionSelect');
+      if (editionSelect) {
+        editionSelect.addEventListener('change', function(e){
+          var pdfViewer = document.getElementById('pdfViewer');
+          if (pdfViewer) pdfViewer.src = e.target.value;
+        });
+      }
+    
+      // ===== Side Car modal + safeguards =====
+      var infoModal    = document.getElementById('infoModal');
+      var btnInfoStart = document.getElementById('btnInfoStart');
+      var mapOverlay   = document.getElementById('ehcMapOverlay'); // for Esc-to-close
+    
+      function isMobileDevice() {
+        var ua = navigator.userAgent || '';
+        var touch = (navigator.maxTouchPoints && navigator.maxTouchPoints > 1);
+        return /Mobi|Android|iPhone|iPad|iPod|Windows Phone/i.test(ua) || (touch && window.innerWidth < 1024);
+      }
+    
+      function openSidecar() {
+        if (!infoModal) return;
+        infoModal.style.display = 'block';
+    
+        // Cap size so it's never bigger than the viewport
+        capModalSize();
+    
+        // On mobile/touch: block usage and show message
+        if (isMobileDevice()) {
+          var content = infoModal.querySelector('.modal-content');
+          if (content) {
+            content.innerHTML =
+              '<h2>The Chronicle Side Car</h2>' +
+              '<p style="margin-top:.5rem;">Must use a computer browser for optimal use.</p>' +
+              '<p style="opacity:.85">This interactive side car is disabled on mobile/touch devices to prevent layout and performance issues.</p>';
+          }
+        }
+      }
+    
+      // Show sidecar on page load
+      window.addEventListener('load', openSidecar);
+    
+      // "Get Started" closes the modal (only when not blocked by mobile guard)
+      if (btnInfoStart) {
+        btnInfoStart.addEventListener('click', function(){
+          if (!isMobileDevice() && infoModal) infoModal.style.display = 'none';
+        });
+      }
+    
+      // Esc key should close: 1) map overlay (if open), 2) sidecar (if not mobile-blocked)
+      document.addEventListener('keydown', function(e){
+        var key = e.key || e.keyCode;
+        if (key === 'Escape' || key === 'Esc' || key === 27) {
+          if (mapOverlay && !mapOverlay.hasAttribute('hidden')) {
+            mapOverlay.setAttribute('hidden', '');
+          }
+          if (infoModal && infoModal.style.display === 'block' && !isMobileDevice()) {
+            infoModal.style.display = 'none';
+          }
+        }
       });
-    });
-
-    // Chronicle volume selector
-    document.getElementById('editionSelect').addEventListener('change', e => {
-      document.getElementById('pdfViewer').src = e.target.value;
-    });
-
-    // Info modal
-    window.addEventListener('load', () => {
-      document.getElementById('infoModal').style.display = 'block';
-    });
-    document.getElementById('btnInfoStart').onclick = () => {
-      document.getElementById('infoModal').style.display = 'none';
-    };
-  </script>
+    
+      // Cap sidecar size & enable scroll if content is tall
+      var sideContent = infoModal ? infoModal.querySelector('.modal-content') : null;
+      function capModalSize(){
+        if (!sideContent) return;
+        sideContent.style.maxWidth  = 'min(92vw, 720px)';
+        sideContent.style.maxHeight = 'min(85vh, 1000px)';
+        sideContent.style.overflow  = 'auto';
+      }
+      capModalSize();
+    
+      // Keep it capped if the content changes size
+      if ('ResizeObserver' in window && sideContent) {
+        var ro = new ResizeObserver(function(){ capModalSize(); });
+        ro.observe(sideContent);
+      } else {
+        window.addEventListener('resize', capModalSize);
+      }
+    })();
+    </script>
+    
 
 <!-- Wizard Engine -->
 <script type="module">
@@ -656,30 +733,68 @@
     elSub.disabled = !!isSubmitting;
     elSub.textContent = isSubmitting ? 'Submitting…' : 'Submit';
   }
-  elSub.onclick = async () => {
-    if (!/^https?:\/\//i.test(receiverUrl)) {
-      elStat.textContent = 'Submit config error: receiver URL not set.';
-      console.error('receiverUrl is not a valid http(s) URL:', receiverUrl);
-      return;
-    }
-    const email = answers['email'] || `anon_${Date.now()}`;
-    const payload = { userKey: email, characterName: getCharacterName(answers), path, answers, meta: { title: graph.meta?.title, version: graph.meta?.version } };
-    elStat.textContent = "Submitting… please don't leave this page.";
-    setSubmitting(true);
-    try {
-      const res = await fetch(receiverUrl, { method: 'POST', body: JSON.stringify(payload) });
-      if (!res.ok) {
-        const t = await res.text().catch(()=> '');
-        throw new Error(`HTTP ${res.status} ${res.statusText} ${t || ''}`.trim());
-      }
-      elStat.textContent = 'Submitted successfully. Thank you!';
-    } catch (e) {
-      elStat.textContent = 'Submit failed. You can Download Save and try again later.';
-      console.error(e);
-    } finally {
-      setSubmitting(false);
-    }
+// --- NEW: resolve labels for radios/checkboxes using questions.json ---
+function valueToLabel(q, v) {
+  if (!q) return v;
+  if (q.type === 'radio') {
+    const opt = (q.options || []).find(o => o.value === v);
+    return opt ? opt.label : v;
+  }
+  if (q.type === 'checkbox' && Array.isArray(v)) {
+    return v.map(x => {
+      const opt = (q.options || []).find(o => o.value === x);
+      return opt ? opt.label : x;
+    });
+  }
+  // text/textarea or anything else: return as-is
+  return v;
+}
+
+function buildExportAnswers() {
+  const out = {};
+  for (const [qid, v] of Object.entries(answers)) {
+    const q = qById(qid);
+    out[qid] = valueToLabel(q, v);
+  }
+  return out;
+}
+
+elSub.onclick = async () => {
+  if (!/^https?:\/\//i.test(receiverUrl)) {
+    elStat.textContent = 'Submit config error: receiver URL not set.';
+    console.error('receiverUrl is not a valid http(s) URL:', receiverUrl);
+    return;
+  }
+  const email = answers['email'] || `anon_${Date.now()}`;
+
+  // Use labels for radios/checkboxes in the exported payload:
+  const exportedAnswers = buildExportAnswers();
+
+  const payload = {
+    userKey: email,
+    characterName: getCharacterName(answers),
+    path,
+    answers: exportedAnswers,
+    meta: { title: graph.meta?.title, version: graph.meta?.version }
   };
+
+  elStat.textContent = "Submitting… please don't leave this page.";
+  setSubmitting(true);
+  try {
+    const res = await fetch(receiverUrl, { method: 'POST', body: JSON.stringify(payload) });
+    if (!res.ok) {
+      const t = await res.text().catch(()=> '');
+      throw new Error(`HTTP ${res.status} ${res.statusText} ${t || ''}`.trim());
+    }
+    elStat.textContent = 'Submitted successfully. Thank you!';
+  } catch (e) {
+    elStat.textContent = 'Submit failed. You can Download Save and try again later.';
+    console.error(e);
+  } finally {
+    setSubmitting(false);
+  }
+};
+
 
   // Reset flow
   elReset.onclick = () => {
