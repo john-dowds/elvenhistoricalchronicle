@@ -157,6 +157,14 @@
             "label": "Non-binary"
           },
           {
+            "value": "genderqueer",
+            "label": "Gender Queer"
+          },
+          {
+            "value": "trans",
+            "label": "Transgender"
+          },
+          {
             "value": "other",
             "label": "Other"
           }
