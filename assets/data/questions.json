@@ -290,11 +290,11 @@
           {
             "value": "50_500_EK",
             "label": "(Adult High Elves)<br>Between 50 and 500 years old, and born on the Eastern Kingdoms.",
-            "next": "q106"
+            "next": "q104"
           },
           {
             "value": "500_2800_EK",
-            "label": "(Elderly High Elves, born anytime after the founding of Quel'Thalas)<br>Between 500 and 2,800 years old and born on the Eastern Kingdoms.",
+            "label": "(Elderly High Elves, born between the Troll Wars and establishment of the Ranger Lodges)<br>Between 500 and 2,800 years old and born on the Eastern Kingdoms.",
             "next": "q94"
           },
           {
