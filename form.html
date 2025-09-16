@@ -2,58 +2,79 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-C9BDYX4X32"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-C9BDYX4X32');
-</script>
   <title>The Elven Historical Chronicle – Application</title>
   <link rel="stylesheet" href="/style.css" />
   <style>
-
     /* Hero layout */
     .hero {
-      display:grid; grid-template-columns:55% 45%; gap:2rem;
-      padding:0 3rem;
-      margin-top: 1.5rem; 
-
+      display: grid;
+      grid-template-columns: 55% 45%;
+      gap: 2rem;
+      padding: 0 3rem;
+      margin-top: 1.5rem;
     }
     .hero .left,
     .hero .right {
-      background:rgba(0,0,0,0.6); padding:1rem; border-radius:8px;
+      background: rgba(0,0,0,0.6);
+      padding: 1rem;
+      border-radius: 8px;
     }
+    .hero .right { min-height: 110vh; }
   </style>
 </head>
 <body>
-    <!-- Info Modal -->
-    <div id="infoModal">
-      <div class="modal-content">
-        <h2>The Chronicle Side Car</h2>
-        <p>
-          The Chronicle Side Car feature allows users to work on filling out their character’s application side by side with the latest editions of the Chronicle, allowing a good frame of reference when needed.  
-          Be sure you are logged into your email account, otherwise it may not save.
-        </p>
-        <p style="color: #f88; font-weight: bold;">
-          Warning: Clearing your browser cache or history may risk erasing your progress if you haven’t submitted.
-        </p>
-        <div class="modal-actions">
-          <button id="btnInfoStart">Get Started</button>
-          <button id="btnInfoEmail">Give me the link instead</button>
-        </div>
+  <!-- Info Modal -->
+  <div id="infoModal">
+    <div class="modal-content">
+      <h2>The Chronicle Side Car</h2>
+      <p>
+        The Chronicle Side Car feature allows you to work on filling out your character’s application side by side with the latest editions of the Chronicle, allowing a good frame of reference when needed.</p>
+      <p>Some things to note about the feature:</p>
+      <ul>
+        <li>It will automatically jump to the appropriate next section based on your answers.</li>
+        <li>You can skip non-essential questions; don't feel compelled to fill out every single one. Just go with what makes sense.</li>
+        <li>The path map will show you your progression (though it is still in beta).</li>
+      </ul>
+      <p style="color: #f88; font-weight: bold;">
+        Warning: Clearing your browser cache or history may risk erasing your progress if you haven’t submitted. Be sure you download and save the file if you need to pause! You can always upload it again later and continue from where you left off.
+      </p>
+      <div class="modal-actions">
+        <button id="btnInfoStart">Get Started</button>
       </div>
     </div>
-  
-  <img src="assets/art/sigil_master1trans.png" alt="Elven Sigil" class="sigil-overlay" />
+  </div>
+
+  <!-- Reset Modal -->
+  <div id="resetModal" style="display:none;">
+    <div class="modal-content">
+      <h2>Restart form?</h2>
+      <p>Clicking <strong>“Restart form”</strong> will wipe your local progress on this device and return the questionnaire to the beginning.</p>
+      <div class="modal-actions">
+        <button id="btnResetCancel">Cancel</button>
+        <button id="btnResetConfirm">Restart form</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Path Map Overlay -->
+  <div id="ehcMapOverlay" class="ehc-map-overlay" hidden>
+    <div class="ehc-map-card">
+      <div class="ehc-map-bar">
+        <span>Path Map (beta)</span>
+        <button id="ehcMapClose" class="btn subtle" aria-label="Close map">×</button>
+      </div>
+      <div id="ehcMapViewport" class="ehc-map-viewport">
+        <svg id="ehcMapSvg" width="1600" height="720" aria-label="Path map"></svg>
+      </div>
+      <div id="ehcMapTip" class="ehc-map-tip" hidden></div>
+    </div>
+  </div>
+
   <header class="banner">
     <h1 class="site-title">The Elven Historical Chronicle</h1>
   </header>
+
   <nav class="menu-bar">
-    <audio controls loop>
-      <source src="assets/audio/theme.mp3" type="audio/mpeg">
-    </audio>
     <ul>
       <li><a href="index.html">Home</a></li>
       <li class="dropdown">
@@ -62,7 +83,6 @@
           <li><a href="volume1.html">Volume 1</a></li>
           <li><a href="volume2.html">Volume 2</a></li>
           <li><a href="volume3.html">Volume 3</a></li>
-          <li><a href="volume4.html">Volume 4</a></li>
         </ul>
       </li>
       <li><a href="form.html">Apply</a></li>
@@ -73,36 +93,56 @@
   </nav>
 
   <div class="hero">
-    <!-- PDF viewer -->
+    <!-- LEFT: PDF viewer -->
     <div class="left">
       <label for="editionSelect">View Chronicle:</label>
       <select id="editionSelect">
         <option value="/assets/pdfs/book_volume1.pdf">Volume 1</option>
         <option value="/assets/pdfs/book_volume2.pdf">Volume 2</option>
         <option value="/assets/pdfs/book_volume3.pdf">Volume 3</option>
-        <option value="/assets/pdfs/book_volume4.pdf">Volume 4</option>
       </select>
+      (Keep in mind, this is still the 2nd Edition; the 3rd comes with Midnight.)
+
       <iframe
         id="pdfViewer"
         src="/assets/pdfs/book_volume1.pdf"
         style="width:100%; height:110vh; border:none;">
       </iframe>
     </div>
+
+    <!-- RIGHT: Wizard -->
     <div class="right">
-      <iframe
-      src="https://docs.google.com/forms/d/e/1FAIpQLSf2ZTI80ZKQvqdBsexqOmKtFzstsp6FXA5UlCPIVcQLEd5GjQ/viewform"
-      width="100%"
-      height="900"
-      frameborder="0"
-      marginheight="0"
-      marginwidth="0"
-      >
-      Loading…
-    </iframe>
+      <div id="wizardPane" class="wizard-pane">
+      <div id="currentCard" class="qcard current">
+        <div class="qcard-controls">
+          <button id="btnBack" class="btn subtle">Back</button>
+          <button id="btnReset" class="btn subtle" title="Restart this form from the beginning">Reset</button>
+          <button id="ehcMapOpen" class="btn subtle" title="Show path map">Map</button>
+          <button id="btnNext" class="btn accent">Next</button>
+          <div class="grow"></div>
+
+          <button id="btnDownload" class="btn">Download</button>
+          <label class="upload-btn btn">
+            <input id="fileUpload" type="file" accept="application/json" style="display:none">
+            <span>Upload</span>
+          </label>
+
+          <button id="btnReturn" class="btn subtle btn-return" title="Back to current" style="display:none;">↑</button>
+          <button id="btnSubmit" class="btn gold">Submit</button>
+        </div>
+        <div class="qcard-header">
+          <div id="progress"></div>
+        </div>
+        <p id="status" class="status"></p>
+        <div id="question"></div>
+      </div>
+
+
+        <!-- Scrollable answered history -->
+        <div id="history" class="history"></div>
+      </div>
+    </div>
   </div>
-  </div>
-</main>
-    
 
   <footer class="site-footer">
     <ul class="footer-links">
@@ -115,6 +155,7 @@
     <p>This site is a fan-created, non-commercial project and is not endorsed or affiliated with Blizzard Entertainment.</p>
   </footer>
 
+  <!-- Menus & PDF selector -->
   <script>
     // Dropdown hover/click
     document.querySelectorAll('nav.menu-bar li.dropdown').forEach(dd => {
@@ -125,31 +166,748 @@
         e.preventDefault(); clearTimeout(hideT); dd.classList.toggle('open');
       });
     });
-  </script>
 
-<script>
-  document
-    .getElementById('editionSelect')
-    .addEventListener('change', e => {
+    // Chronicle volume selector
+    document.getElementById('editionSelect').addEventListener('change', e => {
       document.getElementById('pdfViewer').src = e.target.value;
     });
-</script>
 
-<script>
+    // Info modal
+    window.addEventListener('load', () => {
+      document.getElementById('infoModal').style.display = 'block';
+    });
+    document.getElementById('btnInfoStart').onclick = () => {
+      document.getElementById('infoModal').style.display = 'none';
+    };
+  </script>
+
+<!-- Wizard Engine -->
+<script type="module">
+  /** Chronicle Wizard Engine **/
+  const stateKey = 'ehc_wizard_state_v1';
+  const qsUrl = 'assets/data/questions.json';
+  const receiverUrl = 'https://script.google.com/macros/s/AKfycbyfIQjIPraHoZGfDu1nw2DZ-CyxfVeQpgmWmVDnvBbzAS8hXbJBx_dSBX_WFOk23WgRow/exec';
+
+  let graph, answers = {}, path = [], currentId = null;
+  let resumeState = null;      // remembers frontier before a history jump
+  let branchConfirm = null;    // { questionId, purgeIds }
+
+  // restore draft
+  const saved = JSON.parse(localStorage.getItem(stateKey) || '{}');
+  if (saved.answers) { answers = saved.answers; path = saved.path || []; currentId = saved.currentId || null; }
+
+  // DOM
+  const elQ   = document.getElementById('question');
+  const elProg= document.getElementById('progress');
+  const elStat= document.getElementById('status');
+  const elBack= document.getElementById('btnBack');
+  const elNext= document.getElementById('btnNext');
+  const elDl  = document.getElementById('btnDownload');
+  const elUp  = document.getElementById('fileUpload');
+  const elSub = document.getElementById('btnSubmit');
+  const elReset = document.getElementById('btnReset');
+  const elHistory = document.getElementById('history');
+  const elCurrent = document.getElementById('currentCard');
+  const elReturn  = document.getElementById('btnReturn');
+
+  // Reset modal DOM
+  const elResetModal   = document.getElementById('resetModal');
+  const elResetCancel  = document.getElementById('btnResetCancel');
+  const elResetConfirm = document.getElementById('btnResetConfirm');
+
+  // Map overlay DOM
+  const mapOpenBtn  = document.getElementById('ehcMapOpen');
+  const mapOverlay  = document.getElementById('ehcMapOverlay');
+  const mapCloseBtn = document.getElementById('ehcMapClose');
+  const mapSvg      = document.getElementById('ehcMapSvg');
+  const mapTip      = document.getElementById('ehcMapTip');
+
+  mapOpenBtn?.addEventListener('click', () => { buildPathMap(); mapOverlay?.removeAttribute('hidden'); });
+  mapCloseBtn?.addEventListener('click', () => { mapOverlay?.setAttribute('hidden',''); hideMapTip(); });
+
+  // === Load questions.json ===
+  fetch(qsUrl)
+    .then(r => { if (!r.ok) throw new Error(`Failed ${r.status} ${r.statusText}`); return r.json(); })
+    .then(json => {
+      graph = json;
+
+      // If there is no explicit currentId (fresh page or old draft), infer from last answered
+      if (!currentId) {
+        const inferred = inferResumeCurrentId(answers);
+        if (inferred) currentId = inferred;
+        else currentId = graph.questions[0]?.id || null;
+      }
+
+      render(true);
+    })
+    .catch(err => {
+      elStat.textContent = 'Could not load questions.json (check the path).';
+      console.error(err);
+    });
+
+  function saveDraft(){
+    localStorage.setItem(stateKey, JSON.stringify({ answers, path, currentId, ts: Date.now() }));
+  }
+  function qById(id){ return graph.questions.find(q => q.id === id); }
+
+  function positionEraBar() {
+    const sticky = elHistory?.querySelector('.history-sticky');
+    if (!sticky || !elHistory || !elCurrent) return;
+
+    const histRect = elHistory.getBoundingClientRect();
+    const cardRect = elCurrent.getBoundingClientRect();
+    const topOffset = Math.max(0, (cardRect.bottom - histRect.top) + 8); 
+    sticky.style.position = 'sticky';
+    sticky.style.top = `${topOffset}px`;
+    sticky.style.zIndex = '1';
+  }
+  window.addEventListener('resize', positionEraBar);
+  window.addEventListener('scroll', positionEraBar, { passive: true });
+  elHistory?.addEventListener('scroll', positionEraBar, { passive: true });
+
+  function render(animate=false){
+    const q = qById(currentId);
+    if (!q) {
+      elProg.textContent = `Complete`;
+      elQ.innerHTML = `<p>All done. You can submit or download your save.</p>`;
+      elNext.disabled = true;
+      elReturn.style.display = resumeState ? '' : 'none';
+      hideNextTooltip();
+      return;
+    }
+
+    elProg.textContent = `Question ${q.number ?? ''}${q.number?':':''} ${q.text}`;
+    elQ.innerHTML = renderInput(q, answers[q.id]);
+    elStat.textContent = '';
+
+    // dynamic Skip/Next
+    wireNextLabelReactivity(q);
+
+    elBack.disabled = path.length === 0;
+
+    if (animate){
+      elCurrent.classList.remove('enter');
+      requestAnimationFrame(()=>{ elCurrent.classList.add('enter'); });
+    }
+
+    buildHistory();
+    elReturn.style.display = resumeState ? '' : 'none';
+
+
+    positionEraBar();
+
+    if (branchConfirm && branchConfirm.questionId !== currentId) {
+      branchConfirm = null;
+      hideNextTooltip();
+    }
+  }
+
+  function renderInput(q, val){
+    const v = val ?? '';
+    switch(q.type){
+      case 'text':
+        return `<input id="ans" type="text" value="${escapeHtml(v)}">`;
+      case 'textarea':
+        return `<textarea id="ans" rows="6">${escapeHtml(v)}</textarea>`;
+      case 'radio':
+        return `
+          <div class="options">
+            ${(q.options||[]).map(opt=>`
+              <label>
+                <input type="radio" name="ans" value="${opt.value}" ${(v===opt.value)?'checked':''}>
+                ${opt.label}
+              </label>`).join('')}
+          </div>`;
+      case 'checkbox': {
+        const values = Array.isArray(v) ? new Set(v) : new Set();
+        return `
+          <div class="options">
+            ${(q.options||[]).map(opt=>`
+              <label>
+                <input type="checkbox" name="ans" value="${opt.value}" ${values.has(opt.value)?'checked':''}>
+                ${opt.label}
+              </label>`).join('')}
+          </div>`;
+      }
+      default: return `<div>Unsupported type: ${q.type}</div>`;
+    }
+  }
+  function readAnswer(q){
+    switch(q.type){
+      case 'text':
+      case 'textarea': return document.getElementById('ans').value.trim();
+      case 'radio': {
+        const rb = document.querySelector('input[name="ans"]:checked');
+        return rb ? rb.value : null;
+      }
+      case 'checkbox': {
+        return Array.from(document.querySelectorAll('input[name="ans"]:checked')).map(i=>i.value);
+      }
+      default: return null;
+    }
+  }
+  function computeNext(q, val){
+    if (q.type === 'radio'){
+      const opt = (q.options||[]).find(o=>o.value===val);
+      if (opt?.next) return opt.next;
+    }
+    return q.next ?? null;
+  }
+
+  /* Save current answer before any jump */
+  function persistCurrentAnswer({allowNull=true} = {}){
+    const q = qById(currentId);
+    if (!q) return;
+    const val = readAnswer(q);
+    if (val === null && !allowNull) return;
+    answers[q.id] = val;
+    saveDraft();
+  }
+
+  // ===== Sticky section separators in history =====
+  const SECTION_ANCHORS = [
+    { id: 'q1',   label: 'Basic Information' },
+    { id: 'q16',  label: 'Age & Era' },
+    { id: 'q17',  label: 'Pre-Sundering' },
+    { id: 'q36',  label: 'Suramar' },
+    { id: 'q50',  label: 'Sundering' },
+    { id: 'q84',  label: 'Long Vigil' },
+    { id: 'q88',  label: 'Exile of the Quel’dorei' },
+    { id: 'q94',  label: 'Troll Wars' },
+    { id: 'q106', label: 'Farstriders & First War' },
+    { id: 'q114', label: 'Second War' },
+    { id: 'q140', label: 'Alliance Expedition' },
+    { id: 'q154', label: 'Interwar & Third War' },
+    { id: 'q162', label: 'Fall of Quel’Thalas' },
+    { id: 'q185', label: 'Dalaran & Hyjal' },
+    { id: 'q252', label: 'Burning Crusade' },
+    { id: 'q302', label: 'Wrath of the Lich King' },
+    { id: 'q337', label: 'Cataclysm' },
+    { id: 'q343', label: 'Mists of Pandaria' },
+    { id: 'q362', label: 'Warlords of Draenor' },
+    { id: 'q366', label: 'Legion' },
+    { id: 'q390', label: 'Battle for Azeroth' },
+    { id: 'q419', label: 'Shadowlands' },
+    { id: 'q423', label: 'Dragonflight' },
+    { id: 'q429', label: 'The War Within' }
+  ];
+  const qNum = id => Number(String(id).replace(/[^\d]/g,'')) || 0;
+  function sectionLabelFor(id) {
+    let label = SECTION_ANCHORS[0].label;
+    for (const a of SECTION_ANCHORS) if (qNum(a.id) <= qNum(id)) label = a.label;
+    return label;
+  }
+
+  function buildHistory(){
+    elHistory.innerHTML = '';
+
+    const sticky = document.createElement('div');
+    sticky.className = 'history-sticky';
+    sticky.textContent = '';
+    elHistory.appendChild(sticky);
+
+    let lastLabel = null;
+
+    for (let i = path.length - 1; i >= 0; i--){
+      const pid = path[i];
+      const pq  = qById(pid);
+      if (!pq) continue; 
+      const ans = answers[pid];
+
+      const label = sectionLabelFor(pid);
+      if (label !== lastLabel){
+        const sep = document.createElement('div');
+        sep.className = 'hist-sep';
+        sep.innerHTML = `<span class="label">${label}</span>`;
+        elHistory.appendChild(sep);
+        lastLabel = label;
+      }
+
+      const item = document.createElement('button');
+      item.type = 'button';
+      item.className = 'hist-item';
+      item.setAttribute('data-qid', pid);
+      item.setAttribute('data-section', label);
+      item.innerHTML = `
+        <div><span class="hist-qnum">Q${pq.number}.</span><span class="hist-qtext">${escapeHtml(pq.text)}</span></div>
+        <div class="hist-ans">${previewAnswer(ans)}</div>
+      `;
+      item.addEventListener('click', ()=>{
+        persistCurrentAnswer({allowNull:true});
+        resumeState = { path: [...path], currentId };
+        elReturn.style.display = '';
+        const idx = i;
+        path = path.slice(0, idx);
+        currentId = pid;
+        saveDraft();
+        render(true);
+        document.querySelector('.wizard-pane').scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      elHistory.appendChild(item);
+    }
+
+    function updateSticky(){
+      const seps = [...elHistory.querySelectorAll('.hist-sep')];
+      let current = seps.length ? seps[0].querySelector('.label').textContent : '';
+      for (const sep of seps){
+        if (sep.offsetTop - elHistory.scrollTop <= 8) current = sep.querySelector('.label').textContent; else break;
+      }
+      sticky.textContent = current;
+    }
+    elHistory.removeEventListener('scroll', updateSticky);
+    elHistory.addEventListener('scroll', updateSticky);
+    updateSticky();
+    positionEraBar();
+  }
+
+  function previewAnswer(a){
+    if (a == null) return '<em>No answer</em>';
+    if (Array.isArray(a)) return escapeHtml(a.join(', '));
+    const s = String(a);
+    return escapeHtml(s.length > 160 ? s.slice(0,157)+'…' : s);
+  }
+
+  // ===== “Skip” label for optional/empty =====
+  function isAnswered(q){
+    const v = readAnswer(q);
+    if (v == null) return false;
+    if (Array.isArray(v)) return v.length > 0;
+    if (typeof v === 'string') return v.trim().length > 0;
+    return true;
+  }
+  function setNextLabelFor(q){
+    const showSkip = (!q.required && !isAnswered(q));
+    elNext.textContent = showSkip ? 'Skip' : 'Next';
+  }
+  function wireNextLabelReactivity(q){
+    setNextLabelFor(q);
+    if (q.type === 'text' || q.type === 'textarea'){
+      const input = document.getElementById('ans');
+      if (input) input.addEventListener('input', () => setNextLabelFor(q));
+    } else if (q.type === 'radio' || q.type === 'checkbox'){
+      document.querySelectorAll('input[name="ans"]').forEach(el => {
+        el.addEventListener('change', () => setNextLabelFor(q));
+      });
+    }
+  }
+
+  // ===== Branch-change tooltip for purge confirm =====
+  function showNextTooltip(msg){
+    hideNextTooltip();
+    const tip = document.createElement('div');
+    tip.id = 'nextPurgeTip';
+    tip.textContent = msg;
+    tip.style.cssText = `
+      position: fixed; z-index: 4000; background: rgba(17,17,17,.95);
+      color: #fce5cd; border: 1px solid rgba(255,215,160,.5); border-radius: 8px;
+      padding: 8px 10px; box-shadow: 0 6px 16px rgba(0,0,0,.4); max-width: 320px; font-size: 14px;`;
+    document.body.appendChild(tip);
+    const rect = elNext.getBoundingClientRect();
+    const tipRect = tip.getBoundingClientRect();
+    const top = Math.max(8, rect.top - tipRect.height - 8);
+    const left = Math.min(window.innerWidth - tipRect.width - 8, rect.left + rect.width - tipRect.width);
+    tip.style.top = `${top}px`;
+    tip.style.left = `${left}px`;
+  }
+  function hideNextTooltip(){
+    const tip = document.getElementById('nextPurgeTip');
+    if (tip) tip.remove();
+  }
+  function forwardNodesFromResume(){
+    if (!resumeState) return [];
+    const keep = new Set(path.concat(currentId ? [currentId] : []));
+    return resumeState.path.filter(id => !keep.has(id));
+  }
+  elNext.onclick = () => {
+    const q = qById(currentId);
+    const prevVal = answers[q.id];
+    const newVal  = readAnswer(q);
+
+    const requiredEmpty = (v) =>
+      v == null || (typeof v === 'string' && v.trim()==='') || (Array.isArray(v) && v.length===0);
+    if (q.required && requiredEmpty(newVal)){
+      elStat.textContent = 'This question is required.';
+      hideNextTooltip();
+      return;
+    }
+
+    const oldNext = computeNext(q, prevVal);
+    const newNext = computeNext(q, newVal);
+    const diverges = (resumeState && oldNext !== null && newNext !== oldNext);
+
+    if (diverges && (!branchConfirm || branchConfirm.questionId !== q.id)) {
+      branchConfirm = { questionId: q.id, purgeIds: forwardNodesFromResume() };
+      const label = (!q.required && !isAnswered(q)) ? 'Skip' : 'Next';
+      showNextTooltip(`Branch changed: answers from the previous path will be cleared. Click ${label} again to confirm.`);
+      return;
+    }
+
+    answers[q.id] = newVal;
+
+    if (branchConfirm && branchConfirm.questionId === q.id) {
+      for (const id of branchConfirm.purgeIds) delete answers[id];
+      branchConfirm = null;
+      resumeState = null;
+      elReturn.style.display = 'none';
+      hideNextTooltip();
+    }
+
+    const nxt = computeNext(q, newVal);
+    if (nxt === null){
+      path.push(currentId);
+      currentId = null;
+      saveDraft();
+      render(true);
+      return;
+    }
+    path.push(currentId);
+    currentId = nxt;
+    saveDraft();
+    render(true);
+  };
+
+  elBack.onclick = () => {
+    if (path.length === 0) return;
+    currentId = path.pop();
+    saveDraft();
+    render(true);
+  };
+
+  // === Character name helpers ===
+  function getCharacterName(src = answers){
+    const raw = (src['q3'] || src['q2'] || src['q5'] || '').trim(); // try current, fall back to older saves
+    return raw || 'unknown';
+  }
+  function slugifyName(name){
+    return name.toLowerCase().replace(/[^a-z0-9]+/g,'_').replace(/^_+|_+$/g,'').slice(0,40) || 'unknown';
+  }
+
+  // === Infer the last answered question to resume from ===
+  function inferResumeCurrentId(ans = answers) {
+    if (!graph || !Array.isArray(graph.questions)) return null;
+    let bestId = null, bestNum = -1;
+
+    const isFilled = (v) =>
+      v != null && (
+        (Array.isArray(v) && v.length > 0) ||
+        (typeof v === 'string' && v.trim().length > 0) ||
+        (typeof v === 'number')
+      );
+
+    for (const q of graph.questions) {
+      const val = ans[q.id];
+      if (isFilled(val)) {
+        const n = (typeof q.number === 'number') ? q.number : (parseInt(String(q.id).replace(/\D/g,''),10) || 0);
+        if (n > bestNum) { bestNum = n; bestId = q.id; }
+      }
+    }
+    return bestId; // may be null
+  }
+
+  // Download with character name in filename
+  elDl.onclick = () => {
+    const charName = getCharacterName();
+    const slug = slugifyName(charName);
+    const date = new Date().toISOString().slice(0,10);
+    const blob = new Blob([JSON.stringify({ answers, path, currentId }, null, 2)], { type: 'application/json' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `EHC_save_${date}_${slug}.json`;
+    a.click();
+  };
+
+  // ==== Robust Upload  ====
+  function reconcileSaveWithGraph(data){
+    const valid = new Set((graph?.questions || []).map(q => q.id));
+    const answersIn = data.answers || {};
+    const out = {};
+    for (const [qid, val] of Object.entries(answersIn)) if (valid.has(qid)) out[qid] = val;
+    const pathIn = Array.isArray(data.path) ? data.path : [];
+    const newPath = pathIn.filter(qid => valid.has(qid));
+    const cid = data.currentId;
+    const newCid = (cid && valid.has(cid)) ? cid : null;
+    return { answers: out, path: newPath, currentId: newCid };
+  }
+  elUp.onchange = (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    const fr = new FileReader();
+    fr.onload = () => {
+      try {
+        const data = JSON.parse(fr.result);
+        const sanitized = reconcileSaveWithGraph(data);
+        answers = sanitized.answers;
+        path = sanitized.path;
+        currentId = sanitized.currentId || inferResumeCurrentId(answers) || (graph?.questions?.[0]?.id || null);
+        saveDraft();
+        render(true);
+        const charName = getCharacterName(answers);
+        elStat.textContent = `Save loaded; welcome back ${charName}.`;
+      } catch (err) {
+        elStat.textContent = 'Invalid save file.';
+      }
+    };
+    fr.readAsText(file);
+  };
+
+  // Submitting state feedback
+  function setSubmitting(isSubmitting){
+    elSub.disabled = !!isSubmitting;
+    elSub.textContent = isSubmitting ? 'Submitting…' : 'Submit';
+  }
+  elSub.onclick = async () => {
+    if (!/^https?:\/\//i.test(receiverUrl)) {
+      elStat.textContent = 'Submit config error: receiver URL not set.';
+      console.error('receiverUrl is not a valid http(s) URL:', receiverUrl);
+      return;
+    }
+    const email = answers['email'] || `anon_${Date.now()}`;
+    const payload = { userKey: email, characterName: getCharacterName(answers), path, answers, meta: { title: graph.meta?.title, version: graph.meta?.version } };
+    elStat.textContent = "Submitting… please don't leave this page.";
+    setSubmitting(true);
+    try {
+      const res = await fetch(receiverUrl, { method: 'POST', body: JSON.stringify(payload) });
+      if (!res.ok) {
+        const t = await res.text().catch(()=> '');
+        throw new Error(`HTTP ${res.status} ${res.statusText} ${t || ''}`.trim());
+      }
+      elStat.textContent = 'Submitted successfully. Thank you!';
+    } catch (e) {
+      elStat.textContent = 'Submit failed. You can Download Save and try again later.';
+      console.error(e);
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  // Reset flow
+  elReset.onclick = () => {
+    persistCurrentAnswer({allowNull:true});
+    document.getElementById('resetModal').style.display = 'block';
+  };
+  document.getElementById('btnResetCancel').onclick = () => {
+    document.getElementById('resetModal').style.display = 'none';
+  };
+  document.getElementById('btnResetConfirm').onclick = () => {
+    try { localStorage.removeItem(stateKey); } catch(e){}
+    answers = {};
+    path = [];
+    resumeState = null;
+    branchConfirm = null;
+    elReturn.style.display = 'none';
+    hideNextTooltip();
+    const firstId = graph?.questions?.[0]?.id || null;
+    currentId = firstId;
+    document.getElementById('resetModal').style.display = 'none';
+    elStat.textContent = 'Form reset. Start anew.';
+    render(true);
+    document.querySelector('.wizard-pane').scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  // Return to current frontier
+  elReturn.onclick = () => {
+    if (!resumeState) return;
+    persistCurrentAnswer({allowNull:true});
+    ({ path, currentId } = resumeState);
+    resumeState = null;
+    branchConfirm = null;
+    elReturn.style.display = 'none';
+    hideNextTooltip();
+    saveDraft();
+    render(true);
+    document.querySelector('.wizard-pane').scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  /* ===========================
+     MAP OVERLAY (BETA)
+     =========================== */
+
+  // Build adjacency (id -> question; id -> outgoing array)
+  function mapBuildAdjacency(){
+    const byId = new Map(), outs = new Map();
+    (graph?.questions||[]).forEach(q=>{ byId.set(q.id,q); outs.set(q.id,[]); });
+    (graph?.questions||[]).forEach(q=>{
+      if (q.next) outs.get(q.id).push(q.next);
+      if (q.type === 'radio' && Array.isArray(q.options)){
+        q.options.forEach(o=>{ if (o.next) outs.get(q.id).push(o.next); });
+      }
+    });
+    return { byId, outs };
+  }
+
+  // BFS depth layering (left -> right)
+  function computeDepth(startId, outs){
+    const depth = new Map(); depth.set(startId, 0);
+    const q = [startId]; const visited = new Set([startId]);
+    while (q.length){
+      const id = q.shift();
+      const d = depth.get(id);
+      const children = outs.get(id) || [];
+      for (const to of children){
+        if (!depth.has(to)){ depth.set(to, d+1); }
+        if (!visited.has(to)){ visited.add(to); q.push(to); }
+      }
+    }
+    return depth;
+  }
+  function edgesList(outs){
+    const E = [];
+    outs.forEach((arr, from)=> arr.forEach(to=> E.push([from,to])));
+    return E;
+  }
+  function mapVisited(){
+    const visitedNodes = new Set(path.concat(currentId ? [currentId] : []));
+    const visitedEdges = new Set();
+    for (let i=0;i<path.length-1;i++){
+      visitedEdges.add(`${path[i]}->${path[i+1]}`);
+    }
+    if (path.length && currentId) visitedEdges.add(`${path[path.length-1]}->${currentId}`);
+    return { visitedNodes, visitedEdges };
+  }
+
+  // Tooltip helpers
+  function showMapTip(text, x, y){
+    if (!mapTip) return;
+    mapTip.textContent = text;
+    mapTip.removeAttribute('hidden');
+    const pad = 12;
+    const w = mapTip.offsetWidth || 300;
+    const h = mapTip.offsetHeight || 80;
+    const left = Math.min(window.innerWidth - w - pad, x + pad);
+    const top  = Math.max(8, y - h - pad);
+    mapTip.style.left = left + 'px';
+    mapTip.style.top  = top  + 'px';
+  }
+  function hideMapTip(){ mapTip?.setAttribute('hidden',''); }
+
+  function buildPathMap(){
+    if (!mapSvg) return;
+    // clear old drawing
+    while (mapSvg.firstChild) mapSvg.removeChild(mapSvg.firstChild);
+
+    const firstId = (graph?.questions?.[0]?.id) || null;
+    if (!firstId) return;
+
+    const { byId, outs } = mapBuildAdjacency();
+    const depth = computeDepth(firstId, outs);
+    const E = edgesList(outs);
+    const { visitedNodes, visitedEdges } = mapVisited();
+
+    // Group nodes per column (depth)
+    const cols = new Map(); // depth -> array of ids (stable order by question number) Consider alternative route for this?
+    byId.forEach((q, id)=>{
+      const d = depth.has(id) ? depth.get(id) : 0;
+      if (!cols.has(d)) cols.set(d, []);
+      cols.get(d).push(id);
+    });
+    cols.forEach(arr=>{
+      arr.sort((a,b)=>{
+        const qa = byId.get(a), qb = byId.get(b);
+        return (qa.number||9999) - (qb.number||9999);
+      });
+    });
+
+    // Layout constants
+    const colW = 220, rowH = 110, topPad = 60, leftPad = 60, r = 16;
+    const maxDepth = Math.max(...cols.keys());
+    const svgW = leftPad + (maxDepth+1)*colW + 160;
+    const maxRows = Math.max(...[...cols.values()].map(a=>a.length));
+    const svgH = topPad + Math.max(6, maxRows)*rowH + 80;
+    mapSvg.setAttribute('width', svgW);
+    mapSvg.setAttribute('height', svgH);
+
+    // Map node positions: id -> [x,y]
+    const pos = new Map();
+    cols.forEach((arr, d)=>{
+      arr.forEach((id, i)=>{
+        const x = leftPad + d*colW;
+        const y = topPad + i*rowH;
+        pos.set(id, [x,y]);
+      });
+    });
+
+    // Draw edges (left->right or with gentle vertical curves)
+    const makeEdge = (from, to) => {
+      const p1 = pos.get(from), p2 = pos.get(to);
+      if (!p1 || !p2) return;
+      const [x1,y1] = p1, [x2,y2] = p2;
+      const mid = (x1+x2)/2;
+      const pathD = `M ${x1+r} ${y1} C ${mid} ${y1}, ${mid} ${y2}, ${x2-r} ${y2}`;
+      const e = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      const v = visitedEdges.has(`${from}->${to}`);
+      e.setAttribute('d', pathD);
+      e.setAttribute('fill','none');
+      e.setAttribute('class', `ehc-map-edge ${v ? 'visited' : 'ignored'}`);
+      mapSvg.appendChild(e);
+    };
+    E.forEach(([a,b])=> makeEdge(a,b));
+
+    // Draw nodes
+    byId.forEach((q, id)=>{
+      const p = pos.get(id); if (!p) return;
+      const [x,y] = p;
+
+      const g = document.createElementNS('http://www.w3.org/2000/svg','g');
+      g.setAttribute('class', `ehc-map-node ${visitedNodes.has(id) ? 'visited' : ''}`);
+      g.setAttribute('data-id', id);
+      mapSvg.appendChild(g);
+
+      const circle = document.createElementNS('http://www.w3.org/2000/svg','circle');
+      circle.setAttribute('cx', x);
+      circle.setAttribute('cy', y);
+      circle.setAttribute('r', r);
+      circle.setAttribute('class', visitedNodes.has(id) ? 'visited' : 'ignored');
+      g.appendChild(circle);
+
+      // Q# in the circle
+      const t = document.createElementNS('http://www.w3.org/2000/svg','text');
+      t.setAttribute('x', x);
+      t.setAttribute('y', y+4);
+      t.setAttribute('text-anchor','middle');
+      t.setAttribute('class','qnum');
+      t.textContent = q.number ? `Q${q.number}` : id;
+      g.appendChild(t);
+
+      // Hover tooltip shows full question text
+      g.addEventListener('mouseenter', (ev)=>{ showMapTip(q.text || id, ev.clientX, ev.clientY); });
+      g.addEventListener('mousemove',  (ev)=>{ showMapTip(q.text || id, ev.clientX, ev.clientY); });
+      g.addEventListener('mouseleave', hideMapTip);
+
+      // Click: if node is in visited path, jump there
+      if (visitedNodes.has(id)){
+        g.addEventListener('click', ()=>{
+          hideMapTip();
+          // behave like history click: prune to this node
+          persistCurrentAnswer({allowNull:true});
+          resumeState = { path: [...path], currentId };
+          elReturn.style.display = '';
+          const idx = path.indexOf(id);
+          if (idx >= 0){
+            path = path.slice(0, idx);
+          } else {
+            // if node isn't already in path just set current
+            path = [];
+          }
+          currentId = id;
+          saveDraft();
+          render(true);
+          mapOverlay?.setAttribute('hidden',''); // close map after jump
+          document.querySelector('.wizard-pane').scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    });
+  }
+
+  // Utilities
+  function escapeHtml(s=''){
+    return s.replace(/[&<>"']/g, m => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+  }
+
+  // Show the info modal on page load 
   window.addEventListener('load', () => {
     document.getElementById('infoModal').style.display = 'block';
   });
-
-  // Dismiss & continue
-  document.getElementById('btnInfoStart').onclick = () => {
-    document.getElementById('infoModal').style.display = 'none';
-  };
-
-document.getElementById('btnInfoEmail').onclick = () => {
-  const formURL = 'https://docs.google.com/forms/d/e/1FAIpQLSf2ZTI80ZKQvqdBsexqOmKtFzstsp6FXA5UlCPIVcQLEd5GjQ/viewform?usp=sf_link';
-  prompt('Copy the intake form link below:', formURL);
-};
-</script>
 </script>
 
 </body>
