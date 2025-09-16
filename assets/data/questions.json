@@ -1,7 +1,7 @@
 {
     "meta": {
       "title": "Elven Historical Chronicle Questionnaire",
-      "version": 1,
+      "version": 2,
       "range": "Q1–Q432",
       "parts": [
         "Q1–Q120",
@@ -1232,7 +1232,7 @@
       {
         "id": "q104",
         "number": 104,
-        "text": "Did you have any other interactions with the mortal races outside of Quel'Thalas during these long years? If so, please expand upon them.",
+        "text": "Did you have any interactions with the mortal races outside of Quel'Thalas during the long years between the start of the Troll Wars and the establishment of the Ranger Lodges? If so, please expand upon them.",
         "type": "textarea",
         "required": false,
         "next": "q105"
@@ -1350,7 +1350,7 @@
         "text": "When did you withdraw north of Thandol Span?",
         "type": "text",
         "required": false,
-        "next": "q114"
+        "next": "q117"
       },
       {
         "id": "q114",
@@ -1390,7 +1390,7 @@
       {
         "id": "q117",
         "number": 117,
-        "text": "What were your impressions of the human forces as they began to assemble for war, and what commentary do you have on the nature of Quel'Thalas' limited involvement?",
+        "text": "What were your impressions of the human forces as they began to assemble for war in Hillsbrad, and what commentary do you have on the nature of Quel'Thalas' limited involvement?",
         "type": "textarea",
         "required": false,
         "next": "q118"
@@ -1690,7 +1690,7 @@
         "text": "What were your experiences during the 14 years between Draenor's destruction and Lord Illidan Stormrage's arrival?",
         "type": "textarea",
         "required": false,
-        "next": "q220"
+        "next": "433"
       },
       {
         "id": "q151",
@@ -2517,7 +2517,7 @@
       {
         "id": "q233",
         "number": 233,
-        "text": "What was the extent of your involvement, if any, in the affairs of Sunfury, Naga, and demonic forces under Lord Illidan Stormrage in the Outlands?",
+        "text": "What was the extent of your involvement, if any, in the affairs of Sunfury, naga, and demonic forces under Lord Illidan Stormrage upon their arrival in the Outlands?",
         "type": "textarea",
         "required": false,
         "next": "q234"
@@ -4494,6 +4494,14 @@
         "text": "Thank you for completing the Chronicle. If you have any feedback, include it here.",
         "type": "textarea",
         "required": false
+      },
+      {
+        "id": "q433",
+        "number": 433,
+        "text": "As the Burning Legion and Lord Illidan and Prince Kael'thas and their naga allies battled for control over the Outlands, what were your experiences over the next few years before the reopening of the Dark Portal?",
+        "type": "textarea",
+        "required": false,
+        "next": "q256"
       }
     ]
   }
